@@ -1,0 +1,203 @@
+microsome analyses
+========================================================
+Results presentation and discussion for parent analytes (atrazine, triadimenon, and fipronil) and their xenobiotic metabolites.
+
+Toxicity of parents and metabolites discussion.
+
+```{r eval=TRUE, echo=TRUE}
+R.Version()$version.string
+library(dplyr)
+library(knitr)
+library(grofit)
+library(zoo)
+
+
+#### read in and format data ####
+if(Sys.info()[4]=="DC2626UTPURUCKE"){
+  microdir <- "C:\\stp_drop\\Dropbox\\amphib_microsomes_glinskietal2015\\RCode\\"
+}
+
+if(Sys.info()[4]=="stp-air.local"){
+  microdir <- "C:\\stp_drop\\Dropbox\\amphib_microsomes_glinskietal2015\\RCode\\"
+}
+
+micro <- read.table(paste(microdir,"Microsomes2.csv",sep=""), header = TRUE, sep = ",")
+str(micro)
+micro$time <- factor(micro$time)
+micro$tank <- factor(micro$tank)
+parents <- unique(micro$parent)
+analytes <- unique(micro$analyte)
+```
+
+Microsomal analysis of soil and amphibian data for 0 (soil only), 2, 4, 12, 24, and 48 hours after exposure.
+
+```{r eval=TRUE, echo=TRUE}
+micro
+parents
+analytes
+```
+
+Database has factors for time, parent (mapped to analyte), analyte (can be either parent or metabolite), matrix (amphibian or soil), and tank (potentially a nuisance variable).
+
+```{r eval=TRUE, echo=FALSE}
+#using dplyr
+micro.group <- group_by(micro, parent, analyte, matrix, time)
+str(micro.group)
+micro.group
+micro.group.stats <- summarise(micro.group, 
+            count = n(),
+            ConcMean = mean(conc),
+            ConcSD = sd(conc)
+)
+
+micro.group.stats
+
+
+
+```
+
+The amphibian data set summary statistics. Atrazine peaks at 4 hours and then declines monotonically. DEA peaks at 12 hours and DIA at 24. Fipronil steadily declines from its first observation at 2 hours with fipronil sulfone not peaking until 24 hours. Triadimenon peaks at 24 hours with its metabolites tdla and tdlb peaking at 4 hours.
+
+```{r eval=TRUE, echo=FALSE}
+str(micro.group.stats)
+micro.group.stats.amphib <- micro.group.stats[which(micro.group.stats$matrix=="amphib"),]
+head(micro.group.stats.amphib)
+#atrazine
+micro.group.stats.amphib.atrazine <- micro.group.stats.amphib[which(micro.group.stats.amphib$parent=="atrazine"),]
+micro.group.stats.amphib.atrazine
+atrazine.analytes <- unique(micro.group.stats.amphib.atrazine$analyte)
+for(analyte in atrazine.analytes){
+  print(analyte)
+}
+
+#fipronil
+micro.group.stats.amphib.fipronil <- micro.group.stats.amphib[which(micro.group.stats.amphib$parent=="fipronil"),]
+micro.group.stats.amphib.fipronil
+#triadimenon
+micro.group.stats.amphib.triadimenon <- micro.group.stats.amphib[which(micro.group.stats.amphib$parent=="triadimenon"),]
+micro.group.stats.amphib.triadimenon
+```
+
+```{r eval=TRUE, echo=FALSE}
+#plot with zoo objects
+```
+
+The soil data set summary statistics. Atrazine in soil showing an upwards trend (need to test if significant) with dia and dea levels very low indicating little degradation in soil over the 48 hour period. Fipronil and triadimenon data also indicating little degradation in soil. 
+
+```{r eval=TRUE, echo=FALSE}
+micro.group.stats.soil <- micro.group.stats[which(micro.group.stats$matrix=="soil"),]
+#atrazine
+micro.group.stats.soil.atrazine <- micro.group.stats.soil[which(micro.group.stats.soil$parent=="atrazine"),]
+micro.group.stats.soil.atrazine
+#fipronil
+micro.group.stats.soil.fipronil <- micro.group.stats.soil[which(micro.group.stats.soil$parent=="fipronil"),]
+micro.group.stats.soil.fipronil
+#triadimenon
+micro.group.stats.soil.triadimenon <- micro.group.stats.soil[which(micro.group.stats.soil$parent=="triadimenon"),]
+micro.group.stats.soil.triadimenon
+```
+
+
+
+```{r eval=TRUE, echo=TRUE}
+par(mfrow=c(3,1))
+print(parents)
+for(parent in parents){
+  i=0
+  print(parent)
+  temp.parent <- micro.group.stats.amphib[which(micro.group.stats.amphib$parent==parent),]
+  print(temp.parent)
+  parent.analytes <- unique(temp.parent$analyte)
+  for(analyte in parent.analytes){
+    print(parent)
+    print(analyte) 
+    analytetemp <- micro.group.stats.amphib[which(micro.group.stats.amphib$analyte==analyte),]
+    xvalues <- as.numeric(as.character(analytetemp$time))
+    #create empty plot if needed
+    if(i==0){
+      parenttemp <- micro.group.stats.amphib[which(micro.group.stats.amphib$parent==parent),]
+      maxconc <- max(parenttemp$ConcMean) 
+      plot(xvalues,analytetemp$ConcMean,type="l", xlim=c(0,48),
+           ylim = c(0,maxconc), main=parent,col="black")
+      axis(1,at=xvalues)
+      i=1
+    }
+    #add line for parent metabolite
+    if(analyte %in% parents){
+      lines(xvalues,analytetemp$ConcMean,type="l",col="red")
+    }else{
+    #add line for daughter metabolite
+      lines(xvalues,analytetemp$ConcMean,type="l",col="blue")
+    }
+  }
+}
+```
+
+la de da
+
+#turn times series to zoo objects
+
+
+
+#estimate lambdas using maximum likelihood for each time series
+library(maxLik)
+
+MLexp <- function(times, data){
+  
+  expLik <- function(param) {
+    y <- data
+    t <- times
+    alpha1 <- param[1]
+    lambda1 <- param[2]-1*(alpha1-lambda1*t) - y/(exp(alpha1-lambda1*t))
+  }
+  
+  max.fit <- maxLik(expLik, start = c(1,1))
+  crit <- qt(.975, length(data)-2)
+  max.intercept.CI <- c(summary(max.fit)$est[1,1]-crit*summary(max.fit)$est[1,2],summary(max.fit)$est[1,1]+crit*summary(max.fit)$est[1,2])
+  max.decayrate.CI <- c(-1*summary(max.fit)$est[2,1]-crit*summary(max.fit)$est[2,2],-1*summary(max.fit)$est[2,1]+crit*summary(max.fit)$est[2,2])
+  max.halflife.CI <- c(log(2)/max.decayrate.CI[2],log(2)/max.decayrate.CI[1])
+  
+  paste("MLE for Initial Concentration =",max.fit$est[1],
+        "MLE for decay rate =", max.fit$est[2],
+        "MLE for half life =", -log(.5)/max.fit$est[2])
+  
+  temp.list <- list(max.fit$est[1],  max.fit$est[2], -log(.5)/max.fit$est[2], max.intercept.CI, max.decayrate.CI, max.halflife.CI, vcov(max.fit) )
+  return(temp.list)
+}
+
+MLexp.intercept <- function(times, data) {
+  temp.fit <- MLexp(times,data)
+  temp.fit[[1]]
+}
+
+MLexp.decayrate <- function(times, data) {
+  temp.fit <- MLexp(times,data)
+  temp.fit[[2]]
+}
+
+MLexp.halflife <- function(times,data) {
+  temp.fit <- MLexp(times,data)
+  temp.fit[[3]]
+}
+
+MLexp.intercept.CI <- function(times,data){
+  temp.fit <- MLexp(times,data)
+  temp2 <- temp.fit[[4]]
+  names(temp2) <- c("Lower95", "Upper95")
+  temp2
+}
+
+MLexp.decayrate.CI <- function(times,data){
+  temp.fit <- MLexp(times,data)
+  temp2 <- temp.fit[[5]]
+  names(temp2) <- c("Lower95", "Upper95")
+  temp2
+}
+
+MLexp.halflife.CI <- function(times,data){
+  temp.fit <- MLexp(times,data)
+  temp2 <- temp.fit[[6]]
+  names(temp2) <- c("Lower95", "Upper95")
+  temp2
+}
+
