@@ -4,9 +4,20 @@ library(dplyr)
 library(knitr)
 #library(grofit)
 library(zoo)
+library(xtable)
+
+Sys.info()[4]
 
 if(Sys.info()[4]=="DC2626UTPURUCKE"){
   microdir <- "C:\\stp_drop\\Dropbox\\amphib_microsomes_glinskietal2015\\RCode\\"
+}
+
+if(Sys.info()[4]=="d2626utpurucke3.aa.ad.epa.gov"){
+  micro.root <- path.expand("~/git/glinski_metabolites/")
+  micro.csv.in <- path.expand("~/git/glinski_metabolites/csv_in/")
+  micro.csv.out <- path.expand("~/git/glinski_metabolites/csv_out/")
+  micro.graphics <- path.expand("~/git/glinski_metabolites/graphics/")
+  micro.tables <- path.expand("~/git/glinski_metabolites/tables/")
 }
 
 if(Sys.info()[4]=="stp-air-3.local"){
@@ -14,6 +25,7 @@ if(Sys.info()[4]=="stp-air-3.local"){
   micro.csv.in <- path.expand("~/git/glinski_metabolites/csv_in/")
   micro.csv.out <- path.expand("~/git/glinski_metabolites/csv_out/")
   micro.graphics <- path.expand("~/git/glinski_metabolites/graphics/")
+  micro.tables <- path.expand("~/git/glinski_metabolites/tables/")
 }
 
 file.exists(micro.root)
