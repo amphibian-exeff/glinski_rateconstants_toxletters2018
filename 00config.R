@@ -20,7 +20,7 @@ if(Sys.info()[4]=="d2626utpurucke3.aa.ad.epa.gov"){
   micro.tables <- path.expand("~/git/glinski_metabolites/tables/")
 }
 
-if(Sys.info()[4]=="stp-air-3.local"){
+if(Sys.info()[4]=="stp-air.local"){
   micro.root <- path.expand("~/git/glinski_metabolites/")
   micro.csv.in <- path.expand("~/git/glinski_metabolites/csv_in/")
   micro.csv.out <- path.expand("~/git/glinski_metabolites/csv_out/")
