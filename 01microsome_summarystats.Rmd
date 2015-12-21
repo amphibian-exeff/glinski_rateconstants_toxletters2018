@@ -1,10 +1,11 @@
+---
+output: pdf_document
+---
 microsome analyses
 ========================================================
 Results presentation and discussion for parent analytes (atrazine, triadimenon, and fipronil) and their xenobiotic metabolites.
 
 Toxicity of parents and metabolites discussion.
-
-```{r eval=TRUE, echo=TRUE}
 
 Microsomal analysis of soil and amphibian data for 0 (soil only), 2, 4, 12, 24, and 48 hours after exposure.
 
@@ -25,7 +26,7 @@ micro.group.stats
 micro.group.stats.html <- print.xtable(xtable(micro.group.stats), type="html")
 dput(micro.group.stats.html, file = paste(micro.tables,"micro.group.stats.html"
                                           ,sep=""))
-View(micro.group.stats)
+#View(micro.group.stats)
 ```
 
 The amphibian data set summary statistics. Atrazine peaks at 4 hours and then declines monotonically. DEA peaks at 12 hours and DIA at 24. Fipronil steadily declines from its first observation at 2 hours with fipronil sulfone not peaking until 24 hours. Triadimenon peaks at 24 hours with its metabolites tdla and tdlb peaking at 4 hours.
