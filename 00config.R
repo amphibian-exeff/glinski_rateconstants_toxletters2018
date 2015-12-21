@@ -1,10 +1,12 @@
-
 R.Version()$version.string
 library(dplyr)
 library(knitr)
 #library(grofit)
 library(zoo)
 library(xtable)
+library(drc) # for fitting Michaelis Menten model
+library(ggplot2) # for drawing
+
 
 Sys.info()[4]
 
