@@ -7,8 +7,10 @@ Michaelis-Menton kinetics represent an enzymatic reaction that involves competit
 The typical application is the determination of the rate in the presence of an inhibitor concentration 
 contrasted to the rate at a different inhibitor concentration.
 
+So we have an enzyme and a substrate that interact to from an enzyme-substrate complex that can either go back to the original enzyme and substrate or go forward to form the product and the free enzyme.
+E + S <-> ES -> E + P
 
-#E + S <-> ES
+So for this experiment, the substrate is the pesticide, the enzyme is unknown but assumed to be present in the microsomes. Microsomes are vesicles that are formed from parts of the endoplasmic reticulum when eukaryotic cells are broken-down in the laboratory (microsomes are not present in living cells). Microsomes are then differentially centrifuged so that the soluble enzymes and cytochrome P450 are present in solution.
 
 x <- seq(0,10,by=0.1)
 
