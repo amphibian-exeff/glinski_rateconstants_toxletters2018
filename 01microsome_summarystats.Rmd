@@ -1,8 +1,8 @@
 ---
-output: pdf_document
+output: html_document
 ---
 microsome analyses
-========================================================
+==================
 Results presentation and discussion for parent analytes (atrazine, triadimenon, and fipronil) and their xenobiotic metabolites.
 
 Toxicity of parents and metabolites discussion.
