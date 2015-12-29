@@ -66,25 +66,6 @@ img {
 <p>Install and load supporting libraries.</p>
 <pre><code>## [1] &quot;R version 3.2.2 (2015-08-14)&quot;</code></pre>
 <pre><code>## 
-## Attaching package: 'dplyr'
-## 
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-## 
-## 
-## Attaching package: 'zoo'
-## 
-## The following objects are masked from 'package:base':
-## 
-##     as.Date, as.Date.numeric
-## 
-## Loading required package: MASS
-## 
 ## Attaching package: 'MASS'
 ## 
 ## The following object is masked from 'package:dplyr':
@@ -95,20 +76,14 @@ img {
 ## 'drc' has been loaded.
 ## 
 ## Please cite R and 'drc' if used for a publication,
-## for references type 'citation()' and 'citation('drc')'.
-## 
-## 
-## Attaching package: 'drc'
-## 
-## The following objects are masked from 'package:stats':
-## 
-##     gaussian, getInitial</code></pre>
+## for references type 'citation()' and 'citation('drc')'.</code></pre>
 </div>
 <div id="import-data" class="section level1">
 <h1>import data</h1>
 <p>Load csv file with experimental data. Do not have microsome data in csv format.</p>
 <pre><code>##        nodename 
 ## &quot;stp-air.local&quot;</code></pre>
+<pre><code>## [1] &quot;check to see if R can access files OK&quot;</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 </div>
@@ -487,10 +462,6 @@ img {
 <p>Toxicity of parents and metabolites discussion.</p>
 <p>Microsomal analysis of soil and amphibian data for 0 (soil only), 2, 4, 12, 24, and 48 hours after exposure.</p>
 <p>Database has factors for time, parent (mapped to analyte), analyte (can be either parent or metabolite), matrix (amphibian or soil), and tank (potentially a nuisance variable).</p>
-<pre class="r"><code>#using dplyr
-library(dplyr)
-micro.group &lt;- group_by(micro, parent, analyte, matrix, time)
-str(micro.group)</code></pre>
 <pre><code>## Classes 'grouped_df', 'tbl_df', 'tbl' and 'data.frame':  352 obs. of  6 variables:
 ##  $ time   : Factor w/ 6 levels &quot;0&quot;,&quot;2&quot;,&quot;4&quot;,&quot;12&quot;,..: 2 2 2 2 3 3 3 3 4 4 ...
 ##  $ parent : Factor w/ 3 levels &quot;atrazine&quot;,&quot;fipronil&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
@@ -604,7 +575,6 @@ str(micro.group)</code></pre>
 ##   .. ..$ : symbol matrix
 ##   .. ..$ : symbol time
 ##   ..- attr(*, &quot;drop&quot;)= logi TRUE</code></pre>
-<pre class="r"><code>micro.group</code></pre>
 <pre><code>## Source: local data frame [352 x 6]
 ## Groups: parent, analyte, matrix, time [86]
 ## 
@@ -621,13 +591,6 @@ str(micro.group)</code></pre>
 ## 9      12 atrazine atrazine amphib 2.452278      1
 ## 10     12 atrazine atrazine amphib 3.786893      2
 ## ..    ...      ...      ...    ...      ...    ...</code></pre>
-<pre class="r"><code>micro.group.stats &lt;- summarise(micro.group, 
-            count = n(),
-            ConcMean = mean(conc),
-            ConcSD = sd(conc)
-)
-
-micro.group.stats</code></pre>
 <pre><code>## Source: local data frame [86 x 7]
 ## Groups: parent, analyte, matrix [?]
 ## 
@@ -644,9 +607,8 @@ micro.group.stats</code></pre>
 ## 9  atrazine atrazine   soil     12     4 20.614190 3.8918511
 ## 10 atrazine atrazine   soil     24     4 24.996196 4.4473828
 ## ..      ...      ...    ...    ...   ...       ...       ...</code></pre>
-<pre class="r"><code>micro.group.stats.html &lt;- print.xtable(xtable(micro.group.stats), type=&quot;html&quot;)</code></pre>
 <pre><code>## &lt;!-- html table generated in R 3.2.2 by xtable 1.8-0 package --&gt;
-## &lt;!-- Mon Dec 28 22:49:27 2015 --&gt;
+## &lt;!-- Mon Dec 28 23:15:48 2015 --&gt;
 ## &lt;table border=1&gt;
 ## &lt;tr&gt; &lt;th&gt;  &lt;/th&gt; &lt;th&gt; parent &lt;/th&gt; &lt;th&gt; analyte &lt;/th&gt; &lt;th&gt; matrix &lt;/th&gt; &lt;th&gt; time &lt;/th&gt; &lt;th&gt; count &lt;/th&gt; &lt;th&gt; ConcMean &lt;/th&gt; &lt;th&gt; ConcSD &lt;/th&gt;  &lt;/tr&gt;
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 1 &lt;/td&gt; &lt;td&gt; atrazine &lt;/td&gt; &lt;td&gt; atrazine &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.34 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.18 &lt;/td&gt; &lt;/tr&gt;
@@ -736,9 +698,6 @@ micro.group.stats</code></pre>
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 85 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 86 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.04 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
 ##    &lt;/table&gt;</code></pre>
-<pre class="r"><code>dput(micro.group.stats.html, file = paste(micro.tables,&quot;micro.group.stats.html&quot;
-                                          ,sep=&quot;&quot;))
-#View(micro.group.stats)</code></pre>
 <p>The amphibian data set summary statistics. Atrazine peaks at 4 hours and then declines monotonically. DEA peaks at 12 hours and DIA at 24. Fipronil steadily declines from its first observation at 2 hours with fipronil sulfone not peaking until 24 hours. Triadimenon peaks at 24 hours with its metabolites tdla and tdlb peaking at 4 hours.</p>
 <pre><code>## Classes 'grouped_df', 'tbl_df', 'tbl' and 'data.frame':  86 obs. of  7 variables:
 ##  $ parent  : Factor w/ 3 levels &quot;atrazine&quot;,&quot;fipronil&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...

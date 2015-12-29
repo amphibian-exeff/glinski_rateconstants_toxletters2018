@@ -19,13 +19,13 @@ Install and load supporting libraries.
 #library(grofit)
 
 R.Version()$version.string
-library(rmarkdown)
-library(dplyr)
-library(knitr)
-library(zoo)
-library(xtable)
-library(drc) # for fitting Michaelis Menten model
-library(ggplot2) # for drawing
+library(rmarkdown, quietly = TRUE, warn.conflicts = FALSE)
+library(dplyr, quietly = TRUE, warn.conflicts = FALSE)
+library(knitr, quietly = TRUE, warn.conflicts = FALSE)
+library(zoo, quietly = TRUE, warn.conflicts = FALSE)
+library(xtable, quietly = TRUE, warn.conflicts = FALSE)
+library(drc, quietly = TRUE, warn.conflicts = FALSE) # for fitting Michaelis Menten model
+library(ggplot2, quietly = TRUE, warn.conflicts = FALSE) # for drawing
 #library(grofit)
 ```
 
@@ -53,7 +53,7 @@ micro.csv.out <- paste(micro.root, "csv_out/", sep="")
 micro.graphics <- paste(micro.root, "graphics/", sep="")
 micro.tables <- paste(micro.root, "tables/", sep="")
 
-#check to see if R can access files OK
+print("check to see if R can access files OK")
 file.exists(micro.root)
 file.exists(micro.csv.in)
 
@@ -92,7 +92,7 @@ Microsomal analysis of soil and amphibian data for 0 (soil only), 2, 4, 12, 24, 
 
 Database has factors for time, parent (mapped to analyte), analyte (can be either parent or metabolite), matrix (amphibian or soil), and tank (potentially a nuisance variable).
 
-```{r eval=TRUE, echo=TRUE}
+```{r eval=TRUE, echo=FALSE}
 #using dplyr
 micro.group <- group_by(micro, parent, analyte, matrix, time)
 str(micro.group)
