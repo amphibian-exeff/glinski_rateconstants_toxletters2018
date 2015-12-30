@@ -80,16 +80,19 @@ img {
 </div>
 <div id="import-data" class="section level1">
 <h1>import data</h1>
-<p>Load csv file with experimental data. Do not have microsome data in csv format.</p>
-<pre><code>##        nodename 
-## &quot;stp-air.local&quot;</code></pre>
+<p>Load csv file with experimental data. Do not yet have microsome data in csv format.</p>
+<pre><code>##  nodename 
+## &quot;stp-air&quot;</code></pre>
+<pre><code>## [1] &quot;Root directory location&quot;</code></pre>
+<pre><code>## [1] &quot;/Users/puruckertom/git/glinski_metabolites/&quot;</code></pre>
 <pre><code>## [1] &quot;check to see if R can access files OK&quot;</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="data-structure" class="section level1">
 <h1>data structure</h1>
-<p>Check out structure of imported data set. Set a couple of fields as character.</p>
+<p>Check out structure of imported data set.</p>
+<pre class="r"><code>str(micro)</code></pre>
 <pre><code>## 'data.frame':    352 obs. of  6 variables:
 ##  $ time   : int  2 2 2 2 4 4 4 4 12 12 ...
 ##  $ parent : Factor w/ 3 levels &quot;atrazine&quot;,&quot;fipronil&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
@@ -97,6 +100,7 @@ img {
 ##  $ matrix : Factor w/ 2 levels &quot;amphib&quot;,&quot;soil&quot;: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ conc   : num  3.07 3.69 4.7 1.89 7.62 ...
 ##  $ tank   : int  1 2 3 4 1 2 3 4 1 2 ...</code></pre>
+<p>Set a time and tank fields as character.</p>
 <pre><code>##     time      parent     analyte matrix         conc tank
 ## 1      2    atrazine    atrazine amphib  3.068202720    1
 ## 2      2    atrazine    atrazine amphib  3.689639699    2
@@ -608,7 +612,7 @@ img {
 ## 10 atrazine atrazine   soil     24     4 24.996196 4.4473828
 ## ..      ...      ...    ...    ...   ...       ...       ...</code></pre>
 <pre><code>## &lt;!-- html table generated in R 3.2.2 by xtable 1.8-0 package --&gt;
-## &lt;!-- Mon Dec 28 23:15:48 2015 --&gt;
+## &lt;!-- Wed Dec 30 13:50:02 2015 --&gt;
 ## &lt;table border=1&gt;
 ## &lt;tr&gt; &lt;th&gt;  &lt;/th&gt; &lt;th&gt; parent &lt;/th&gt; &lt;th&gt; analyte &lt;/th&gt; &lt;th&gt; matrix &lt;/th&gt; &lt;th&gt; time &lt;/th&gt; &lt;th&gt; count &lt;/th&gt; &lt;th&gt; ConcMean &lt;/th&gt; &lt;th&gt; ConcSD &lt;/th&gt;  &lt;/tr&gt;
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 1 &lt;/td&gt; &lt;td&gt; atrazine &lt;/td&gt; &lt;td&gt; atrazine &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.34 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.18 &lt;/td&gt; &lt;/tr&gt;

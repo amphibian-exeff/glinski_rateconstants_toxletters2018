@@ -31,7 +31,7 @@ library(ggplot2, quietly = TRUE, warn.conflicts = FALSE) # for drawing
 
 import data
 ===========
-Load csv file with experimental data. Do not have microsome data in csv format.
+Load csv file with experimental data. Do not yet have microsome data in csv format.
 
 ```{r eval=TRUE, echo=FALSE}
 Sys.info()[4]
@@ -44,9 +44,12 @@ if(Sys.info()[4]=="DONNA-PC"){
   micro.root <- path.expand("C:/Users/Donna/Documents/Github/glinski_metabolites/")
 }
 
-if(Sys.info()[4]=="stp-air-3.local" || Sys.info()[4]=="stp-air.local"){
+if(Sys.info()[4]=="stp-air-3.local" || Sys.info()[4]=="stp-air.local" || Sys.info()[4]=="stp-air"){
   micro.root <- path.expand("~/git/glinski_metabolites/")
 }
+
+print("Root directory location")
+micro.root
 
 micro.csv.in <- paste(micro.root, "csv_in/", sep="")
 micro.csv.out <- paste(micro.root, "csv_out/", sep="")
@@ -63,10 +66,14 @@ micro <- read.table(paste(micro.csv.in,"Microsomes2.csv",sep=""), header = TRUE,
 
 data structure
 ==============
-Check out structure of imported data set. Set a couple of fields as character.
+Check out structure of imported data set. 
 
-```{r eval=TRUE, echo=FALSE}
+```{r eval=TRUE, echo=TRUE}
 str(micro)
+```
+
+Set a time and tank fields as character.
+```{r eval=TRUE, echo=FALSE}
 micro$time <- factor(micro$time)
 micro$tank <- factor(micro$tank)
 parents <- unique(micro$parent)
