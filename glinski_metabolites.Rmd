@@ -6,6 +6,8 @@ general configuration
 Install and load supporting libraries.
 
 ```{r eval=TRUE, echo=FALSE}
+print(Sys.info()[4])
+
 #original data sources are available on dropbox
 #/amphib_glinski_micosomes
 
@@ -34,12 +36,6 @@ import data
 Load csv file with experimental data. Do not yet have microsome data in csv format.
 
 ```{r eval=TRUE, echo=FALSE}
-Sys.info()[4]
-
-if(Sys.info()[4]=="d2626utpurucke3.aa.ad.epa.gov"){
-  micro.root <- path.expand("~/git/glinski_metabolites/")
-}
-
 if(Sys.info()[4]=="DONNA-PC"){
   micro.root <- path.expand("C:/Users/Donna/Documents/Github/glinski_metabolites/")
 }
@@ -48,17 +44,17 @@ if(Sys.info()[4]=="stp-air-3.local" || Sys.info()[4]=="stp-air.local" || Sys.inf
   micro.root <- path.expand("~/git/glinski_metabolites/")
 }
 
-print("Root directory location")
-micro.root
+if(Sys.info()[4]=="d2626utpurucke3.aa.ad.epa.gov"){
+  micro.root <- path.expand("~/git/glinski_metabolites/")
+}
+print(paste("Root directory location: ", micro.root, sep=""))
 
 micro.csv.in <- paste(micro.root, "csv_in/", sep="")
 micro.csv.out <- paste(micro.root, "csv_out/", sep="")
 micro.graphics <- paste(micro.root, "graphics/", sep="")
 micro.tables <- paste(micro.root, "tables/", sep="")
 
-print("check to see if R can access files OK")
-file.exists(micro.root)
-file.exists(micro.csv.in)
+print(paste("check to see if R can access files OK: ", file.exists(micro.root), sep = ""))
 
 #import data
 micro <- read.table(paste(micro.csv.in,"Microsomes2.csv",sep=""), header = TRUE, sep = ",")
