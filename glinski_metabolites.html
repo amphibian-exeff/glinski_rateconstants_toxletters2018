@@ -61,9 +61,12 @@ img {
 
 
 
-<div id="general-configuration" class="section level1">
-<h1>general configuration</h1>
-<p>Install and load supporting libraries.</p>
+<div id="things-to-do" class="section level1">
+<h1>things to do</h1>
+<ul>
+<li>load actual microsome data</li>
+<li>negative and zero concentration values general configuration ===================== Install and load supporting libraries.</li>
+</ul>
 <pre><code>##  nodename 
 ## &quot;stp-air&quot;</code></pre>
 <pre><code>## [1] &quot;R version 3.2.2 (2015-08-14)&quot;</code></pre>
@@ -84,7 +87,7 @@ img {
 <h1>import data</h1>
 <p>Load csv file with experimental data. Do not yet have microsome data in csv format.</p>
 <pre><code>## [1] &quot;Root directory location: /Users/puruckertom/git/glinski_metabolites/&quot;</code></pre>
-<pre><code>## [1] &quot;check to see if R can access files OKTRUE&quot;</code></pre>
+<pre><code>## [1] &quot;check to see if R can access files OK: TRUE&quot;</code></pre>
 </div>
 <div id="data-structure" class="section level1">
 <h1>data structure</h1>
@@ -457,8 +460,8 @@ img {
 ## [7] fipronil    fipsulf    
 ## 8 Levels: atrazine dea dia fipronil fipsulf triadimenon ... triadlb</code></pre>
 </div>
-<div id="microsome-analyses" class="section level1">
-<h1>microsome analyses</h1>
+<div id="exposure-experiment-analysis" class="section level1">
+<h1>exposure experiment analysis</h1>
 <p>Results presentation and discussion for parent analytes (atrazine, triadimenon, and fipronil) and their xenobiotic metabolites.</p>
 <p>Toxicity of parents and metabolites discussion.</p>
 <p>Microsomal analysis of soil and amphibian data for 0 (soil only), 2, 4, 12, 24, and 48 hours after exposure.</p>
@@ -609,7 +612,7 @@ img {
 ## 10 atrazine atrazine   soil     24     4 24.996196 4.4473828
 ## ..      ...      ...    ...    ...   ...       ...       ...</code></pre>
 <pre><code>## &lt;!-- html table generated in R 3.2.2 by xtable 1.8-0 package --&gt;
-## &lt;!-- Thu Dec 31 20:43:15 2015 --&gt;
+## &lt;!-- Fri Jan  1 13:51:37 2016 --&gt;
 ## &lt;table border=1&gt;
 ## &lt;tr&gt; &lt;th&gt;  &lt;/th&gt; &lt;th&gt; parent &lt;/th&gt; &lt;th&gt; analyte &lt;/th&gt; &lt;th&gt; matrix &lt;/th&gt; &lt;th&gt; time &lt;/th&gt; &lt;th&gt; count &lt;/th&gt; &lt;th&gt; ConcMean &lt;/th&gt; &lt;th&gt; ConcSD &lt;/th&gt;  &lt;/tr&gt;
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 1 &lt;/td&gt; &lt;td&gt; atrazine &lt;/td&gt; &lt;td&gt; atrazine &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.34 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.18 &lt;/td&gt; &lt;/tr&gt;
@@ -978,6 +981,10 @@ img {
 <p>MLexp.intercept.CI &lt;- function(times,data){ temp.fit &lt;- MLexp(times,data) temp2 &lt;- temp.fit[[4]] names(temp2) &lt;- c(“Lower95”, “Upper95”) temp2 }</p>
 <p>MLexp.decayrate.CI &lt;- function(times,data){ temp.fit &lt;- MLexp(times,data) temp2 &lt;- temp.fit[[5]] names(temp2) &lt;- c(“Lower95”, “Upper95”) temp2 }</p>
 <p>MLexp.halflife.CI &lt;- function(times,data){ temp.fit &lt;- MLexp(times,data) temp2 &lt;- temp.fit[[6]] names(temp2) &lt;- c(“Lower95”, “Upper95”) temp2 }</p>
+</div>
+<div id="microsome-experiment-analysis" class="section level1">
+<h1>microsome experiment analysis</h1>
+<p>data in csv format</p>
 </div>
 
 

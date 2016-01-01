@@ -1,6 +1,10 @@
 ---
   output: html_document
 ---
+things to do
+============
+- load actual microsome data
+- negative and zero concentration values
 general configuration
 =====================
 Install and load supporting libraries.
@@ -85,8 +89,8 @@ micro.soil <- micro[which(micro$matrix=="soil"),]
 #need to get actual microsome data and run michaelis menton kinetics
 ```
 
-microsome analyses
-==================
+exposure experiment analysis
+============================
 Results presentation and discussion for parent analytes (atrazine, triadimenon, and fipronil) and their xenobiotic metabolites.
 
 Toxicity of parents and metabolites discussion.
@@ -264,3 +268,6 @@ MLexp.halflife.CI <- function(times,data){
   temp2
 }
 
+microsome experiment analysis
+============================
+data in csv format
