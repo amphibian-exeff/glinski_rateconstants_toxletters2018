@@ -3,8 +3,10 @@
 ---
 things to do
 ============
-- load actual microsome data
-- negative and zero concentration values
+- load actual microsome data into csv
+- negative and zero concentration values in exposure experiment data
+- michaelis menton first order comparison for both experiments
+
 general configuration
 =====================
 Install and load supporting libraries.
@@ -72,7 +74,7 @@ Check out structure of imported data set.
 str(micro)
 ```
 
-Set a time and tank fields as character.
+Set time and tank fields as factor for later statistical inference.
 ```{r eval=TRUE, echo=FALSE}
 micro$time <- factor(micro$time)
 micro$tank <- factor(micro$tank)
