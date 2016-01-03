@@ -1,5 +1,6 @@
 ---
-  output: html_document
+title: "glinski_metabolites"  
+output: html_document
 ---
 things to do
 ============
