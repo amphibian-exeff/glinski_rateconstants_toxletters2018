@@ -35,6 +35,8 @@ library(xtable, quietly = TRUE, warn.conflicts = FALSE)
 library(drc, quietly = TRUE, warn.conflicts = FALSE) # for fitting Michaelis Menten model
 library(ggplot2, quietly = TRUE, warn.conflicts = FALSE) # for drawing
 #library(grofit)
+print("list of loaded packages: ")
+print((.packages()))
 ```
 
 import data
