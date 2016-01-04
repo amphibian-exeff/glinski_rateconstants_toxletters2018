@@ -2,6 +2,12 @@
 title: "glinski_metabolites"  
 output: html_document
 ---
+tested hypotheses
+============
+- observed vivo versus in vitro degradation rates are the same
+- observed vivo rates are lower than in vitro rates (due to other degradation processes, uptake kinetics?)
+- first order kinetics are michaelis-menton, second order?
+
 things to do
 ============
 - load actual microsome data into csv
