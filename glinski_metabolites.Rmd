@@ -4,8 +4,7 @@ output: html_document
 ---
 tested hypotheses
 ============
-- observed vivo versus in vitro degradation rates are the same
-- observed vivo rates are lower than in vitro rates (due to other degradation processes, uptake kinetics?)
+- observed vivo versus in vitro degradation rates are the same, or observed vivo rates are lower than in vitro rates (due to other degradation processes, uptake kinetics?)
 - first order kinetics are michaelis-menton, second order?
 
 things to do
@@ -46,9 +45,9 @@ print("list of loaded packages: ")
 print((.packages()))
 ```
 
-import data
-===========
-Load csv file with experimental data. Do not yet have microsome data in csv format.
+import experimental exposure data
+=================================
+Load csv file with experimental data.
 
 ```{r eval=TRUE, echo=FALSE}
 if(Sys.info()[4]=="DONNA-PC"){
@@ -99,6 +98,10 @@ micro.soil <- micro[which(micro$matrix=="soil"),]
 
 #need to get actual microsome data and run michaelis menton kinetics
 ```
+
+import experimental microsomal data
+=================================
+This data is observed from 0-90 minutes and has 3-4 replicates for each different micromolar concentration in a traditional Michaelis-Menton setup. Used to estimate slopes.
 
 exposure experiment analysis
 ============================
