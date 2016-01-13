@@ -1,1120 +1,1119 @@
 time,parent,analyte,matrix,conc,replicate,microMexp
-0,Atrazine,Atrazine,microsomes,1.208049891,1,0.712
-0,Atrazine,Atrazine,microsomes,1.59580743,2,0.712
-0,Atrazine,Atrazine,microsomes,1.362262655,3,0.712
-15,Atrazine,Atrazine,microsomes,1.346911275,2,0.712
-15,Atrazine,Atrazine,microsomes,1.212444791,3,0.712
-30,Atrazine,Atrazine,microsomes,1.13491833,1,0.712
-30,Atrazine,Atrazine,microsomes,1.082466929,2,0.712
-30,Atrazine,Atrazine,microsomes,1.113889522,3,0.712
-60,Atrazine,Atrazine,microsomes,0.918015161,1,0.712
-60,Atrazine,Atrazine,microsomes,0.819916078,2,0.712
-60,Atrazine,Atrazine,microsomes,0.830401682,3,0.712
-90,Atrazine,Atrazine,microsomes,0.60193292,1,0.712
-90,Atrazine,Atrazine,microsomes,0.514615471,2,0.712
-90,Atrazine,Atrazine,microsomes,0.543046503,3,0.712
-0,Atrazine,Atrazine,microsomes,7.925055611,1,10
-0,Atrazine,Atrazine,microsomes,8.535004798,2,10
-0,Atrazine,Atrazine,microsomes,7.898999742,3,10
-15,Atrazine,Atrazine,microsomes,8.712917025,1,10
-15,Atrazine,Atrazine,microsomes,8.046755376,2,10
-15,Atrazine,Atrazine,microsomes,8.073616112,3,10
-30,Atrazine,Atrazine,microsomes,7.2564376,1,10
-30,Atrazine,Atrazine,microsomes,7.355158639,2,10
-30,Atrazine,Atrazine,microsomes,7.326464072,3,10
-60,Atrazine,Atrazine,microsomes,5.106466762,1,10
-60,Atrazine,Atrazine,microsomes,6.116856982,2,10
-60,Atrazine,Atrazine,microsomes,6.612799065,3,10
-60,Atrazine,Atrazine,microsomes,6.416351487,4,10
-90,Atrazine,Atrazine,microsomes,7.579706731,1,10
-90,Atrazine,Atrazine,microsomes,5.426896279,2,10
-90,Atrazine,Atrazine,microsomes,5.468859038,3,10
-0,Atrazine,Atrazine,microsomes,3.856504507,1,3.1684
-0,Atrazine,Atrazine,microsomes,3.856469097,2,3.1684
-0,Atrazine,Atrazine,microsomes,4.000676106,3,3.1684
-15,Atrazine,Atrazine,microsomes,3.592664828,1,3.1684
-15,Atrazine,Atrazine,microsomes,3.566235426,2,3.1684
-15,Atrazine,Atrazine,microsomes,3.407025511,3,3.1684
-30,Atrazine,Atrazine,microsomes,3.230387651,1,3.1684
-30,Atrazine,Atrazine,microsomes,3.182488109,2,3.1684
-30,Atrazine,Atrazine,microsomes,3.039757913,3,3.1684
-60,Atrazine,Atrazine,microsomes,2.523246477,1,3.1684
-60,Atrazine,Atrazine,microsomes,2.351721019,2,3.1684
-60,Atrazine,Atrazine,microsomes,2.405223762,3,3.1684
-90,Atrazine,Atrazine,microsomes,1.868645301,1,3.1684
-90,Atrazine,Atrazine,microsomes,2.090714793,2,3.1684
-90,Atrazine,Atrazine,microsomes,1.793542295,3,3.1684
-0,Atrazine,Atrazine,microsomes,32.90836376,2,50
-0,Atrazine,Atrazine,microsomes,30.42372369,3,50
-15,Atrazine,Atrazine,microsomes,31.55345576,1,50
-15,Atrazine,Atrazine,microsomes,32.90354023,2,50
-15,Atrazine,Atrazine,microsomes,31.44767354,3,50
-30,Atrazine,Atrazine,microsomes,33.73099629,1,50
-30,Atrazine,Atrazine,microsomes,32.44019536,2,50
-30,Atrazine,Atrazine,microsomes,30.07668957,3,50
-60,Atrazine,Atrazine,microsomes,30.88120635,1,50
-60,Atrazine,Atrazine,microsomes,30.4651428,2,50
-60,Atrazine,Atrazine,microsomes,31.22382922,3,50
-90,Atrazine,Atrazine,microsomes,29.55546923,1,50
-90,Atrazine,Atrazine,microsomes,28.76418276,2,50
-0,Atrazine,Atrazine,microsomes,28.76477533,1,75
-0,Atrazine,Atrazine,microsomes,27.39613326,2,75
-0,Atrazine,Atrazine,microsomes,35.59524226,3,75
-15,Atrazine,Atrazine,microsomes,27.29687233,1,75
-15,Atrazine,Atrazine,microsomes,25.64705914,2,75
-15,Atrazine,Atrazine,microsomes,28.43580376,3,75
-30,Atrazine,Atrazine,microsomes,25.06838562,1,75
-30,Atrazine,Atrazine,microsomes,23.04529413,2,75
-30,Atrazine,Atrazine,microsomes,27.46845867,3,75
-60,Atrazine,Atrazine,microsomes,27.93745262,1,75
-60,Atrazine,Atrazine,microsomes,33.92932133,2,75
-60,Atrazine,Atrazine,microsomes,27.74838267,3,75
-90,Atrazine,Atrazine,microsomes,24.23551708,1,75
-90,Atrazine,Atrazine,microsomes,30.62112241,2,75
-90,Atrazine,Atrazine,microsomes,14.47936085,3,75
-0,Atrazine,Atrazine,microsomes,91.15167676,1,100
-0,Atrazine,Atrazine,microsomes,87.7834746,2,100
-0,Atrazine,Atrazine,microsomes,88.1043964,3,100
-15,Atrazine,Atrazine,microsomes,88.83435547,1,100
-15,Atrazine,Atrazine,microsomes,85.08036669,2,100
-15,Atrazine,Atrazine,microsomes,83.34355705,3,100
-30,Atrazine,Atrazine,microsomes,87.40290074,1,100
-30,Atrazine,Atrazine,microsomes,77.14189081,2,100
-30,Atrazine,Atrazine,microsomes,81.17033458,3,100
-60,Atrazine,Atrazine,microsomes,82.38968511,1,100
-60,Atrazine,Atrazine,microsomes,78.82099072,2,100
-60,Atrazine,Atrazine,microsomes,74.48074886,3,100
-90,Atrazine,Atrazine,microsomes,81.10749001,1,100
-90,Atrazine,Atrazine,microsomes,72.11741368,2,100
-90,Atrazine,Atrazine,microsomes,74.72567112,3,100
-0,Atrazine,Atrazine,microsomes,88.09234635,2,125
-0,Atrazine,Atrazine,microsomes,85.70476499,3,125
-15,Atrazine,Atrazine,microsomes,107.9737675,1,125
-15,Atrazine,Atrazine,microsomes,85.24148342,2,125
-15,Atrazine,Atrazine,microsomes,85.54901737,3,125
-30,Atrazine,Atrazine,microsomes,158.6507932,1,125
-30,Atrazine,Atrazine,microsomes,83.6386001,2,125
-30,Atrazine,Atrazine,microsomes,83.07467838,3,125
-60,Atrazine,Atrazine,microsomes,170.65218,1,125
-60,Atrazine,Atrazine,microsomes,78.21161933,2,125
-60,Atrazine,Atrazine,microsomes,84.54185693,3,125
-90,Atrazine,Atrazine,microsomes,80.88478508,1,125
-90,Atrazine,Atrazine,microsomes,79.00424811,2,125
-90,Atrazine,Atrazine,microsomes,78.20108166,3,125
-0,Atrazine,Atrazine,microsomes,111.7791798,1,150
-0,Atrazine,Atrazine,microsomes,108.954701,2,150
-0,Atrazine,Atrazine,microsomes,113.7158271,3,150
-0,Atrazine,Atrazine,microsomes,107.5512697,4,150
-15,Atrazine,Atrazine,microsomes,110.8050341,1,150
-15,Atrazine,Atrazine,microsomes,114.7205562,2,150
-15,Atrazine,Atrazine,microsomes,107.1291095,3,150
-15,Atrazine,Atrazine,microsomes,110.2111065,4,150
-30,Atrazine,Atrazine,microsomes,106.4113993,1,150
-30,Atrazine,Atrazine,microsomes,109.2588435,2,150
-30,Atrazine,Atrazine,microsomes,108.8110859,3,150
-30,Atrazine,Atrazine,microsomes,98.45121644,4,150
-60,Atrazine,Atrazine,microsomes,105.7397626,1,150
-60,Atrazine,Atrazine,microsomes,103.5578664,2,150
-60,Atrazine,Atrazine,microsomes,109.569591,3,150
-60,Atrazine,Atrazine,microsomes,103.2077499,4,150
-90,Atrazine,Atrazine,microsomes,96.26533592,1,150
-90,Atrazine,Atrazine,microsomes,104.9741825,2,150
-90,Atrazine,Atrazine,microsomes,105.7942757,3,150
-90,Atrazine,Atrazine,microsomes,95.31462118,4,150
-0,Atrazine,Atrazine,microsomes,152.8225899,1,200
-0,Atrazine,Atrazine,microsomes,135.8870454,2,200
-0,Atrazine,Atrazine,microsomes,146.1520591,3,200
-15,Atrazine,Atrazine,microsomes,200.8987987,1,200
-15,Atrazine,Atrazine,microsomes,134.815613,2,200
-15,Atrazine,Atrazine,microsomes,211.5785603,3,200
-30,Atrazine,Atrazine,microsomes,193.1222732,1,200
-30,Atrazine,Atrazine,microsomes,210.4725656,2,200
-30,Atrazine,Atrazine,microsomes,213.5140511,3,200
-60,Atrazine,Atrazine,microsomes,197.4425651,1,200
-60,Atrazine,Atrazine,microsomes,146.8087435,2,200
-60,Atrazine,Atrazine,microsomes,201.9011064,3,200
-90,Atrazine,Atrazine,microsomes,127.9031459,1,200
-90,Atrazine,Atrazine,microsomes,203.6292232,2,200
-90,Atrazine,Atrazine,microsomes,128.0068329,3,200
-0,Atrazine,Atrazine,microsomes,131.4789717,1,250
-0,Atrazine,Atrazine,microsomes,204.8856278,2,250
-0,Atrazine,Atrazine,microsomes,177.2918803,3,250
-15,Atrazine,Atrazine,microsomes,194.2191372,1,250
-15,Atrazine,Atrazine,microsomes,232.3468724,2,250
-15,Atrazine,Atrazine,microsomes,253.7129794,3,250
-30,Atrazine,Atrazine,microsomes,176.2649821,1,250
-30,Atrazine,Atrazine,microsomes,160.3314976,3,250
-60,Atrazine,Atrazine,microsomes,227.2455073,1,250
-60,Atrazine,Atrazine,microsomes,162.6834257,2,250
-60,Atrazine,Atrazine,microsomes,182.9563831,3,250
-90,Atrazine,Atrazine,microsomes,193.324742,1,250
-90,Atrazine,Atrazine,microsomes,160.6296294,2,250
-90,Atrazine,Atrazine,microsomes,218.2684298,3,250
-0,Triadimefon,Triadimefon,microsomes,0.491983075,1,0.68082
-0,Triadimefon,Triadimefon,microsomes,0.401196591,2,0.68082
-0,Triadimefon,Triadimefon,microsomes,0.426789449,3,0.68082
-15,Triadimefon,Triadimefon,microsomes,0.399443695,1,0.68082
-15,Triadimefon,Triadimefon,microsomes,0.42224169,2,0.68082
-15,Triadimefon,Triadimefon,microsomes,0.36799564,3,0.68082
-30,Triadimefon,Triadimefon,microsomes,0.335043095,1,0.68082
-30,Triadimefon,Triadimefon,microsomes,0.307545884,2,0.68082
-30,Triadimefon,Triadimefon,microsomes,0.33049829,3,0.68082
-60,Triadimefon,Triadimefon,microsomes,0.298781298,1,0.68082
-60,Triadimefon,Triadimefon,microsomes,0.300851183,2,0.68082
-60,Triadimefon,Triadimefon,microsomes,0.297372843,3,0.68082
-90,Triadimefon,Triadimefon,microsomes,0.30988245,1,0.68082
-90,Triadimefon,Triadimefon,microsomes,0.29724505,2,0.68082
-90,Triadimefon,Triadimefon,microsomes,0.293730776,3,0.68082
-0,Triadimefon,Triadimefon,microsomes,1.66496797,1,10
-0,Triadimefon,Triadimefon,microsomes,1.809450976,2,10
-0,Triadimefon,Triadimefon,microsomes,2.047584443,3,10
-15,Triadimefon,Triadimefon,microsomes,3.796829723,1,10
-15,Triadimefon,Triadimefon,microsomes,3.995422538,2,10
-15,Triadimefon,Triadimefon,microsomes,4.084402023,3,10
-30,Triadimefon,Triadimefon,microsomes,3.689670522,1,10
-30,Triadimefon,Triadimefon,microsomes,3.770627455,2,10
-30,Triadimefon,Triadimefon,microsomes,3.708045842,3,10
-60,Triadimefon,Triadimefon,microsomes,2.923805377,2,10
-60,Triadimefon,Triadimefon,microsomes,2.81999575,3,10
-90,Triadimefon,Triadimefon,microsomes,1.627429272,1,10
-90,Triadimefon,Triadimefon,microsomes,1.556106647,2,10
-90,Triadimefon,Triadimefon,microsomes,1.615639352,3,10
-0,Triadimefon,Triadimefon,microsomes,0.953124823,1,2.89
-0,Triadimefon,Triadimefon,microsomes,0.851227037,2,2.89
-0,Triadimefon,Triadimefon,microsomes,0.735830293,3,2.89
-15,Triadimefon,Triadimefon,microsomes,1.438977536,1,2.89
-15,Triadimefon,Triadimefon,microsomes,1.147878572,2,2.89
-15,Triadimefon,Triadimefon,microsomes,1.273836719,3,2.89
-30,Triadimefon,Triadimefon,microsomes,1.170628317,1,2.89
-30,Triadimefon,Triadimefon,microsomes,1.153347335,2,2.89
-30,Triadimefon,Triadimefon,microsomes,0.90609785,3,2.89
-60,Triadimefon,Triadimefon,microsomes,0.796555881,1,2.89
-60,Triadimefon,Triadimefon,microsomes,0.724314066,2,2.89
-60,Triadimefon,Triadimefon,microsomes,0.705525399,3,2.89
-90,Triadimefon,Triadimefon,microsomes,0.684015583,1,2.89
-90,Triadimefon,Triadimefon,microsomes,0.645877009,2,2.89
-90,Triadimefon,Triadimefon,microsomes,0.633912406,3,2.89
-0,Triadimefon,Triadimefon,microsomes,24.40802225,1,50
-0,Triadimefon,Triadimefon,microsomes,24.82657815,2,50
-0,Triadimefon,Triadimefon,microsomes,23.72724558,3,50
-15,Triadimefon,Triadimefon,microsomes,25.6223204,1,50
-15,Triadimefon,Triadimefon,microsomes,24.15898057,2,50
-15,Triadimefon,Triadimefon,microsomes,24.97516518,3,50
-30,Triadimefon,Triadimefon,microsomes,26.62994332,2,50
-30,Triadimefon,Triadimefon,microsomes,26.25228145,3,50
-60,Triadimefon,Triadimefon,microsomes,25.95782864,2,50
-60,Triadimefon,Triadimefon,microsomes,28.59868326,3,50
-90,Triadimefon,Triadimefon,microsomes,22.32352998,1,50
-90,Triadimefon,Triadimefon,microsomes,22.61126729,2,50
-90,Triadimefon,Triadimefon,microsomes,22.93204565,3,50
-0,Triadimefon,Triadimefon,microsomes,40.78378417,1,75
-0,Triadimefon,Triadimefon,microsomes,39.14533446,2,75
-0,Triadimefon,Triadimefon,microsomes,37.19980911,3,75
-15,Triadimefon,Triadimefon,microsomes,39.60290919,1,75
-15,Triadimefon,Triadimefon,microsomes,36.37647057,2,75
-15,Triadimefon,Triadimefon,microsomes,38.41537648,3,75
-30,Triadimefon,Triadimefon,microsomes,41.36228948,1,75
-30,Triadimefon,Triadimefon,microsomes,39.60347726,2,75
-30,Triadimefon,Triadimefon,microsomes,37.05197615,3,75
-60,Triadimefon,Triadimefon,microsomes,38.79077057,1,75
-60,Triadimefon,Triadimefon,microsomes,39.14694989,2,75
-60,Triadimefon,Triadimefon,microsomes,38.88285882,3,75
-90,Triadimefon,Triadimefon,microsomes,38.84162326,1,75
-90,Triadimefon,Triadimefon,microsomes,38.38496898,2,75
-90,Triadimefon,Triadimefon,microsomes,38.08875118,3,75
-0,Triadimefon,Triadimefon,microsomes,48.8233658,1,100
-0,Triadimefon,Triadimefon,microsomes,45.64682255,2,100
-0,Triadimefon,Triadimefon,microsomes,49.68642703,3,100
-15,Triadimefon,Triadimefon,microsomes,49.24893567,1,100
-15,Triadimefon,Triadimefon,microsomes,52.23999837,2,100
-15,Triadimefon,Triadimefon,microsomes,54.94800062,3,100
-30,Triadimefon,Triadimefon,microsomes,51.63283427,1,100
-30,Triadimefon,Triadimefon,microsomes,55.62979138,2,100
-30,Triadimefon,Triadimefon,microsomes,53.25296347,3,100
-60,Triadimefon,Triadimefon,microsomes,57.2285182,1,100
-60,Triadimefon,Triadimefon,microsomes,52.25557462,2,100
-60,Triadimefon,Triadimefon,microsomes,57.56142454,3,100
-90,Triadimefon,Triadimefon,microsomes,55.15134637,1,100
-90,Triadimefon,Triadimefon,microsomes,52.80788424,2,100
-90,Triadimefon,Triadimefon,microsomes,54.77096052,3,100
-0,Triadimefon,Triadimefon,microsomes,61.59837616,1,125
-0,Triadimefon,Triadimefon,microsomes,58.92902388,2,125
-0,Triadimefon,Triadimefon,microsomes,62.18995319,3,125
-15,Triadimefon,Triadimefon,microsomes,54.97761564,1,125
-15,Triadimefon,Triadimefon,microsomes,64.19295623,2,125
-15,Triadimefon,Triadimefon,microsomes,61.97688614,3,125
-30,Triadimefon,Triadimefon,microsomes,68.89112849,1,125
-30,Triadimefon,Triadimefon,microsomes,56.33566744,2,125
-30,Triadimefon,Triadimefon,microsomes,71.31751913,3,125
-60,Triadimefon,Triadimefon,microsomes,66.04862513,1,125
-60,Triadimefon,Triadimefon,microsomes,69.71262134,3,125
-90,Triadimefon,Triadimefon,microsomes,57.48171016,1,125
-90,Triadimefon,Triadimefon,microsomes,60.79276739,2,125
-90,Triadimefon,Triadimefon,microsomes,57.42314849,3,125
-0,Triadimefon,Triadimefon,microsomes,65.77539856,2,150
-0,Triadimefon,Triadimefon,microsomes,67.99385172,3,150
-15,Triadimefon,Triadimefon,microsomes,78.63355587,1,150
-15,Triadimefon,Triadimefon,microsomes,62.93987056,2,150
-15,Triadimefon,Triadimefon,microsomes,106.7018113,3,150
-30,Triadimefon,Triadimefon,microsomes,73.37624336,1,150
-30,Triadimefon,Triadimefon,microsomes,66.9635187,2,150
-30,Triadimefon,Triadimefon,microsomes,95.5133834,3,150
-60,Triadimefon,Triadimefon,microsomes,69.7678651,1,150
-60,Triadimefon,Triadimefon,microsomes,58.53815945,2,150
-60,Triadimefon,Triadimefon,microsomes,61.06336245,3,150
-90,Triadimefon,Triadimefon,microsomes,82.43537943,1,150
-90,Triadimefon,Triadimefon,microsomes,75.76324133,2,150
-90,Triadimefon,Triadimefon,microsomes,73.77914496,3,150
-0,Triadimefon,Triadimefon,microsomes,293.4352803,1,200
-0,Triadimefon,Triadimefon,microsomes,357.1944002,2,200
-0,Triadimefon,Triadimefon,microsomes,335.0321393,3,200
-15,Triadimefon,Triadimefon,microsomes,338.7826757,1,200
-15,Triadimefon,Triadimefon,microsomes,357.9520843,2,200
-15,Triadimefon,Triadimefon,microsomes,202.0964578,3,200
-30,Triadimefon,Triadimefon,microsomes,422.3552358,1,200
-30,Triadimefon,Triadimefon,microsomes,340.5253492,2,200
-30,Triadimefon,Triadimefon,microsomes,345.8291382,3,200
-60,Triadimefon,Triadimefon,microsomes,359.4674526,1,200
-60,Triadimefon,Triadimefon,microsomes,377.2730298,2,200
-60,Triadimefon,Triadimefon,microsomes,186.1093226,3,200
-90,Triadimefon,Triadimefon,microsomes,471.6047045,1,200
-90,Triadimefon,Triadimefon,microsomes,376.1365036,2,200
-90,Triadimefon,Triadimefon,microsomes,190.6933116,3,200
-0,Triadimefon,Triadimefon,microsomes,222.4579985,1,250
-0,Triadimefon,Triadimefon,microsomes,180.8725406,2,250
-15,Triadimefon,Triadimefon,microsomes,186.8824662,1,250
-15,Triadimefon,Triadimefon,microsomes,208.9457498,2,250
-15,Triadimefon,Triadimefon,microsomes,167.0779465,3,250
-30,Triadimefon,Triadimefon,microsomes,229.5166359,1,250
-30,Triadimefon,Triadimefon,microsomes,99.11335239,2,250
-30,Triadimefon,Triadimefon,microsomes,263.0350796,3,250
-60,Triadimefon,Triadimefon,microsomes,59.52448054,1,250
-60,Triadimefon,Triadimefon,microsomes,46.29054385,2,250
-60,Triadimefon,Triadimefon,microsomes,51.98182232,3,250
-90,Triadimefon,Triadimefon,microsomes,162.0360626,1,250
-90,Triadimefon,Triadimefon,microsomes,200.5560551,2,250
-90,Triadimefon,Triadimefon,microsomes,187.8908429,3,250
-0,Fipronil,Fipronil,microsomes,105.7355056,1,10
-0,Fipronil,Fipronil,microsomes,71.31297707,2,10
-0,Fipronil,Fipronil,microsomes,79.81665852,3,10
-15,Fipronil,Fipronil,microsomes,7.601993848,1,10
-15,Fipronil,Fipronil,microsomes,11.87171779,3,10
-30,Fipronil,Fipronil,microsomes,8.347482218,1,10
-30,Fipronil,Fipronil,microsomes,12.54233702,2,10
-30,Fipronil,Fipronil,microsomes,9.213313367,3,10
-60,Fipronil,Fipronil,microsomes,10.38856477,1,10
-60,Fipronil,Fipronil,microsomes,12.36949156,2,10
-60,Fipronil,Fipronil,microsomes,8.215365646,3,10
-90,Fipronil,Fipronil,microsomes,11.17931895,1,10
-90,Fipronil,Fipronil,microsomes,12.71923746,2,10
-90,Fipronil,Fipronil,microsomes,9.99477721,3,10
-0,Fipronil,Fipronil,microsomes,3.553166435,1,2.89
-0,Fipronil,Fipronil,microsomes,2.185797914,2,2.89
-0,Fipronil,Fipronil,microsomes,4.160901096,3,2.89
-15,Fipronil,Fipronil,microsomes,0.961731316,1,2.89
-15,Fipronil,Fipronil,microsomes,0.608701865,2,2.89
-15,Fipronil,Fipronil,microsomes,2.021395291,3,2.89
-30,Fipronil,Fipronil,microsomes,0.34095865,1,2.89
-30,Fipronil,Fipronil,microsomes,1.416552854,2,2.89
-30,Fipronil,Fipronil,microsomes,4.678731136,3,2.89
-60,Fipronil,Fipronil,microsomes,1.597568113,1,2.89
-60,Fipronil,Fipronil,microsomes,2.059112975,2,2.89
-60,Fipronil,Fipronil,microsomes,4.336224939,3,2.89
-90,Fipronil,Fipronil,microsomes,0.73593197,1,2.89
-90,Fipronil,Fipronil,microsomes,1.01143428,2,2.89
-90,Fipronil,Fipronil,microsomes,2.098949857,3,2.89
-0,Fipronil,Fipronil,microsomes,285.0383486,1,50
-0,Fipronil,Fipronil,microsomes,295.6872209,2,50
-0,Fipronil,Fipronil,microsomes,261.2375276,3,50
-15,Fipronil,Fipronil,microsomes,223.3849191,1,50
-15,Fipronil,Fipronil,microsomes,19.09530124,2,50
-15,Fipronil,Fipronil,microsomes,61.85004879,3,50
-30,Fipronil,Fipronil,microsomes,76.72890033,1,50
-30,Fipronil,Fipronil,microsomes,65.4447593,2,50
-30,Fipronil,Fipronil,microsomes,59.88633813,3,50
-60,Fipronil,Fipronil,microsomes,74.09066447,1,50
-60,Fipronil,Fipronil,microsomes,65.54242812,2,50
-60,Fipronil,Fipronil,microsomes,39.55208359,3,50
-90,Fipronil,Fipronil,microsomes,66.15498564,1,50
-90,Fipronil,Fipronil,microsomes,23.55175796,2,50
-90,Fipronil,Fipronil,microsomes,58.25965938,3,50
-0,Fipronil,Fipronil,microsomes,49.56034014,1,75
-0,Fipronil,Fipronil,microsomes,49.17468426,2,75
-0,Fipronil,Fipronil,microsomes,36.68866915,3,75
-15,Fipronil,Fipronil,microsomes,35.05455395,1,75
-15,Fipronil,Fipronil,microsomes,40.30349338,2,75
-15,Fipronil,Fipronil,microsomes,44.1381674,3,75
-30,Fipronil,Fipronil,microsomes,38.08049817,1,75
-30,Fipronil,Fipronil,microsomes,38.34527612,2,75
-30,Fipronil,Fipronil,microsomes,89.31881211,3,75
-60,Fipronil,Fipronil,microsomes,40.27279664,2,75
-60,Fipronil,Fipronil,microsomes,55.95173867,3,75
-90,Fipronil,Fipronil,microsomes,37.82415225,1,75
-90,Fipronil,Fipronil,microsomes,32.32010713,2,75
-90,Fipronil,Fipronil,microsomes,45.93427684,3,75
-0,Fipronil,Fipronil,microsomes,32.55124669,1,100
-0,Fipronil,Fipronil,microsomes,72.28565415,2,100
-0,Fipronil,Fipronil,microsomes,50.30200713,3,100
-15,Fipronil,Fipronil,microsomes,65.75118371,1,100
-15,Fipronil,Fipronil,microsomes,61.03836189,2,100
-15,Fipronil,Fipronil,microsomes,86.42270417,3,100
-30,Fipronil,Fipronil,microsomes,18.77293974,1,100
-30,Fipronil,Fipronil,microsomes,84.04356305,2,100
-30,Fipronil,Fipronil,microsomes,89.30314297,3,100
-60,Fipronil,Fipronil,microsomes,60.95565287,1,100
-60,Fipronil,Fipronil,microsomes,89.79580177,2,100
-60,Fipronil,Fipronil,microsomes,90.59062961,3,100
-90,Fipronil,Fipronil,microsomes,56.03613412,1,100
-90,Fipronil,Fipronil,microsomes,94.58659729,2,100
-90,Fipronil,Fipronil,microsomes,89.70085579,3,100
-0,Fipronil,Fipronil,microsomes,58.45901219,1,125
-0,Fipronil,Fipronil,microsomes,51.85481179,2,125
-0,Fipronil,Fipronil,microsomes,53.89065136,3,125
-15,Fipronil,Fipronil,microsomes,62.24891641,1,125
-15,Fipronil,Fipronil,microsomes,54.68420677,2,125
-15,Fipronil,Fipronil,microsomes,91.10795719,3,125
-30,Fipronil,Fipronil,microsomes,51.66702524,1,125
-30,Fipronil,Fipronil,microsomes,65.6950903,2,125
-30,Fipronil,Fipronil,microsomes,112.1237445,3,125
-60,Fipronil,Fipronil,microsomes,62.81350539,1,125
-60,Fipronil,Fipronil,microsomes,74.14828799,2,125
-60,Fipronil,Fipronil,microsomes,93.87631612,3,125
-90,Fipronil,Fipronil,microsomes,59.80299767,1,125
-90,Fipronil,Fipronil,microsomes,82.33654045,2,125
-90,Fipronil,Fipronil,microsomes,89.20514072,3,125
-0,Fipronil,Fipronil,microsomes,80.1226913,1,150
-0,Fipronil,Fipronil,microsomes,96.90138648,2,150
-0,Fipronil,Fipronil,microsomes,94.88883577,3,150
-15,Fipronil,Fipronil,microsomes,37.15191594,1,150
-15,Fipronil,Fipronil,microsomes,76.95257401,2,150
-15,Fipronil,Fipronil,microsomes,82.83018255,3,150
-30,Fipronil,Fipronil,microsomes,89.28298886,1,150
-30,Fipronil,Fipronil,microsomes,103.9076465,2,150
-30,Fipronil,Fipronil,microsomes,88.89209516,3,150
-60,Fipronil,Fipronil,microsomes,75.20034761,1,150
-60,Fipronil,Fipronil,microsomes,99.21349783,2,150
-60,Fipronil,Fipronil,microsomes,86.10641447,3,150
-90,Fipronil,Fipronil,microsomes,85.35534061,1,150
-90,Fipronil,Fipronil,microsomes,86.89358929,2,150
-90,Fipronil,Fipronil,microsomes,19.45762438,3,150
-0,Fipronil,Fipronil,microsomes,161.3373216,1,200
-0,Fipronil,Fipronil,microsomes,140.3753919,2,200
-0,Fipronil,Fipronil,microsomes,143.641415,3,200
-15,Fipronil,Fipronil,microsomes,143.5820327,1,200
-15,Fipronil,Fipronil,microsomes,117.0381728,2,200
-15,Fipronil,Fipronil,microsomes,105.3992543,3,200
-30,Fipronil,Fipronil,microsomes,120.601107,1,200
-30,Fipronil,Fipronil,microsomes,115.1379412,2,200
-30,Fipronil,Fipronil,microsomes,126.1830373,3,200
-60,Fipronil,Fipronil,microsomes,91.91948648,1,200
-60,Fipronil,Fipronil,microsomes,106.6462813,2,200
-60,Fipronil,Fipronil,microsomes,72.50149496,3,200
-90,Fipronil,Fipronil,microsomes,112.4063583,1,200
-90,Fipronil,Fipronil,microsomes,105.3992543,2,200
-90,Fipronil,Fipronil,microsomes,111.7531537,3,200
-0,Fipronil,Fipronil,microsomes,94.37993663,1,250
-0,Fipronil,Fipronil,microsomes,113.4786371,2,250
-0,Fipronil,Fipronil,microsomes,91.29136792,3,250
-15,Fipronil,Fipronil,microsomes,105.2844752,1,250
-15,Fipronil,Fipronil,microsomes,83.9166222,2,250
-15,Fipronil,Fipronil,microsomes,57.25407999,3,250
-30,Fipronil,Fipronil,microsomes,71.31021926,1,250
-30,Fipronil,Fipronil,microsomes,93.93871253,2,250
-30,Fipronil,Fipronil,microsomes,36.95777127,3,250
-60,Fipronil,Fipronil,microsomes,77.4873567,1,250
-60,Fipronil,Fipronil,microsomes,101.3134582,2,250
-60,Fipronil,Fipronil,microsomes,91.54349597,3,250
-90,Fipronil,Fipronil,microsomes,58.38865626,1,250
-90,Fipronil,Fipronil,microsomes,74.14665992,2,250
-90,Fipronil,Fipronil,microsomes,61.1620649,3,250
-0,Fipronil,Fip Sulfone,microsomes,1.034753921,1,10
-0,Fipronil,Fip Sulfone,microsomes,0.612239983,2,10
-0,Fipronil,Fip Sulfone,microsomes,0.491206676,3,10
-15,Fipronil,Fip Sulfone,microsomes,0.253317628,1,10
-15,Fipronil,Fip Sulfone,microsomes,0.304604645,3,10
-30,Fipronil,Fip Sulfone,microsomes,0.753233413,1,10
-30,Fipronil,Fip Sulfone,microsomes,0.430810702,2,10
-30,Fipronil,Fip Sulfone,microsomes,0.388027952,3,10
-60,Fipronil,Fip Sulfone,microsomes,0.893906043,1,10
-60,Fipronil,Fip Sulfone,microsomes,0.912279045,2,10
-60,Fipronil,Fip Sulfone,microsomes,0.746948366,3,10
-90,Fipronil,Fip Sulfone,microsomes,1.679672886,1,10
-90,Fipronil,Fip Sulfone,microsomes,1.465935823,2,10
-90,Fipronil,Fip Sulfone,microsomes,1.164455827,3,10
-0,Fipronil,Fip Sulfone,microsomes,0,1,2.89
-0,Fipronil,Fip Sulfone,microsomes,0,2,2.89
-0,Fipronil,Fip Sulfone,microsomes,0,3,2.89
-15,Fipronil,Fip Sulfone,microsomes,0,1,2.89
-15,Fipronil,Fip Sulfone,microsomes,0,2,2.89
-15,Fipronil,Fip Sulfone,microsomes,0,3,2.89
-30,Fipronil,Fip Sulfone,microsomes,0.001551533,1,2.89
-30,Fipronil,Fip Sulfone,microsomes,0.002942426,2,2.89
-30,Fipronil,Fip Sulfone,microsomes,0.054608448,3,2.89
-60,Fipronil,Fip Sulfone,microsomes,0.285064434,1,2.89
-60,Fipronil,Fip Sulfone,microsomes,0.23700421,2,2.89
-90,Fipronil,Fip Sulfone,microsomes,0.381958677,1,2.89
-90,Fipronil,Fip Sulfone,microsomes,0.616806706,2,2.89
-90,Fipronil,Fip Sulfone,microsomes,0.534712544,3,2.89
-0,Fipronil,Fip Sulfone,microsomes,0.811460258,1,50
-0,Fipronil,Fip Sulfone,microsomes,1.086074757,2,50
-0,Fipronil,Fip Sulfone,microsomes,1.040314018,3,50
-15,Fipronil,Fip Sulfone,microsomes,1.531183402,1,50
-15,Fipronil,Fip Sulfone,microsomes,0.7015224,2,50
-15,Fipronil,Fip Sulfone,microsomes,0.633657965,3,50
-30,Fipronil,Fip Sulfone,microsomes,0.584525154,1,50
-30,Fipronil,Fip Sulfone,microsomes,0.82789851,2,50
-30,Fipronil,Fip Sulfone,microsomes,0.889875096,3,50
-60,Fipronil,Fip Sulfone,microsomes,1.135727445,1,50
-60,Fipronil,Fip Sulfone,microsomes,1.255430288,2,50
-60,Fipronil,Fip Sulfone,microsomes,0.661992528,3,50
-90,Fipronil,Fip Sulfone,microsomes,1.595923434,1,50
-90,Fipronil,Fip Sulfone,microsomes,1.538868851,3,50
-0,Fipronil,Fip Sulfone,microsomes,0.008770252,1,75
-0,Fipronil,Fip Sulfone,microsomes,0.018719868,2,75
-0,Fipronil,Fip Sulfone,microsomes,0.011112259,3,75
-15,Fipronil,Fip Sulfone,microsomes,0.263848309,1,75
-15,Fipronil,Fip Sulfone,microsomes,0.275508269,2,75
-15,Fipronil,Fip Sulfone,microsomes,0.274084452,3,75
-30,Fipronil,Fip Sulfone,microsomes,0.451610926,1,75
-30,Fipronil,Fip Sulfone,microsomes,0.474347788,2,75
-30,Fipronil,Fip Sulfone,microsomes,0.649283533,3,75
-60,Fipronil,Fip Sulfone,microsomes,0.766822227,2,75
-60,Fipronil,Fip Sulfone,microsomes,0.798666758,3,75
-90,Fipronil,Fip Sulfone,microsomes,0.965006564,1,75
-90,Fipronil,Fip Sulfone,microsomes,0.923280908,2,75
-90,Fipronil,Fip Sulfone,microsomes,1.076886237,3,75
-0,Fipronil,Fip Sulfone,microsomes,0,1,100
-0,Fipronil,Fip Sulfone,microsomes,0.062492993,2,100
-0,Fipronil,Fip Sulfone,microsomes,0.018577993,3,100
-15,Fipronil,Fip Sulfone,microsomes,0.354399846,1,100
-15,Fipronil,Fip Sulfone,microsomes,0.356555348,2,100
-15,Fipronil,Fip Sulfone,microsomes,0.245970557,3,100
-30,Fipronil,Fip Sulfone,microsomes,0.029234365,1,100
-30,Fipronil,Fip Sulfone,microsomes,0.047299497,2,100
-30,Fipronil,Fip Sulfone,microsomes,0.589482892,3,100
-60,Fipronil,Fip Sulfone,microsomes,0.80911051,1,100
-60,Fipronil,Fip Sulfone,microsomes,0.702975839,2,100
-60,Fipronil,Fip Sulfone,microsomes,0.619265376,3,100
-90,Fipronil,Fip Sulfone,microsomes,0.948944808,1,100
-90,Fipronil,Fip Sulfone,microsomes,1.012104281,2,100
-90,Fipronil,Fip Sulfone,microsomes,0.99641886,3,100
-0,Fipronil,Fip Sulfone,microsomes,0.026799093,1,125
-0,Fipronil,Fip Sulfone,microsomes,0.047725018,2,125
-0,Fipronil,Fip Sulfone,microsomes,0.001684607,3,125
-15,Fipronil,Fip Sulfone,microsomes,0.598927027,1,125
-15,Fipronil,Fip Sulfone,microsomes,0.251459439,2,125
-15,Fipronil,Fip Sulfone,microsomes,0.534784324,3,125
-30,Fipronil,Fip Sulfone,microsomes,0.611779761,1,125
-30,Fipronil,Fip Sulfone,microsomes,0.672830973,2,125
-30,Fipronil,Fip Sulfone,microsomes,0.845729752,3,125
-60,Fipronil,Fip Sulfone,microsomes,1.024609092,1,125
-60,Fipronil,Fip Sulfone,microsomes,0.937279841,2,125
-60,Fipronil,Fip Sulfone,microsomes,1.119582432,3,125
-90,Fipronil,Fip Sulfone,microsomes,1.176188941,1,125
-90,Fipronil,Fip Sulfone,microsomes,1.478442217,2,125
-90,Fipronil,Fip Sulfone,microsomes,1.6878732,3,125
-0,Fipronil,Fip Sulfone,microsomes,0.17573091,1,150
-0,Fipronil,Fip Sulfone,microsomes,0.126528998,2,150
-0,Fipronil,Fip Sulfone,microsomes,0.078924326,3,150
-15,Fipronil,Fip Sulfone,microsomes,0.001048481,1,150
-15,Fipronil,Fip Sulfone,microsomes,0.446496465,2,150
-15,Fipronil,Fip Sulfone,microsomes,0.452337061,3,150
-30,Fipronil,Fip Sulfone,microsomes,0.747973198,1,150
-30,Fipronil,Fip Sulfone,microsomes,0.458731246,2,150
-30,Fipronil,Fip Sulfone,microsomes,0.920372618,3,150
-60,Fipronil,Fip Sulfone,microsomes,0.94199132,1,150
-60,Fipronil,Fip Sulfone,microsomes,0.884966572,2,150
-60,Fipronil,Fip Sulfone,microsomes,0.673385006,3,150
-90,Fipronil,Fip Sulfone,microsomes,1.145508947,1,150
-90,Fipronil,Fip Sulfone,microsomes,,2,150
-90,Fipronil,Fip Sulfone,microsomes,1.186552367,3,150
-0,Fipronil,Fip Sulfone,microsomes,0,1,200
-0,Fipronil,Fip Sulfone,microsomes,0.139500206,2,200
-0,Fipronil,Fip Sulfone,microsomes,0,3,200
-15,Fipronil,Fip Sulfone,microsomes,0.921840151,1,200
-15,Fipronil,Fip Sulfone,microsomes,1.265455207,2,200
-15,Fipronil,Fip Sulfone,microsomes,0.083794693,3,200
-30,Fipronil,Fip Sulfone,microsomes,1.758009212,1,200
-30,Fipronil,Fip Sulfone,microsomes,1.131761977,2,200
-30,Fipronil,Fip Sulfone,microsomes,2.14032494,3,200
-60,Fipronil,Fip Sulfone,microsomes,3.119569212,1,200
-60,Fipronil,Fip Sulfone,microsomes,5.219960219,2,200
-60,Fipronil,Fip Sulfone,microsomes,3.68483357,3,200
-90,Fipronil,Fip Sulfone,microsomes,4.382618411,1,200
-90,Fipronil,Fip Sulfone,microsomes,4.121095689,2,200
-90,Fipronil,Fip Sulfone,microsomes,4.42249183,3,200
-0,Fipronil,Fip Sulfone,microsomes,0,1,250
-0,Fipronil,Fip Sulfone,microsomes,0,2,250
-0,Fipronil,Fip Sulfone,microsomes,0,3,250
-15,Fipronil,Fip Sulfone,microsomes,0.196637529,1,250
-15,Fipronil,Fip Sulfone,microsomes,0.241543415,2,250
-15,Fipronil,Fip Sulfone,microsomes,0.072809551,3,250
-30,Fipronil,Fip Sulfone,microsomes,0.455594801,1,250
-30,Fipronil,Fip Sulfone,microsomes,0.755341586,2,250
-30,Fipronil,Fip Sulfone,microsomes,0.808854432,3,250
-60,Fipronil,Fip Sulfone,microsomes,1.296083288,1,250
-60,Fipronil,Fip Sulfone,microsomes,0.819332472,2,250
-60,Fipronil,Fip Sulfone,microsomes,1.012053563,3,250
-90,Fipronil,Fip Sulfone,microsomes,1.174088966,1,250
-90,Fipronil,Fip Sulfone,microsomes,1.085025627,2,250
-90,Fipronil,Fip Sulfone,microsomes,1.682273901,3,250
-0,Triadimefon,TDL A,microsomes,0.776869584,1,0.68
-0,Triadimefon,TDL A,microsomes,0.395237886,2,0.68
-0,Triadimefon,TDL A,microsomes,2.220388898,3,0.68
-15,Triadimefon,TDL A,microsomes,0.124349504,1,0.68
-15,Triadimefon,TDL A,microsomes,0.14627783,2,0.68
-15,Triadimefon,TDL A,microsomes,0.089752887,3,0.68
-30,Triadimefon,TDL A,microsomes,0.107638677,1,0.68
-30,Triadimefon,TDL A,microsomes,0.159434476,2,0.68
-30,Triadimefon,TDL A,microsomes,0.159787554,3,0.68
-60,Triadimefon,TDL A,microsomes,0.099828091,1,0.68
-60,Triadimefon,TDL A,microsomes,0.225228369,2,0.68
-60,Triadimefon,TDL A,microsomes,0.139329405,3,0.68
-90,Triadimefon,TDL A,microsomes,0.072482112,1,0.68
-90,Triadimefon,TDL A,microsomes,0.09994686,2,0.68
-90,Triadimefon,TDL A,microsomes,0.061506341,3,0.68
-0,Triadimefon,TDL A,microsomes,0.964686974,1,10
-0,Triadimefon,TDL A,microsomes,0.95171618,2,10
-0,Triadimefon,TDL A,microsomes,0.951349197,3,10
-15,Triadimefon,TDL A,microsomes,0.562008549,1,10
-15,Triadimefon,TDL A,microsomes,0.514503123,2,10
-15,Triadimefon,TDL A,microsomes,0.553400833,3,10
-30,Triadimefon,TDL A,microsomes,0.914781067,1,10
-30,Triadimefon,TDL A,microsomes,0.896944628,2,10
-30,Triadimefon,TDL A,microsomes,0.854682343,3,10
-60,Triadimefon,TDL A,microsomes,0.640465968,1,10
-60,Triadimefon,TDL A,microsomes,1.46510307,2,10
-60,Triadimefon,TDL A,microsomes,1.529173181,3,10
-90,Triadimefon,TDL A,microsomes,1.670981262,1,10
-90,Triadimefon,TDL A,microsomes,1.594325825,2,10
-90,Triadimefon,TDL A,microsomes,1.598291535,3,10
-0,Triadimefon,TDL A,microsomes,0.504235051,1,2.89
-0,Triadimefon,TDL A,microsomes,0.597387774,2,2.89
-0,Triadimefon,TDL A,microsomes,0.684729101,3,2.89
-15,Triadimefon,TDL A,microsomes,0.587769932,1,2.89
-15,Triadimefon,TDL A,microsomes,0.500911907,2,2.89
-15,Triadimefon,TDL A,microsomes,2.390614252,3,2.89
-30,Triadimefon,TDL A,microsomes,0.732569141,1,2.89
-30,Triadimefon,TDL A,microsomes,0.819349521,2,2.89
-30,Triadimefon,TDL A,microsomes,0.882196657,3,2.89
-60,Triadimefon,TDL A,microsomes,1.272480799,1,2.89
-60,Triadimefon,TDL A,microsomes,1.332879865,2,2.89
-60,Triadimefon,TDL A,microsomes,1.171215513,3,2.89
-90,Triadimefon,TDL A,microsomes,1.284978616,1,2.89
-90,Triadimefon,TDL A,microsomes,1.466507839,2,2.89
-0,Triadimefon,TDL A,microsomes,4.958654666,1,50
-0,Triadimefon,TDL A,microsomes,5.087523701,2,50
-0,Triadimefon,TDL A,microsomes,4.465832565,3,50
-15,Triadimefon,TDL A,microsomes,2.366202494,1,50
-15,Triadimefon,TDL A,microsomes,2.316676352,2,50
-15,Triadimefon,TDL A,microsomes,2.98040696,3,50
-30,Triadimefon,TDL A,microsomes,2.746818134,1,50
-30,Triadimefon,TDL A,microsomes,3.431666105,2,50
-30,Triadimefon,TDL A,microsomes,3.294563534,3,50
-60,Triadimefon,TDL A,microsomes,3.820882667,1,50
-60,Triadimefon,TDL A,microsomes,4.627112685,2,50
-60,Triadimefon,TDL A,microsomes,4.219456142,3,50
-90,Triadimefon,TDL A,microsomes,4.7035697,1,50
-90,Triadimefon,TDL A,microsomes,4.419483485,2,50
-90,Triadimefon,TDL A,microsomes,4.677842802,3,50
-0,Triadimefon,TDL A,microsomes,2.568919585,1,75
-0,Triadimefon,TDL A,microsomes,2.306987426,2,75
-0,Triadimefon,TDL A,microsomes,2.580318005,3,75
-15,Triadimefon,TDL A,microsomes,2.219185884,1,75
-15,Triadimefon,TDL A,microsomes,2.155328801,2,75
-15,Triadimefon,TDL A,microsomes,2.202708256,3,75
-30,Triadimefon,TDL A,microsomes,2.811019032,1,75
-30,Triadimefon,TDL A,microsomes,2.229132105,2,75
-30,Triadimefon,TDL A,microsomes,2.319209877,3,75
-60,Triadimefon,TDL A,microsomes,3.438186485,1,75
-60,Triadimefon,TDL A,microsomes,3.239731804,2,75
-60,Triadimefon,TDL A,microsomes,3.112249253,3,75
-90,Triadimefon,TDL A,microsomes,3.973569475,1,75
-90,Triadimefon,TDL A,microsomes,3.922150065,2,75
-90,Triadimefon,TDL A,microsomes,3.990347195,3,75
-0,Triadimefon,TDL A,microsomes,3.426769825,1,100
-0,Triadimefon,TDL A,microsomes,4.801627038,2,100
-0,Triadimefon,TDL A,microsomes,5.167321476,3,100
-15,Triadimefon,TDL A,microsomes,2.973173898,1,100
-15,Triadimefon,TDL A,microsomes,4.278761105,2,100
-15,Triadimefon,TDL A,microsomes,5.203600328,3,100
-30,Triadimefon,TDL A,microsomes,3.752087918,1,100
-30,Triadimefon,TDL A,microsomes,4.489689601,2,100
-30,Triadimefon,TDL A,microsomes,4.3820044,3,100
-60,Triadimefon,TDL A,microsomes,4.18858056,1,100
-60,Triadimefon,TDL A,microsomes,4.787062374,2,100
-60,Triadimefon,TDL A,microsomes,4.819935077,3,100
-90,Triadimefon,TDL A,microsomes,5.229225315,1,100
-90,Triadimefon,TDL A,microsomes,5.541134166,2,100
-90,Triadimefon,TDL A,microsomes,5.363637277,3,100
-0,Triadimefon,TDL A,microsomes,2.777271491,1,125
-0,Triadimefon,TDL A,microsomes,5.313869486,2,125
-0,Triadimefon,TDL A,microsomes,5.064521305,3,125
-15,Triadimefon,TDL A,microsomes,3.664975002,1,125
-15,Triadimefon,TDL A,microsomes,5.128116042,2,125
-15,Triadimefon,TDL A,microsomes,3.342678541,3,125
-30,Triadimefon,TDL A,microsomes,3.909877303,1,125
-30,Triadimefon,TDL A,microsomes,3.131834777,2,125
-30,Triadimefon,TDL A,microsomes,6.184369077,3,125
-60,Triadimefon,TDL A,microsomes,5.034115174,1,125
-60,Triadimefon,TDL A,microsomes,6.997125798,2,125
-60,Triadimefon,TDL A,microsomes,5.513028895,3,125
-90,Triadimefon,TDL A,microsomes,5.609126979,1,125
-90,Triadimefon,TDL A,microsomes,6.565737598,2,125
-90,Triadimefon,TDL A,microsomes,6.051117386,3,125
-0,Triadimefon,TDL A,microsomes,4.971974528,1,150
-0,Triadimefon,TDL A,microsomes,4.282559204,2,150
-0,Triadimefon,TDL A,microsomes,4.289935015,3,150
-15,Triadimefon,TDL A,microsomes,4.690841414,1,150
-15,Triadimefon,TDL A,microsomes,4.417155339,2,150
-15,Triadimefon,TDL A,microsomes,6.21277087,3,150
-30,Triadimefon,TDL A,microsomes,3.839544319,1,150
-30,Triadimefon,TDL A,microsomes,4.519625245,2,150
-30,Triadimefon,TDL A,microsomes,6.760429619,3,150
-60,Triadimefon,TDL A,microsomes,7.2240805,1,150
-60,Triadimefon,TDL A,microsomes,3.468203577,2,150
-60,Triadimefon,TDL A,microsomes,4.462789205,3,150
-90,Triadimefon,TDL A,microsomes,8.035064896,1,150
-90,Triadimefon,TDL A,microsomes,8.748204845,2,150
-90,Triadimefon,TDL A,microsomes,7.504701282,3,150
-0,Triadimefon,TDL A,microsomes,13.83186168,1,250
-0,Triadimefon,TDL A,microsomes,18.22611755,3,250
-15,Triadimefon,TDL A,microsomes,17.81066063,1,250
-15,Triadimefon,TDL A,microsomes,14.08273374,3,250
-30,Triadimefon,TDL A,microsomes,20.76679639,1,250
-30,Triadimefon,TDL A,microsomes,16.9957259,3,250
-60,Triadimefon,TDL A,microsomes,18.08230553,1,250
-60,Triadimefon,TDL A,microsomes,16.51635254,2,250
-60,Triadimefon,TDL A,microsomes,17.9065353,3,250
-90,Triadimefon,TDL A,microsomes,19.61630031,1,250
-90,Triadimefon,TDL A,microsomes,17.39520371,3,250
-0,Triadimefon,TDL B,microsomes,0.285757105,1,0.68
-0,Triadimefon,TDL B,microsomes,0.146483192,2,0.68
-0,Triadimefon,TDL B,microsomes,0.792173926,3,0.68
-15,Triadimefon,TDL B,microsomes,0.159849035,1,0.68
-15,Triadimefon,TDL B,microsomes,0.171671782,2,0.68
-15,Triadimefon,TDL B,microsomes,0.137258352,3,0.68
-30,Triadimefon,TDL B,microsomes,0.135498718,1,0.68
-30,Triadimefon,TDL B,microsomes,0.166579942,2,0.68
-30,Triadimefon,TDL B,microsomes,0.160555121,3,0.68
-60,Triadimefon,TDL B,microsomes,0.085155894,1,0.68
-60,Triadimefon,TDL B,microsomes,0.137641779,2,0.68
-60,Triadimefon,TDL B,microsomes,0.101223849,3,0.68
-90,Triadimefon,TDL B,microsomes,0.041122976,1,0.68
-90,Triadimefon,TDL B,microsomes,0.056120989,2,0.68
-90,Triadimefon,TDL B,microsomes,0.040770384,3,0.68
-0,Triadimefon,TDL B,microsomes,0.525255948,1,10
-0,Triadimefon,TDL B,microsomes,0.525187009,2,10
-0,Triadimefon,TDL B,microsomes,0.531029336,3,10
-15,Triadimefon,TDL B,microsomes,0.540578005,1,10
-15,Triadimefon,TDL B,microsomes,0.535327972,2,10
-15,Triadimefon,TDL B,microsomes,0.549947891,3,10
-30,Triadimefon,TDL B,microsomes,0.963906807,1,10
-30,Triadimefon,TDL B,microsomes,0.939249694,2,10
-30,Triadimefon,TDL B,microsomes,0.8832653,3,10
-60,Triadimefon,TDL B,microsomes,0.462660817,1,10
-60,Triadimefon,TDL B,microsomes,1.424227752,2,10
-60,Triadimefon,TDL B,microsomes,1.466547242,3,10
-90,Triadimefon,TDL B,microsomes,1.470094516,1,10
-90,Triadimefon,TDL B,microsomes,1.424845158,2,10
-90,Triadimefon,TDL B,microsomes,1.471282702,3,10
-0,Triadimefon,TDL B,microsomes,0.200115219,1,2.89
-0,Triadimefon,TDL B,microsomes,0.242152252,2,2.89
-0,Triadimefon,TDL B,microsomes,0.309582528,3,2.89
-15,Triadimefon,TDL B,microsomes,0.502687773,1,2.89
-15,Triadimefon,TDL B,microsomes,0.443748362,2,2.89
-15,Triadimefon,TDL B,microsomes,1.739413295,3,2.89
-30,Triadimefon,TDL B,microsomes,0.631006803,1,2.89
-30,Triadimefon,TDL B,microsomes,0.676925019,2,2.89
-30,Triadimefon,TDL B,microsomes,0.712219102,3,2.89
-60,Triadimefon,TDL B,microsomes,0.887492395,1,2.89
-60,Triadimefon,TDL B,microsomes,0.922424215,2,2.89
-60,Triadimefon,TDL B,microsomes,0.774293903,3,2.89
-90,Triadimefon,TDL B,microsomes,0.733501521,1,2.89
-90,Triadimefon,TDL B,microsomes,0.837366651,2,2.89
-90,Triadimefon,TDL B,microsomes,0.76078022,3,2.89
-0,Triadimefon,TDL B,microsomes,3.951483646,1,50
-0,Triadimefon,TDL B,microsomes,3.997004582,2,50
-0,Triadimefon,TDL B,microsomes,3.271884585,3,50
-15,Triadimefon,TDL B,microsomes,2.598887073,1,50
-15,Triadimefon,TDL B,microsomes,2.355603277,2,50
-15,Triadimefon,TDL B,microsomes,3.141649164,3,50
-30,Triadimefon,TDL B,microsomes,3.674320887,1,50
-30,Triadimefon,TDL B,microsomes,4.289723095,2,50
-30,Triadimefon,TDL B,microsomes,4.280136564,3,50
-60,Triadimefon,TDL B,microsomes,6.243599629,1,50
-60,Triadimefon,TDL B,microsomes,6.734010485,2,50
-60,Triadimefon,TDL B,microsomes,6.361017452,3,50
-90,Triadimefon,TDL B,microsomes,7.195467955,1,50
-90,Triadimefon,TDL B,microsomes,6.834134189,2,50
-90,Triadimefon,TDL B,microsomes,6.9532999,3,50
-0,Triadimefon,TDL B,microsomes,1.941666948,1,75
-0,Triadimefon,TDL B,microsomes,1.681717791,2,75
-0,Triadimefon,TDL B,microsomes,1.73936846,3,75
-15,Triadimefon,TDL B,microsomes,2.526757358,1,75
-15,Triadimefon,TDL B,microsomes,2.313637237,2,75
-15,Triadimefon,TDL B,microsomes,2.49086012,3,75
-30,Triadimefon,TDL B,microsomes,3.789628052,1,75
-30,Triadimefon,TDL B,microsomes,3.174642429,2,75
-30,Triadimefon,TDL B,microsomes,3.191438558,3,75
-60,Triadimefon,TDL B,microsomes,5.432233942,1,75
-60,Triadimefon,TDL B,microsomes,4.969157891,2,75
-60,Triadimefon,TDL B,microsomes,5.064503301,3,75
-90,Triadimefon,TDL B,microsomes,6.712664257,1,75
-90,Triadimefon,TDL B,microsomes,6.597464296,2,75
-90,Triadimefon,TDL B,microsomes,6.484914,3,75
-0,Triadimefon,TDL B,microsomes,2.204827173,1,100
-0,Triadimefon,TDL B,microsomes,3.695255037,2,100
-0,Triadimefon,TDL B,microsomes,4.217693628,3,100
-15,Triadimefon,TDL B,microsomes,2.987986855,1,100
-15,Triadimefon,TDL B,microsomes,4.62322369,2,100
-15,Triadimefon,TDL B,microsomes,5.738654903,3,100
-30,Triadimefon,TDL B,microsomes,5.010985215,1,100
-30,Triadimefon,TDL B,microsomes,6.920302664,2,100
-30,Triadimefon,TDL B,microsomes,6.308852644,3,100
-60,Triadimefon,TDL B,microsomes,8.11715413,1,100
-60,Triadimefon,TDL B,microsomes,8.804687457,2,100
-60,Triadimefon,TDL B,microsomes,8.950282552,3,100
-90,Triadimefon,TDL B,microsomes,10.81651263,1,100
-90,Triadimefon,TDL B,microsomes,11.45788264,2,100
-90,Triadimefon,TDL B,microsomes,11.01782631,3,100
-0,Triadimefon,TDL B,microsomes,2.580796931,1,125
-0,Triadimefon,TDL B,microsomes,4.589962599,2,125
-0,Triadimefon,TDL B,microsomes,4.339108289,3,125
-15,Triadimefon,TDL B,microsomes,4.759629498,1,125
-15,Triadimefon,TDL B,microsomes,6.081131385,2,125
-15,Triadimefon,TDL B,microsomes,4.761075887,3,125
-30,Triadimefon,TDL B,microsomes,6.970865526,1,125
-30,Triadimefon,TDL B,microsomes,5.864292522,2,125
-30,Triadimefon,TDL B,microsomes,8.990170569,3,125
-60,Triadimefon,TDL B,microsomes,10.29254833,1,125
-60,Triadimefon,TDL B,microsomes,11.89986315,2,125
-60,Triadimefon,TDL B,microsomes,10.55439287,3,125
-90,Triadimefon,TDL B,microsomes,12.66145718,1,125
-90,Triadimefon,TDL B,microsomes,13.84087365,2,125
-90,Triadimefon,TDL B,microsomes,12.77355717,3,125
-0,Triadimefon,TDL B,microsomes,4.642200138,1,150
-0,Triadimefon,TDL B,microsomes,4.107381982,2,150
-0,Triadimefon,TDL B,microsomes,3.642209544,3,150
-15,Triadimefon,TDL B,microsomes,6.090475637,1,150
-15,Triadimefon,TDL B,microsomes,5.80525893,2,150
-15,Triadimefon,TDL B,microsomes,8.98551562,3,150
-30,Triadimefon,TDL B,microsomes,6.941039356,1,150
-30,Triadimefon,TDL B,microsomes,7.206821805,2,150
-30,Triadimefon,TDL B,microsomes,10.94796175,3,150
-60,Triadimefon,TDL B,microsomes,13.80091931,1,150
-60,Triadimefon,TDL B,microsomes,7.457397291,2,150
-60,Triadimefon,TDL B,microsomes,9.668427529,3,150
-90,Triadimefon,TDL B,microsomes,16.81467648,1,150
-90,Triadimefon,TDL B,microsomes,18.96446187,2,150
-90,Triadimefon,TDL B,microsomes,16.539466,3,150
-0,Triadimefon,TDL B,microsomes,19.16500098,1,250
-0,Triadimefon,TDL B,microsomes,25.91267967,3,250
-15,Triadimefon,TDL B,microsomes,22.19280552,1,250
-15,Triadimefon,TDL B,microsomes,17.62020275,3,250
-30,Triadimefon,TDL B,microsomes,24.15778887,1,250
-30,Triadimefon,TDL B,microsomes,20.49970666,3,250
-60,Triadimefon,TDL B,microsomes,25.33183553,1,250
-60,Triadimefon,TDL B,microsomes,23.63873667,2,250
-60,Triadimefon,TDL B,microsomes,25.85088774,3,250
-90,Triadimefon,TDL B,microsomes,28.34728168,1,250
-90,Triadimefon,TDL B,microsomes,25.77673742,3,250
-0,Atrazine,DIA,microsomes,0,1,50
-0,Atrazine,DIA,microsomes,0,2,50
-0,Atrazine,DIA,microsomes,0,3,50
-15,Atrazine,DIA,microsomes,0.17588934,1,50
-15,Atrazine,DIA,microsomes,0.162027282,2,50
-15,Atrazine,DIA,microsomes,0.163356559,3,50
-30,Atrazine,DIA,microsomes,0.343213005,1,50
-30,Atrazine,DIA,microsomes,0.307927387,2,50
-30,Atrazine,DIA,microsomes,0.309459105,3,50
-60,Atrazine,DIA,microsomes,0.560097677,1,50
-60,Atrazine,DIA,microsomes,0.54821645,2,50
-60,Atrazine,DIA,microsomes,0.533109282,3,50
-90,Atrazine,DIA,microsomes,0.73827321,1,50
-90,Atrazine,DIA,microsomes,0.728694143,2,50
-90,Atrazine,DIA,microsomes,0.726811372,3,50
-0,Atrazine,DIA,microsomes,0,1,10
-0,Atrazine,DIA,microsomes,0,2,10
-0,Atrazine,DIA,microsomes,0,3,10
-15,Atrazine,DIA,microsomes,0.037225886,1,10
-15,Atrazine,DIA,microsomes,0.038369499,2,10
-15,Atrazine,DIA,microsomes,0.046312162,3,10
-30,Atrazine,DIA,microsomes,0.08490015,1,10
-30,Atrazine,DIA,microsomes,0.083838648,2,10
-30,Atrazine,DIA,microsomes,0.093345378,3,10
-60,Atrazine,DIA,microsomes,0.209721193,1,10
-60,Atrazine,DIA,microsomes,0.168743119,2,10
-60,Atrazine,DIA,microsomes,0.161851994,3,10
-60,Atrazine,DIA,microsomes,0.162150446,4,10
-90,Atrazine,DIA,microsomes,0.222852555,2,10
-90,Atrazine,DIA,microsomes,0.229604672,3,10
-0,Atrazine,DIA,microsomes,0,1,100
-0,Atrazine,DIA,microsomes,0,2,100
-0,Atrazine,DIA,microsomes,0,3,100
-15,Atrazine,DIA,microsomes,0.519984026,1,100
-15,Atrazine,DIA,microsomes,0.456185794,2,100
-15,Atrazine,DIA,microsomes,0.465640368,3,100
-30,Atrazine,DIA,microsomes,0.969762496,1,100
-30,Atrazine,DIA,microsomes,0.925948373,2,100
-30,Atrazine,DIA,microsomes,0.828633383,3,100
-60,Atrazine,DIA,microsomes,1.646101156,1,100
-60,Atrazine,DIA,microsomes,1.493978674,2,100
-60,Atrazine,DIA,microsomes,1.273473826,3,100
-90,Atrazine,DIA,microsomes,2.097846916,1,100
-90,Atrazine,DIA,microsomes,1.845660879,2,100
-90,Atrazine,DIA,microsomes,1.775884862,3,100
-0,Atrazine,DIA,microsomes,0,1,75
-0,Atrazine,DIA,microsomes,0,2,75
-0,Atrazine,DIA,microsomes,0,3,75
-15,Atrazine,DIA,microsomes,0.105167732,1,75
-15,Atrazine,DIA,microsomes,0.164272494,2,75
-15,Atrazine,DIA,microsomes,0.177858813,3,75
-30,Atrazine,DIA,microsomes,0.289730134,1,75
-30,Atrazine,DIA,microsomes,0.302066953,2,75
-30,Atrazine,DIA,microsomes,0.387892352,3,75
-60,Atrazine,DIA,microsomes,0.703975509,1,75
-60,Atrazine,DIA,microsomes,0.8027739,2,75
-60,Atrazine,DIA,microsomes,0.718751156,3,75
-90,Atrazine,DIA,microsomes,0.974859321,1,75
-90,Atrazine,DIA,microsomes,1.104369407,2,75
-90,Atrazine,DIA,microsomes,0.769135715,3,75
-0,Atrazine,DIA,microsomes,0,1,125
-0,Atrazine,DIA,microsomes,0,2,125
-0,Atrazine,DIA,microsomes,0,3,125
-15,Atrazine,DIA,microsomes,0.558156141,1,125
-15,Atrazine,DIA,microsomes,0.453398653,2,125
-15,Atrazine,DIA,microsomes,0.457441572,3,125
-30,Atrazine,DIA,microsomes,0.819739976,2,125
-30,Atrazine,DIA,microsomes,0.818340148,3,125
-60,Atrazine,DIA,microsomes,1.39707951,2,125
-60,Atrazine,DIA,microsomes,1.483198815,3,125
-90,Atrazine,DIA,microsomes,1.818559552,1,125
-90,Atrazine,DIA,microsomes,1.850457042,2,125
-90,Atrazine,DIA,microsomes,1.741234977,3,125
-0,Atrazine,DIA,microsomes,0,1,0.712
-0,Atrazine,DIA,microsomes,0,2,0.712
-0,Atrazine,DIA,microsomes,0,3,0.712
-15,Atrazine,DIA,microsomes,0,1,0.712
-15,Atrazine,DIA,microsomes,0,2,0.712
-15,Atrazine,DIA,microsomes,0,3,0.712
-30,Atrazine,DIA,microsomes,0,1,0.712
-30,Atrazine,DIA,microsomes,0,2,0.712
-30,Atrazine,DIA,microsomes,0,3,0.712
-60,Atrazine,DIA,microsomes,0,1,0.712
-60,Atrazine,DIA,microsomes,0,2,0.712
-60,Atrazine,DIA,microsomes,0,3,0.712
-90,Atrazine,DIA,microsomes,0,1,0.712
-90,Atrazine,DIA,microsomes,0,2,0.712
-90,Atrazine,DIA,microsomes,0,3,0.712
-0,Atrazine,DIA,microsomes,0,1,3.1684
-0,Atrazine,DIA,microsomes,0,2,3.1684
-0,Atrazine,DIA,microsomes,0,3,3.1684
-15,Atrazine,DIA,microsomes,0,1,3.1684
-15,Atrazine,DIA,microsomes,0,2,3.1684
-15,Atrazine,DIA,microsomes,0,3,3.1684
-30,Atrazine,DIA,microsomes,0,1,3.1684
-30,Atrazine,DIA,microsomes,0,2,3.1684
-30,Atrazine,DIA,microsomes,0,3,3.1684
-60,Atrazine,DIA,microsomes,0,1,3.1684
-60,Atrazine,DIA,microsomes,0,2,3.1684
-60,Atrazine,DIA,microsomes,0,3,3.1684
-90,Atrazine,DIA,microsomes,0,1,3.1684
-90,Atrazine,DIA,microsomes,0,2,3.1684
-90,Atrazine,DIA,microsomes,0,3,3.1684
-0,Atrazine,DIA,microsomes,0,1,250
-0,Atrazine,DIA,microsomes,0,2,250
-0,Atrazine,DIA,microsomes,0,3,250
-15,Atrazine,DIA,microsomes,0.488073154,1,250
-15,Atrazine,DIA,microsomes,0.494203709,2,250
-15,Atrazine,DIA,microsomes,0.58569046,3,250
-30,Atrazine,DIA,microsomes,0.731173258,1,250
-30,Atrazine,DIA,microsomes,0.714667917,3,250
-60,Atrazine,DIA,microsomes,1.145221545,1,250
-60,Atrazine,DIA,microsomes,1.154181588,2,250
-90,Atrazine,DIA,microsomes,1.638731263,1,250
-90,Atrazine,DIA,microsomes,1.563749853,2,250
-90,Atrazine,DIA,microsomes,1.475092589,3,250
-0,Atrazine,DIA,microsomes,0,1,150
-0,Atrazine,DIA,microsomes,0,2,150
-0,Atrazine,DIA,microsomes,0,3,150
-0,Atrazine,DIA,microsomes,0,4,150
-15,Atrazine,DIA,microsomes,0,1,150
-15,Atrazine,DIA,microsomes,0,2,150
-15,Atrazine,DIA,microsomes,0,3,150
-15,Atrazine,DIA,microsomes,0,4,150
-30,Atrazine,DIA,microsomes,0.427606743,1,150
-30,Atrazine,DIA,microsomes,0,2,150
-30,Atrazine,DIA,microsomes,0,3,150
-30,Atrazine,DIA,microsomes,0,4,150
-60,Atrazine,DIA,microsomes,2.289419294,1,150
-60,Atrazine,DIA,microsomes,1.069410045,2,150
-60,Atrazine,DIA,microsomes,0.075701382,3,150
-90,Atrazine,DIA,microsomes,0.947515115,1,150
-90,Atrazine,DIA,microsomes,1.465833554,2,150
-90,Atrazine,DIA,microsomes,0.607269269,3,150
-0,Atrazine,DIA,microsomes,0,1,200
-0,Atrazine,DIA,microsomes,0,2,200
-0,Atrazine,DIA,microsomes,0,3,200
-15,Atrazine,DIA,microsomes,0,1,200
-15,Atrazine,DIA,microsomes,0,2,200
-15,Atrazine,DIA,microsomes,0,3,200
-30,Atrazine,DIA,microsomes,0,1,200
-30,Atrazine,DIA,microsomes,0,2,200
-30,Atrazine,DIA,microsomes,0,3,200
-60,Atrazine,DIA,microsomes,0.147179292,1,200
-60,Atrazine,DIA,microsomes,0.49374336,2,200
-60,Atrazine,DIA,microsomes,0.185151589,3,200
-90,Atrazine,DIA,microsomes,0.905020781,1,200
-90,Atrazine,DIA,microsomes,0.751527127,2,200
-90,Atrazine,DIA,microsomes,0.778803003,3,200
-0,Atrazine,DEA,microsomes,0,1,50
-0,Atrazine,DEA,microsomes,0,2,50
-0,Atrazine,DEA,microsomes,0,3,50
-15,Atrazine,DEA,microsomes,0.105334715,1,50
-15,Atrazine,DEA,microsomes,0.177716074,2,50
-15,Atrazine,DEA,microsomes,0.215668236,3,50
-30,Atrazine,DEA,microsomes,0.273065521,1,50
-30,Atrazine,DEA,microsomes,0.362248011,2,50
-30,Atrazine,DEA,microsomes,0.403265809,3,50
-60,Atrazine,DEA,microsomes,0.502168642,1,50
-60,Atrazine,DEA,microsomes,0.64289193,2,50
-60,Atrazine,DEA,microsomes,0.720570734,3,50
-90,Atrazine,DEA,microsomes,0.725802164,1,50
-90,Atrazine,DEA,microsomes,0.865500124,2,50
-90,Atrazine,DEA,microsomes,0.956691847,3,50
-0,Atrazine,DEA,microsomes,0,1,10
-0,Atrazine,DEA,microsomes,0,2,10
-0,Atrazine,DEA,microsomes,0,3,10
-15,Atrazine,DEA,microsomes,0.062527948,1,10
-15,Atrazine,DEA,microsomes,0.066722432,2,10
-15,Atrazine,DEA,microsomes,0.073739184,3,10
-30,Atrazine,DEA,microsomes,0.13417786,1,10
-30,Atrazine,DEA,microsomes,0.142144514,2,10
-30,Atrazine,DEA,microsomes,0.153899766,3,10
-60,Atrazine,DEA,microsomes,0.359398841,1,10
-60,Atrazine,DEA,microsomes,0.284549411,2,10
-60,Atrazine,DEA,microsomes,0.293488967,3,10
-60,Atrazine,DEA,microsomes,0.291970799,4,10
-90,Atrazine,DEA,microsomes,0.378114427,2,10
-90,Atrazine,DEA,microsomes,0.405964967,3,10
-0,Atrazine,DEA,microsomes,0,1,100
-0,Atrazine,DEA,microsomes,0,2,100
-0,Atrazine,DEA,microsomes,0,3,100
-15,Atrazine,DEA,microsomes,0.692469949,1,100
-15,Atrazine,DEA,microsomes,0.598237597,2,100
-15,Atrazine,DEA,microsomes,0.603481745,3,100
-30,Atrazine,DEA,microsomes,1.23886552,1,100
-30,Atrazine,DEA,microsomes,1.156190328,2,100
-30,Atrazine,DEA,microsomes,1.011651128,3,100
-60,Atrazine,DEA,microsomes,2.056702931,1,100
-60,Atrazine,DEA,microsomes,1.850305243,2,100
-60,Atrazine,DEA,microsomes,1.516060546,3,100
-90,Atrazine,DEA,microsomes,2.637550555,1,100
-90,Atrazine,DEA,microsomes,2.271829323,2,100
-90,Atrazine,DEA,microsomes,2.15464298,3,100
-0,Atrazine,DEA,microsomes,0,1,75
-0,Atrazine,DEA,microsomes,0,2,75
-0,Atrazine,DEA,microsomes,0,3,75
-15,Atrazine,DEA,microsomes,0.126910879,1,75
-15,Atrazine,DEA,microsomes,0.194298986,2,75
-15,Atrazine,DEA,microsomes,0.205689666,3,75
-30,Atrazine,DEA,microsomes,0.343048244,1,75
-30,Atrazine,DEA,microsomes,0.344665429,2,75
-30,Atrazine,DEA,microsomes,0.433300567,3,75
-60,Atrazine,DEA,microsomes,0.79823473,1,75
-60,Atrazine,DEA,microsomes,0.910129645,2,75
-60,Atrazine,DEA,microsomes,0.789753599,3,75
-90,Atrazine,DEA,microsomes,1.097803094,1,75
-90,Atrazine,DEA,microsomes,1.250836941,2,75
-90,Atrazine,DEA,microsomes,0.891346428,3,75
-0,Atrazine,DEA,microsomes,0,1,125
-0,Atrazine,DEA,microsomes,0,2,125
-0,Atrazine,DEA,microsomes,0,3,125
-15,Atrazine,DEA,microsomes,0.660583406,1,125
-15,Atrazine,DEA,microsomes,0.521827731,2,125
-15,Atrazine,DEA,microsomes,0.519014334,3,125
-30,Atrazine,DEA,microsomes,0.937060708,2,125
-30,Atrazine,DEA,microsomes,0.947234926,3,125
-60,Atrazine,DEA,microsomes,1.586433592,2,125
-60,Atrazine,DEA,microsomes,1.701961252,3,125
-90,Atrazine,DEA,microsomes,2.098184546,1,125
-90,Atrazine,DEA,microsomes,2.114078113,2,125
-90,Atrazine,DEA,microsomes,1.9947066,3,125
-0,Atrazine,DEA,microsomes,0,1,0.712
-0,Atrazine,DEA,microsomes,0,2,0.712
-0,Atrazine,DEA,microsomes,0,3,0.712
-15,Atrazine,DEA,microsomes,0,1,0.712
-15,Atrazine,DEA,microsomes,0,2,0.712
-15,Atrazine,DEA,microsomes,0,3,0.712
-30,Atrazine,DEA,microsomes,0,1,0.712
-30,Atrazine,DEA,microsomes,0,2,0.712
-30,Atrazine,DEA,microsomes,0,3,0.712
-60,Atrazine,DEA,microsomes,0,1,0.712
-60,Atrazine,DEA,microsomes,0,2,0.712
-90,Atrazine,DEA,microsomes,0,1,0.712
-90,Atrazine,DEA,microsomes,0,2,0.712
-90,Atrazine,DEA,microsomes,0,3,0.712
-0,Atrazine,DEA,microsomes,0,1,3.1684
-0,Atrazine,DEA,microsomes,0,2,3.1684
-0,Atrazine,DEA,microsomes,0,3,3.1684
-15,Atrazine,DEA,microsomes,0,1,3.1684
-15,Atrazine,DEA,microsomes,0,2,3.1684
-15,Atrazine,DEA,microsomes,0,3,3.1684
-30,Atrazine,DEA,microsomes,0,1,3.1684
-30,Atrazine,DEA,microsomes,0,2,3.1684
-30,Atrazine,DEA,microsomes,0,3,3.1684
-60,Atrazine,DEA,microsomes,0.004276181,1,3.1684
-60,Atrazine,DEA,microsomes,0,2,3.1684
-60,Atrazine,DEA,microsomes,0,3,3.1684
-90,Atrazine,DEA,microsomes,0.068958259,1,3.1684
-90,Atrazine,DEA,microsomes,0.095246481,2,3.1684
-90,Atrazine,DEA,microsomes,0.042564751,3,3.1684
-0,Atrazine,DEA,microsomes,0,1,200
-0,Atrazine,DEA,microsomes,0,2,200
-0,Atrazine,DEA,microsomes,0,3,200
-15,Atrazine,DEA,microsomes,0,1,200
-15,Atrazine,DEA,microsomes,0,2,200
-15,Atrazine,DEA,microsomes,0,3,200
-30,Atrazine,DEA,microsomes,0,1,200
-30,Atrazine,DEA,microsomes,0,2,200
-30,Atrazine,DEA,microsomes,0,3,200
-60,Atrazine,DEA,microsomes,0,1,200
-60,Atrazine,DEA,microsomes,0.08814803,2,200
-60,Atrazine,DEA,microsomes,0,3,200
-90,Atrazine,DEA,microsomes,0.636612173,1,200
-90,Atrazine,DEA,microsomes,0.308057976,2,200
-90,Atrazine,DEA,microsomes,0.343301822,3,200
-0,Atrazine,DEA,microsomes,0,1,250
-0,Atrazine,DEA,microsomes,0,2,250
-0,Atrazine,DEA,microsomes,0,3,250
-15,Atrazine,DEA,microsomes,0.303186347,1,250
-15,Atrazine,DEA,microsomes,0.314346484,2,250
-15,Atrazine,DEA,microsomes,0.32890249,3,250
-30,Atrazine,DEA,microsomes,0.470955087,1,250
-30,Atrazine,DEA,microsomes,0.418661875,3,250
-60,Atrazine,DEA,microsomes,0.69686814,1,250
-60,Atrazine,DEA,microsomes,0.65732937,2,250
-90,Atrazine,DEA,microsomes,1.058297138,1,250
-90,Atrazine,DEA,microsomes,1.054151944,2,250
-90,Atrazine,DEA,microsomes,0.826804017,3,250
-0,Atrazine,DEA,microsomes,0,1,150
-0,Atrazine,DEA,microsomes,0,2,150
-0,Atrazine,DEA,microsomes,0,3,150
-0,Atrazine,DEA,microsomes,0,4,150
-15,Atrazine,DEA,microsomes,0.254933833,1,150
-15,Atrazine,DEA,microsomes,0.313847964,2,150
-15,Atrazine,DEA,microsomes,0,3,150
-15,Atrazine,DEA,microsomes,0.307570229,4,150
-30,Atrazine,DEA,microsomes,1.100979382,1,150
-30,Atrazine,DEA,microsomes,0,2,150
-30,Atrazine,DEA,microsomes,0,3,150
-30,Atrazine,DEA,microsomes,0,4,150
-60,Atrazine,DEA,microsomes,4.59284888,1,150
-60,Atrazine,DEA,microsomes,1.849478583,2,150
-60,Atrazine,DEA,microsomes,1.908392713,3,150
-60,Atrazine,DEA,microsomes,0.504111632,4,150
-90,Atrazine,DEA,microsomes,1.684325856,1,150
-90,Atrazine,DEA,microsomes,0.868220275,2,150
-90,Atrazine,DEA,microsomes,2.611016157,3,150
-90,Atrazine,DEA,microsomes,0.938724071,4,150
+0,atrazine,atrazine,microsomes,1.208049891,1,0.712
+0,atrazine,atrazine,microsomes,1.59580743,2,0.712
+0,atrazine,atrazine,microsomes,1.362262655,3,0.712
+15,atrazine,atrazine,microsomes,1.346911275,2,0.712
+15,atrazine,atrazine,microsomes,1.212444791,3,0.712
+30,atrazine,atrazine,microsomes,1.13491833,1,0.712
+30,atrazine,atrazine,microsomes,1.082466929,2,0.712
+30,atrazine,atrazine,microsomes,1.113889522,3,0.712
+60,atrazine,atrazine,microsomes,0.918015161,1,0.712
+60,atrazine,atrazine,microsomes,0.819916078,2,0.712
+60,atrazine,atrazine,microsomes,0.830401682,3,0.712
+90,atrazine,atrazine,microsomes,0.60193292,1,0.712
+90,atrazine,atrazine,microsomes,0.514615471,2,0.712
+90,atrazine,atrazine,microsomes,0.543046503,3,0.712
+0,atrazine,atrazine,microsomes,7.925055611,1,10
+0,atrazine,atrazine,microsomes,8.535004798,2,10
+0,atrazine,atrazine,microsomes,7.898999742,3,10
+15,atrazine,atrazine,microsomes,8.712917025,1,10
+15,atrazine,atrazine,microsomes,8.046755376,2,10
+15,atrazine,atrazine,microsomes,8.073616112,3,10
+30,atrazine,atrazine,microsomes,7.2564376,1,10
+30,atrazine,atrazine,microsomes,7.355158639,2,10
+30,atrazine,atrazine,microsomes,7.326464072,3,10
+60,atrazine,atrazine,microsomes,5.106466762,1,10
+60,atrazine,atrazine,microsomes,6.116856982,2,10
+60,atrazine,atrazine,microsomes,6.612799065,3,10
+60,atrazine,atrazine,microsomes,6.416351487,4,10
+90,atrazine,atrazine,microsomes,7.579706731,1,10
+90,atrazine,atrazine,microsomes,5.426896279,2,10
+90,atrazine,atrazine,microsomes,5.468859038,3,10
+0,atrazine,atrazine,microsomes,3.856504507,1,3.1684
+0,atrazine,atrazine,microsomes,3.856469097,2,3.1684
+0,atrazine,atrazine,microsomes,4.000676106,3,3.1684
+15,atrazine,atrazine,microsomes,3.592664828,1,3.1684
+15,atrazine,atrazine,microsomes,3.566235426,2,3.1684
+15,atrazine,atrazine,microsomes,3.407025511,3,3.1684
+30,atrazine,atrazine,microsomes,3.230387651,1,3.1684
+30,atrazine,atrazine,microsomes,3.182488109,2,3.1684
+30,atrazine,atrazine,microsomes,3.039757913,3,3.1684
+60,atrazine,atrazine,microsomes,2.523246477,1,3.1684
+60,atrazine,atrazine,microsomes,2.351721019,2,3.1684
+60,atrazine,atrazine,microsomes,2.405223762,3,3.1684
+90,atrazine,atrazine,microsomes,1.868645301,1,3.1684
+90,atrazine,atrazine,microsomes,2.090714793,2,3.1684
+90,atrazine,atrazine,microsomes,1.793542295,3,3.1684
+0,atrazine,atrazine,microsomes,32.90836376,2,50
+0,atrazine,atrazine,microsomes,30.42372369,3,50
+15,atrazine,atrazine,microsomes,31.55345576,1,50
+15,atrazine,atrazine,microsomes,32.90354023,2,50
+15,atrazine,atrazine,microsomes,31.44767354,3,50
+30,atrazine,atrazine,microsomes,33.73099629,1,50
+30,atrazine,atrazine,microsomes,32.44019536,2,50
+30,atrazine,atrazine,microsomes,30.07668957,3,50
+60,atrazine,atrazine,microsomes,30.88120635,1,50
+60,atrazine,atrazine,microsomes,30.4651428,2,50
+60,atrazine,atrazine,microsomes,31.22382922,3,50
+90,atrazine,atrazine,microsomes,29.55546923,1,50
+90,atrazine,atrazine,microsomes,28.76418276,2,50
+0,atrazine,atrazine,microsomes,28.76477533,1,75
+0,atrazine,atrazine,microsomes,27.39613326,2,75
+0,atrazine,atrazine,microsomes,35.59524226,3,75
+15,atrazine,atrazine,microsomes,27.29687233,1,75
+15,atrazine,atrazine,microsomes,25.64705914,2,75
+15,atrazine,atrazine,microsomes,28.43580376,3,75
+30,atrazine,atrazine,microsomes,25.06838562,1,75
+30,atrazine,atrazine,microsomes,23.04529413,2,75
+30,atrazine,atrazine,microsomes,27.46845867,3,75
+60,atrazine,atrazine,microsomes,27.93745262,1,75
+60,atrazine,atrazine,microsomes,33.92932133,2,75
+60,atrazine,atrazine,microsomes,27.74838267,3,75
+90,atrazine,atrazine,microsomes,24.23551708,1,75
+90,atrazine,atrazine,microsomes,30.62112241,2,75
+90,atrazine,atrazine,microsomes,14.47936085,3,75
+0,atrazine,atrazine,microsomes,91.15167676,1,100
+0,atrazine,atrazine,microsomes,87.7834746,2,100
+0,atrazine,atrazine,microsomes,88.1043964,3,100
+15,atrazine,atrazine,microsomes,88.83435547,1,100
+15,atrazine,atrazine,microsomes,85.08036669,2,100
+15,atrazine,atrazine,microsomes,83.34355705,3,100
+30,atrazine,atrazine,microsomes,87.40290074,1,100
+30,atrazine,atrazine,microsomes,77.14189081,2,100
+30,atrazine,atrazine,microsomes,81.17033458,3,100
+60,atrazine,atrazine,microsomes,82.38968511,1,100
+60,atrazine,atrazine,microsomes,78.82099072,2,100
+60,atrazine,atrazine,microsomes,74.48074886,3,100
+90,atrazine,atrazine,microsomes,81.10749001,1,100
+90,atrazine,atrazine,microsomes,72.11741368,2,100
+90,atrazine,atrazine,microsomes,74.72567112,3,100
+0,atrazine,atrazine,microsomes,88.09234635,2,125
+0,atrazine,atrazine,microsomes,85.70476499,3,125
+15,atrazine,atrazine,microsomes,107.9737675,1,125
+15,atrazine,atrazine,microsomes,85.24148342,2,125
+15,atrazine,atrazine,microsomes,85.54901737,3,125
+30,atrazine,atrazine,microsomes,158.6507932,1,125
+30,atrazine,atrazine,microsomes,83.6386001,2,125
+30,atrazine,atrazine,microsomes,83.07467838,3,125
+60,atrazine,atrazine,microsomes,170.65218,1,125
+60,atrazine,atrazine,microsomes,78.21161933,2,125
+60,atrazine,atrazine,microsomes,84.54185693,3,125
+90,atrazine,atrazine,microsomes,80.88478508,1,125
+90,atrazine,atrazine,microsomes,79.00424811,2,125
+90,atrazine,atrazine,microsomes,78.20108166,3,125
+0,atrazine,atrazine,microsomes,111.7791798,1,150
+0,atrazine,atrazine,microsomes,108.954701,2,150
+0,atrazine,atrazine,microsomes,113.7158271,3,150
+0,atrazine,atrazine,microsomes,107.5512697,4,150
+15,atrazine,atrazine,microsomes,110.8050341,1,150
+15,atrazine,atrazine,microsomes,114.7205562,2,150
+15,atrazine,atrazine,microsomes,107.1291095,3,150
+15,atrazine,atrazine,microsomes,110.2111065,4,150
+30,atrazine,atrazine,microsomes,106.4113993,1,150
+30,atrazine,atrazine,microsomes,109.2588435,2,150
+30,atrazine,atrazine,microsomes,108.8110859,3,150
+30,atrazine,atrazine,microsomes,98.45121644,4,150
+60,atrazine,atrazine,microsomes,105.7397626,1,150
+60,atrazine,atrazine,microsomes,103.5578664,2,150
+60,atrazine,atrazine,microsomes,109.569591,3,150
+60,atrazine,atrazine,microsomes,103.2077499,4,150
+90,atrazine,atrazine,microsomes,96.26533592,1,150
+90,atrazine,atrazine,microsomes,104.9741825,2,150
+90,atrazine,atrazine,microsomes,105.7942757,3,150
+90,atrazine,atrazine,microsomes,95.31462118,4,150
+0,atrazine,atrazine,microsomes,152.8225899,1,200
+0,atrazine,atrazine,microsomes,135.8870454,2,200
+0,atrazine,atrazine,microsomes,146.1520591,3,200
+15,atrazine,atrazine,microsomes,200.8987987,1,200
+15,atrazine,atrazine,microsomes,134.815613,2,200
+15,atrazine,atrazine,microsomes,211.5785603,3,200
+30,atrazine,atrazine,microsomes,193.1222732,1,200
+30,atrazine,atrazine,microsomes,210.4725656,2,200
+30,atrazine,atrazine,microsomes,213.5140511,3,200
+60,atrazine,atrazine,microsomes,197.4425651,1,200
+60,atrazine,atrazine,microsomes,146.8087435,2,200
+60,atrazine,atrazine,microsomes,201.9011064,3,200
+90,atrazine,atrazine,microsomes,127.9031459,1,200
+90,atrazine,atrazine,microsomes,203.6292232,2,200
+90,atrazine,atrazine,microsomes,128.0068329,3,200
+0,atrazine,atrazine,microsomes,131.4789717,1,250
+0,atrazine,atrazine,microsomes,204.8856278,2,250
+0,atrazine,atrazine,microsomes,177.2918803,3,250
+15,atrazine,atrazine,microsomes,194.2191372,1,250
+15,atrazine,atrazine,microsomes,232.3468724,2,250
+15,atrazine,atrazine,microsomes,253.7129794,3,250
+30,atrazine,atrazine,microsomes,176.2649821,1,250
+30,atrazine,atrazine,microsomes,160.3314976,3,250
+60,atrazine,atrazine,microsomes,227.2455073,1,250
+60,atrazine,atrazine,microsomes,162.6834257,2,250
+60,atrazine,atrazine,microsomes,182.9563831,3,250
+90,atrazine,atrazine,microsomes,193.324742,1,250
+90,atrazine,atrazine,microsomes,160.6296294,2,250
+90,atrazine,atrazine,microsomes,218.2684298,3,250
+0,atrazine,dea,microsomes,0,1,50
+0,atrazine,dea,microsomes,0,2,50
+0,atrazine,dea,microsomes,0,3,50
+15,atrazine,dea,microsomes,0.105334715,1,50
+15,atrazine,dea,microsomes,0.177716074,2,50
+15,atrazine,dea,microsomes,0.215668236,3,50
+30,atrazine,dea,microsomes,0.273065521,1,50
+30,atrazine,dea,microsomes,0.362248011,2,50
+30,atrazine,dea,microsomes,0.403265809,3,50
+60,atrazine,dea,microsomes,0.502168642,1,50
+60,atrazine,dea,microsomes,0.64289193,2,50
+60,atrazine,dea,microsomes,0.720570734,3,50
+90,atrazine,dea,microsomes,0.725802164,1,50
+90,atrazine,dea,microsomes,0.865500124,2,50
+90,atrazine,dea,microsomes,0.956691847,3,50
+0,atrazine,dea,microsomes,0,1,10
+0,atrazine,dea,microsomes,0,2,10
+0,atrazine,dea,microsomes,0,3,10
+15,atrazine,dea,microsomes,0.062527948,1,10
+15,atrazine,dea,microsomes,0.066722432,2,10
+15,atrazine,dea,microsomes,0.073739184,3,10
+30,atrazine,dea,microsomes,0.13417786,1,10
+30,atrazine,dea,microsomes,0.142144514,2,10
+30,atrazine,dea,microsomes,0.153899766,3,10
+60,atrazine,dea,microsomes,0.359398841,1,10
+60,atrazine,dea,microsomes,0.284549411,2,10
+60,atrazine,dea,microsomes,0.293488967,3,10
+60,atrazine,dea,microsomes,0.291970799,4,10
+90,atrazine,dea,microsomes,0.378114427,2,10
+90,atrazine,dea,microsomes,0.405964967,3,10
+0,atrazine,dea,microsomes,0,1,100
+0,atrazine,dea,microsomes,0,2,100
+0,atrazine,dea,microsomes,0,3,100
+15,atrazine,dea,microsomes,0.692469949,1,100
+15,atrazine,dea,microsomes,0.598237597,2,100
+15,atrazine,dea,microsomes,0.603481745,3,100
+30,atrazine,dea,microsomes,1.23886552,1,100
+30,atrazine,dea,microsomes,1.156190328,2,100
+30,atrazine,dea,microsomes,1.011651128,3,100
+60,atrazine,dea,microsomes,2.056702931,1,100
+60,atrazine,dea,microsomes,1.850305243,2,100
+60,atrazine,dea,microsomes,1.516060546,3,100
+90,atrazine,dea,microsomes,2.637550555,1,100
+90,atrazine,dea,microsomes,2.271829323,2,100
+90,atrazine,dea,microsomes,2.15464298,3,100
+0,atrazine,dea,microsomes,0,1,75
+0,atrazine,dea,microsomes,0,2,75
+0,atrazine,dea,microsomes,0,3,75
+15,atrazine,dea,microsomes,0.126910879,1,75
+15,atrazine,dea,microsomes,0.194298986,2,75
+15,atrazine,dea,microsomes,0.205689666,3,75
+30,atrazine,dea,microsomes,0.343048244,1,75
+30,atrazine,dea,microsomes,0.344665429,2,75
+30,atrazine,dea,microsomes,0.433300567,3,75
+60,atrazine,dea,microsomes,0.79823473,1,75
+60,atrazine,dea,microsomes,0.910129645,2,75
+60,atrazine,dea,microsomes,0.789753599,3,75
+90,atrazine,dea,microsomes,1.097803094,1,75
+90,atrazine,dea,microsomes,1.250836941,2,75
+90,atrazine,dea,microsomes,0.891346428,3,75
+0,atrazine,dea,microsomes,0,1,125
+0,atrazine,dea,microsomes,0,2,125
+0,atrazine,dea,microsomes,0,3,125
+15,atrazine,dea,microsomes,0.660583406,1,125
+15,atrazine,dea,microsomes,0.521827731,2,125
+15,atrazine,dea,microsomes,0.519014334,3,125
+30,atrazine,dea,microsomes,0.937060708,2,125
+30,atrazine,dea,microsomes,0.947234926,3,125
+60,atrazine,dea,microsomes,1.586433592,2,125
+60,atrazine,dea,microsomes,1.701961252,3,125
+90,atrazine,dea,microsomes,2.098184546,1,125
+90,atrazine,dea,microsomes,2.114078113,2,125
+90,atrazine,dea,microsomes,1.9947066,3,125
+0,atrazine,dea,microsomes,0,1,0.712
+0,atrazine,dea,microsomes,0,2,0.712
+0,atrazine,dea,microsomes,0,3,0.712
+15,atrazine,dea,microsomes,0,1,0.712
+15,atrazine,dea,microsomes,0,2,0.712
+15,atrazine,dea,microsomes,0,3,0.712
+30,atrazine,dea,microsomes,0,1,0.712
+30,atrazine,dea,microsomes,0,2,0.712
+30,atrazine,dea,microsomes,0,3,0.712
+60,atrazine,dea,microsomes,0,1,0.712
+60,atrazine,dea,microsomes,0,2,0.712
+90,atrazine,dea,microsomes,0,1,0.712
+90,atrazine,dea,microsomes,0,2,0.712
+90,atrazine,dea,microsomes,0,3,0.712
+0,atrazine,dea,microsomes,0,1,3.1684
+0,atrazine,dea,microsomes,0,2,3.1684
+0,atrazine,dea,microsomes,0,3,3.1684
+15,atrazine,dea,microsomes,0,1,3.1684
+15,atrazine,dea,microsomes,0,2,3.1684
+15,atrazine,dea,microsomes,0,3,3.1684
+30,atrazine,dea,microsomes,0,1,3.1684
+30,atrazine,dea,microsomes,0,2,3.1684
+30,atrazine,dea,microsomes,0,3,3.1684
+60,atrazine,dea,microsomes,0.004276181,1,3.1684
+60,atrazine,dea,microsomes,0,2,3.1684
+60,atrazine,dea,microsomes,0,3,3.1684
+90,atrazine,dea,microsomes,0.068958259,1,3.1684
+90,atrazine,dea,microsomes,0.095246481,2,3.1684
+90,atrazine,dea,microsomes,0.042564751,3,3.1684
+0,atrazine,dea,microsomes,0,1,200
+0,atrazine,dea,microsomes,0,2,200
+0,atrazine,dea,microsomes,0,3,200
+15,atrazine,dea,microsomes,0,1,200
+15,atrazine,dea,microsomes,0,2,200
+15,atrazine,dea,microsomes,0,3,200
+30,atrazine,dea,microsomes,0,1,200
+30,atrazine,dea,microsomes,0,2,200
+30,atrazine,dea,microsomes,0,3,200
+60,atrazine,dea,microsomes,0,1,200
+60,atrazine,dea,microsomes,0.08814803,2,200
+60,atrazine,dea,microsomes,0,3,200
+90,atrazine,dea,microsomes,0.636612173,1,200
+90,atrazine,dea,microsomes,0.308057976,2,200
+90,atrazine,dea,microsomes,0.343301822,3,200
+0,atrazine,dea,microsomes,0,1,250
+0,atrazine,dea,microsomes,0,2,250
+0,atrazine,dea,microsomes,0,3,250
+15,atrazine,dea,microsomes,0.303186347,1,250
+15,atrazine,dea,microsomes,0.314346484,2,250
+15,atrazine,dea,microsomes,0.32890249,3,250
+30,atrazine,dea,microsomes,0.470955087,1,250
+30,atrazine,dea,microsomes,0.418661875,3,250
+60,atrazine,dea,microsomes,0.69686814,1,250
+60,atrazine,dea,microsomes,0.65732937,2,250
+90,atrazine,dea,microsomes,1.058297138,1,250
+90,atrazine,dea,microsomes,1.054151944,2,250
+90,atrazine,dea,microsomes,0.826804017,3,250
+0,atrazine,dea,microsomes,0,1,150
+0,atrazine,dea,microsomes,0,2,150
+0,atrazine,dea,microsomes,0,3,150
+0,atrazine,dea,microsomes,0,4,150
+15,atrazine,dea,microsomes,0.254933833,1,150
+15,atrazine,dea,microsomes,0.313847964,2,150
+15,atrazine,dea,microsomes,0,3,150
+15,atrazine,dea,microsomes,0.307570229,4,150
+30,atrazine,dea,microsomes,1.100979382,1,150
+30,atrazine,dea,microsomes,0,2,150
+30,atrazine,dea,microsomes,0,3,150
+30,atrazine,dea,microsomes,0,4,150
+60,atrazine,dea,microsomes,4.59284888,1,150
+60,atrazine,dea,microsomes,1.849478583,2,150
+60,atrazine,dea,microsomes,1.908392713,3,150
+60,atrazine,dea,microsomes,0.504111632,4,150
+90,atrazine,dea,microsomes,1.684325856,1,150
+90,atrazine,dea,microsomes,0.868220275,2,150
+90,atrazine,dea,microsomes,2.611016157,3,150
+90,atrazine,dea,microsomes,0.938724071,4,150
+0,atrazine,dia,microsomes,0,1,50
+0,atrazine,dia,microsomes,0,2,50
+0,atrazine,dia,microsomes,0,3,50
+15,atrazine,dia,microsomes,0.17588934,1,50
+15,atrazine,dia,microsomes,0.162027282,2,50
+15,atrazine,dia,microsomes,0.163356559,3,50
+30,atrazine,dia,microsomes,0.343213005,1,50
+30,atrazine,dia,microsomes,0.307927387,2,50
+30,atrazine,dia,microsomes,0.309459105,3,50
+60,atrazine,dia,microsomes,0.560097677,1,50
+60,atrazine,dia,microsomes,0.54821645,2,50
+60,atrazine,dia,microsomes,0.533109282,3,50
+90,atrazine,dia,microsomes,0.73827321,1,50
+90,atrazine,dia,microsomes,0.728694143,2,50
+90,atrazine,dia,microsomes,0.726811372,3,50
+0,atrazine,dia,microsomes,0,1,10
+0,atrazine,dia,microsomes,0,2,10
+0,atrazine,dia,microsomes,0,3,10
+15,atrazine,dia,microsomes,0.037225886,1,10
+15,atrazine,dia,microsomes,0.038369499,2,10
+15,atrazine,dia,microsomes,0.046312162,3,10
+30,atrazine,dia,microsomes,0.08490015,1,10
+30,atrazine,dia,microsomes,0.083838648,2,10
+30,atrazine,dia,microsomes,0.093345378,3,10
+60,atrazine,dia,microsomes,0.209721193,1,10
+60,atrazine,dia,microsomes,0.168743119,2,10
+60,atrazine,dia,microsomes,0.161851994,3,10
+60,atrazine,dia,microsomes,0.162150446,4,10
+90,atrazine,dia,microsomes,0.222852555,2,10
+90,atrazine,dia,microsomes,0.229604672,3,10
+0,atrazine,dia,microsomes,0,1,100
+0,atrazine,dia,microsomes,0,2,100
+0,atrazine,dia,microsomes,0,3,100
+15,atrazine,dia,microsomes,0.519984026,1,100
+15,atrazine,dia,microsomes,0.456185794,2,100
+15,atrazine,dia,microsomes,0.465640368,3,100
+30,atrazine,dia,microsomes,0.969762496,1,100
+30,atrazine,dia,microsomes,0.925948373,2,100
+30,atrazine,dia,microsomes,0.828633383,3,100
+60,atrazine,dia,microsomes,1.646101156,1,100
+60,atrazine,dia,microsomes,1.493978674,2,100
+60,atrazine,dia,microsomes,1.273473826,3,100
+90,atrazine,dia,microsomes,2.097846916,1,100
+90,atrazine,dia,microsomes,1.845660879,2,100
+90,atrazine,dia,microsomes,1.775884862,3,100
+0,atrazine,dia,microsomes,0,1,75
+0,atrazine,dia,microsomes,0,2,75
+0,atrazine,dia,microsomes,0,3,75
+15,atrazine,dia,microsomes,0.105167732,1,75
+15,atrazine,dia,microsomes,0.164272494,2,75
+15,atrazine,dia,microsomes,0.177858813,3,75
+30,atrazine,dia,microsomes,0.289730134,1,75
+30,atrazine,dia,microsomes,0.302066953,2,75
+30,atrazine,dia,microsomes,0.387892352,3,75
+60,atrazine,dia,microsomes,0.703975509,1,75
+60,atrazine,dia,microsomes,0.8027739,2,75
+60,atrazine,dia,microsomes,0.718751156,3,75
+90,atrazine,dia,microsomes,0.974859321,1,75
+90,atrazine,dia,microsomes,1.104369407,2,75
+90,atrazine,dia,microsomes,0.769135715,3,75
+0,atrazine,dia,microsomes,0,1,125
+0,atrazine,dia,microsomes,0,2,125
+0,atrazine,dia,microsomes,0,3,125
+15,atrazine,dia,microsomes,0.558156141,1,125
+15,atrazine,dia,microsomes,0.453398653,2,125
+15,atrazine,dia,microsomes,0.457441572,3,125
+30,atrazine,dia,microsomes,0.819739976,2,125
+30,atrazine,dia,microsomes,0.818340148,3,125
+60,atrazine,dia,microsomes,1.39707951,2,125
+60,atrazine,dia,microsomes,1.483198815,3,125
+90,atrazine,dia,microsomes,1.818559552,1,125
+90,atrazine,dia,microsomes,1.850457042,2,125
+90,atrazine,dia,microsomes,1.741234977,3,125
+0,atrazine,dia,microsomes,0,1,0.712
+0,atrazine,dia,microsomes,0,2,0.712
+0,atrazine,dia,microsomes,0,3,0.712
+15,atrazine,dia,microsomes,0,1,0.712
+15,atrazine,dia,microsomes,0,2,0.712
+15,atrazine,dia,microsomes,0,3,0.712
+30,atrazine,dia,microsomes,0,1,0.712
+30,atrazine,dia,microsomes,0,2,0.712
+30,atrazine,dia,microsomes,0,3,0.712
+60,atrazine,dia,microsomes,0,1,0.712
+60,atrazine,dia,microsomes,0,2,0.712
+60,atrazine,dia,microsomes,0,3,0.712
+90,atrazine,dia,microsomes,0,1,0.712
+90,atrazine,dia,microsomes,0,2,0.712
+90,atrazine,dia,microsomes,0,3,0.712
+0,atrazine,dia,microsomes,0,1,3.1684
+0,atrazine,dia,microsomes,0,2,3.1684
+0,atrazine,dia,microsomes,0,3,3.1684
+15,atrazine,dia,microsomes,0,1,3.1684
+15,atrazine,dia,microsomes,0,2,3.1684
+15,atrazine,dia,microsomes,0,3,3.1684
+30,atrazine,dia,microsomes,0,1,3.1684
+30,atrazine,dia,microsomes,0,2,3.1684
+30,atrazine,dia,microsomes,0,3,3.1684
+60,atrazine,dia,microsomes,0,1,3.1684
+60,atrazine,dia,microsomes,0,2,3.1684
+60,atrazine,dia,microsomes,0,3,3.1684
+90,atrazine,dia,microsomes,0,1,3.1684
+90,atrazine,dia,microsomes,0,2,3.1684
+90,atrazine,dia,microsomes,0,3,3.1684
+0,atrazine,dia,microsomes,0,1,250
+0,atrazine,dia,microsomes,0,2,250
+0,atrazine,dia,microsomes,0,3,250
+15,atrazine,dia,microsomes,0.488073154,1,250
+15,atrazine,dia,microsomes,0.494203709,2,250
+15,atrazine,dia,microsomes,0.58569046,3,250
+30,atrazine,dia,microsomes,0.731173258,1,250
+30,atrazine,dia,microsomes,0.714667917,3,250
+60,atrazine,dia,microsomes,1.145221545,1,250
+60,atrazine,dia,microsomes,1.154181588,2,250
+90,atrazine,dia,microsomes,1.638731263,1,250
+90,atrazine,dia,microsomes,1.563749853,2,250
+90,atrazine,dia,microsomes,1.475092589,3,250
+0,atrazine,dia,microsomes,0,1,150
+0,atrazine,dia,microsomes,0,2,150
+0,atrazine,dia,microsomes,0,3,150
+0,atrazine,dia,microsomes,0,4,150
+15,atrazine,dia,microsomes,0,1,150
+15,atrazine,dia,microsomes,0,2,150
+15,atrazine,dia,microsomes,0,3,150
+15,atrazine,dia,microsomes,0,4,150
+30,atrazine,dia,microsomes,0.427606743,1,150
+30,atrazine,dia,microsomes,0,2,150
+30,atrazine,dia,microsomes,0,3,150
+30,atrazine,dia,microsomes,0,4,150
+60,atrazine,dia,microsomes,2.289419294,1,150
+60,atrazine,dia,microsomes,1.069410045,2,150
+60,atrazine,dia,microsomes,0.075701382,3,150
+90,atrazine,dia,microsomes,0.947515115,1,150
+90,atrazine,dia,microsomes,1.465833554,2,150
+90,atrazine,dia,microsomes,0.607269269,3,150
+0,atrazine,dia,microsomes,0,1,200
+0,atrazine,dia,microsomes,0,2,200
+0,atrazine,dia,microsomes,0,3,200
+15,atrazine,dia,microsomes,0,1,200
+15,atrazine,dia,microsomes,0,2,200
+15,atrazine,dia,microsomes,0,3,200
+30,atrazine,dia,microsomes,0,1,200
+30,atrazine,dia,microsomes,0,2,200
+30,atrazine,dia,microsomes,0,3,200
+60,atrazine,dia,microsomes,0.147179292,1,200
+60,atrazine,dia,microsomes,0.49374336,2,200
+60,atrazine,dia,microsomes,0.185151589,3,200
+90,atrazine,dia,microsomes,0.905020781,1,200
+90,atrazine,dia,microsomes,0.751527127,2,200
+90,atrazine,dia,microsomes,0.778803003,3,200
+0,fipronil,fipsulf,microsomes,1.034753921,1,10
+0,fipronil,fipsulf,microsomes,0.612239983,2,10
+0,fipronil,fipsulf,microsomes,0.491206676,3,10
+15,fipronil,fipsulf,microsomes,0.253317628,1,10
+15,fipronil,fipsulf,microsomes,0.304604645,3,10
+30,fipronil,fipsulf,microsomes,0.753233413,1,10
+30,fipronil,fipsulf,microsomes,0.430810702,2,10
+30,fipronil,fipsulf,microsomes,0.388027952,3,10
+60,fipronil,fipsulf,microsomes,0.893906043,1,10
+60,fipronil,fipsulf,microsomes,0.912279045,2,10
+60,fipronil,fipsulf,microsomes,0.746948366,3,10
+90,fipronil,fipsulf,microsomes,1.679672886,1,10
+90,fipronil,fipsulf,microsomes,1.465935823,2,10
+90,fipronil,fipsulf,microsomes,1.164455827,3,10
+0,fipronil,fipsulf,microsomes,0,1,2.89
+0,fipronil,fipsulf,microsomes,0,2,2.89
+0,fipronil,fipsulf,microsomes,0,3,2.89
+15,fipronil,fipsulf,microsomes,0,1,2.89
+15,fipronil,fipsulf,microsomes,0,2,2.89
+15,fipronil,fipsulf,microsomes,0,3,2.89
+30,fipronil,fipsulf,microsomes,0.001551533,1,2.89
+30,fipronil,fipsulf,microsomes,0.002942426,2,2.89
+30,fipronil,fipsulf,microsomes,0.054608448,3,2.89
+60,fipronil,fipsulf,microsomes,0.285064434,1,2.89
+60,fipronil,fipsulf,microsomes,0.23700421,2,2.89
+90,fipronil,fipsulf,microsomes,0.381958677,1,2.89
+90,fipronil,fipsulf,microsomes,0.616806706,2,2.89
+90,fipronil,fipsulf,microsomes,0.534712544,3,2.89
+0,fipronil,fipsulf,microsomes,0.811460258,1,50
+0,fipronil,fipsulf,microsomes,1.086074757,2,50
+0,fipronil,fipsulf,microsomes,1.040314018,3,50
+15,fipronil,fipsulf,microsomes,1.531183402,1,50
+15,fipronil,fipsulf,microsomes,0.7015224,2,50
+15,fipronil,fipsulf,microsomes,0.633657965,3,50
+30,fipronil,fipsulf,microsomes,0.584525154,1,50
+30,fipronil,fipsulf,microsomes,0.82789851,2,50
+30,fipronil,fipsulf,microsomes,0.889875096,3,50
+60,fipronil,fipsulf,microsomes,1.135727445,1,50
+60,fipronil,fipsulf,microsomes,1.255430288,2,50
+60,fipronil,fipsulf,microsomes,0.661992528,3,50
+90,fipronil,fipsulf,microsomes,1.595923434,1,50
+90,fipronil,fipsulf,microsomes,1.538868851,3,50
+0,fipronil,fipsulf,microsomes,0.008770252,1,75
+0,fipronil,fipsulf,microsomes,0.018719868,2,75
+0,fipronil,fipsulf,microsomes,0.011112259,3,75
+15,fipronil,fipsulf,microsomes,0.263848309,1,75
+15,fipronil,fipsulf,microsomes,0.275508269,2,75
+15,fipronil,fipsulf,microsomes,0.274084452,3,75
+30,fipronil,fipsulf,microsomes,0.451610926,1,75
+30,fipronil,fipsulf,microsomes,0.474347788,2,75
+30,fipronil,fipsulf,microsomes,0.649283533,3,75
+60,fipronil,fipsulf,microsomes,0.766822227,2,75
+60,fipronil,fipsulf,microsomes,0.798666758,3,75
+90,fipronil,fipsulf,microsomes,0.965006564,1,75
+90,fipronil,fipsulf,microsomes,0.923280908,2,75
+90,fipronil,fipsulf,microsomes,1.076886237,3,75
+0,fipronil,fipsulf,microsomes,0,1,100
+0,fipronil,fipsulf,microsomes,0.062492993,2,100
+0,fipronil,fipsulf,microsomes,0.018577993,3,100
+15,fipronil,fipsulf,microsomes,0.354399846,1,100
+15,fipronil,fipsulf,microsomes,0.356555348,2,100
+15,fipronil,fipsulf,microsomes,0.245970557,3,100
+30,fipronil,fipsulf,microsomes,0.029234365,1,100
+30,fipronil,fipsulf,microsomes,0.047299497,2,100
+30,fipronil,fipsulf,microsomes,0.589482892,3,100
+60,fipronil,fipsulf,microsomes,0.80911051,1,100
+60,fipronil,fipsulf,microsomes,0.702975839,2,100
+60,fipronil,fipsulf,microsomes,0.619265376,3,100
+90,fipronil,fipsulf,microsomes,0.948944808,1,100
+90,fipronil,fipsulf,microsomes,1.012104281,2,100
+90,fipronil,fipsulf,microsomes,0.99641886,3,100
+0,fipronil,fipsulf,microsomes,0.026799093,1,125
+0,fipronil,fipsulf,microsomes,0.047725018,2,125
+0,fipronil,fipsulf,microsomes,0.001684607,3,125
+15,fipronil,fipsulf,microsomes,0.598927027,1,125
+15,fipronil,fipsulf,microsomes,0.251459439,2,125
+15,fipronil,fipsulf,microsomes,0.534784324,3,125
+30,fipronil,fipsulf,microsomes,0.611779761,1,125
+30,fipronil,fipsulf,microsomes,0.672830973,2,125
+30,fipronil,fipsulf,microsomes,0.845729752,3,125
+60,fipronil,fipsulf,microsomes,1.024609092,1,125
+60,fipronil,fipsulf,microsomes,0.937279841,2,125
+60,fipronil,fipsulf,microsomes,1.119582432,3,125
+90,fipronil,fipsulf,microsomes,1.176188941,1,125
+90,fipronil,fipsulf,microsomes,1.478442217,2,125
+90,fipronil,fipsulf,microsomes,1.6878732,3,125
+0,fipronil,fipsulf,microsomes,0.17573091,1,150
+0,fipronil,fipsulf,microsomes,0.126528998,2,150
+0,fipronil,fipsulf,microsomes,0.078924326,3,150
+15,fipronil,fipsulf,microsomes,0.001048481,1,150
+15,fipronil,fipsulf,microsomes,0.446496465,2,150
+15,fipronil,fipsulf,microsomes,0.452337061,3,150
+30,fipronil,fipsulf,microsomes,0.747973198,1,150
+30,fipronil,fipsulf,microsomes,0.458731246,2,150
+30,fipronil,fipsulf,microsomes,0.920372618,3,150
+60,fipronil,fipsulf,microsomes,0.94199132,1,150
+60,fipronil,fipsulf,microsomes,0.884966572,2,150
+60,fipronil,fipsulf,microsomes,0.673385006,3,150
+90,fipronil,fipsulf,microsomes,1.145508947,1,150
+90,fipronil,fipsulf,microsomes,1.186552367,3,150
+0,fipronil,fipsulf,microsomes,0,1,200
+0,fipronil,fipsulf,microsomes,0.139500206,2,200
+0,fipronil,fipsulf,microsomes,0,3,200
+15,fipronil,fipsulf,microsomes,0.921840151,1,200
+15,fipronil,fipsulf,microsomes,1.265455207,2,200
+15,fipronil,fipsulf,microsomes,0.083794693,3,200
+30,fipronil,fipsulf,microsomes,1.758009212,1,200
+30,fipronil,fipsulf,microsomes,1.131761977,2,200
+30,fipronil,fipsulf,microsomes,2.14032494,3,200
+60,fipronil,fipsulf,microsomes,3.119569212,1,200
+60,fipronil,fipsulf,microsomes,5.219960219,2,200
+60,fipronil,fipsulf,microsomes,3.68483357,3,200
+90,fipronil,fipsulf,microsomes,4.382618411,1,200
+90,fipronil,fipsulf,microsomes,4.121095689,2,200
+90,fipronil,fipsulf,microsomes,4.42249183,3,200
+0,fipronil,fipsulf,microsomes,0,1,250
+0,fipronil,fipsulf,microsomes,0,2,250
+0,fipronil,fipsulf,microsomes,0,3,250
+15,fipronil,fipsulf,microsomes,0.196637529,1,250
+15,fipronil,fipsulf,microsomes,0.241543415,2,250
+15,fipronil,fipsulf,microsomes,0.072809551,3,250
+30,fipronil,fipsulf,microsomes,0.455594801,1,250
+30,fipronil,fipsulf,microsomes,0.755341586,2,250
+30,fipronil,fipsulf,microsomes,0.808854432,3,250
+60,fipronil,fipsulf,microsomes,1.296083288,1,250
+60,fipronil,fipsulf,microsomes,0.819332472,2,250
+60,fipronil,fipsulf,microsomes,1.012053563,3,250
+90,fipronil,fipsulf,microsomes,1.174088966,1,250
+90,fipronil,fipsulf,microsomes,1.085025627,2,250
+90,fipronil,fipsulf,microsomes,1.682273901,3,250
+0,fipronil,fipronil,microsomes,105.7355056,1,10
+0,fipronil,fipronil,microsomes,71.31297707,2,10
+0,fipronil,fipronil,microsomes,79.81665852,3,10
+15,fipronil,fipronil,microsomes,7.601993848,1,10
+15,fipronil,fipronil,microsomes,11.87171779,3,10
+30,fipronil,fipronil,microsomes,8.347482218,1,10
+30,fipronil,fipronil,microsomes,12.54233702,2,10
+30,fipronil,fipronil,microsomes,9.213313367,3,10
+60,fipronil,fipronil,microsomes,10.38856477,1,10
+60,fipronil,fipronil,microsomes,12.36949156,2,10
+60,fipronil,fipronil,microsomes,8.215365646,3,10
+90,fipronil,fipronil,microsomes,11.17931895,1,10
+90,fipronil,fipronil,microsomes,12.71923746,2,10
+90,fipronil,fipronil,microsomes,9.99477721,3,10
+0,fipronil,fipronil,microsomes,3.553166435,1,2.89
+0,fipronil,fipronil,microsomes,2.185797914,2,2.89
+0,fipronil,fipronil,microsomes,4.160901096,3,2.89
+15,fipronil,fipronil,microsomes,0.961731316,1,2.89
+15,fipronil,fipronil,microsomes,0.608701865,2,2.89
+15,fipronil,fipronil,microsomes,2.021395291,3,2.89
+30,fipronil,fipronil,microsomes,0.34095865,1,2.89
+30,fipronil,fipronil,microsomes,1.416552854,2,2.89
+30,fipronil,fipronil,microsomes,4.678731136,3,2.89
+60,fipronil,fipronil,microsomes,1.597568113,1,2.89
+60,fipronil,fipronil,microsomes,2.059112975,2,2.89
+60,fipronil,fipronil,microsomes,4.336224939,3,2.89
+90,fipronil,fipronil,microsomes,0.73593197,1,2.89
+90,fipronil,fipronil,microsomes,1.01143428,2,2.89
+90,fipronil,fipronil,microsomes,2.098949857,3,2.89
+0,fipronil,fipronil,microsomes,285.0383486,1,50
+0,fipronil,fipronil,microsomes,295.6872209,2,50
+0,fipronil,fipronil,microsomes,261.2375276,3,50
+15,fipronil,fipronil,microsomes,223.3849191,1,50
+15,fipronil,fipronil,microsomes,19.09530124,2,50
+15,fipronil,fipronil,microsomes,61.85004879,3,50
+30,fipronil,fipronil,microsomes,76.72890033,1,50
+30,fipronil,fipronil,microsomes,65.4447593,2,50
+30,fipronil,fipronil,microsomes,59.88633813,3,50
+60,fipronil,fipronil,microsomes,74.09066447,1,50
+60,fipronil,fipronil,microsomes,65.54242812,2,50
+60,fipronil,fipronil,microsomes,39.55208359,3,50
+90,fipronil,fipronil,microsomes,66.15498564,1,50
+90,fipronil,fipronil,microsomes,23.55175796,2,50
+90,fipronil,fipronil,microsomes,58.25965938,3,50
+0,fipronil,fipronil,microsomes,49.56034014,1,75
+0,fipronil,fipronil,microsomes,49.17468426,2,75
+0,fipronil,fipronil,microsomes,36.68866915,3,75
+15,fipronil,fipronil,microsomes,35.05455395,1,75
+15,fipronil,fipronil,microsomes,40.30349338,2,75
+15,fipronil,fipronil,microsomes,44.1381674,3,75
+30,fipronil,fipronil,microsomes,38.08049817,1,75
+30,fipronil,fipronil,microsomes,38.34527612,2,75
+30,fipronil,fipronil,microsomes,89.31881211,3,75
+60,fipronil,fipronil,microsomes,40.27279664,2,75
+60,fipronil,fipronil,microsomes,55.95173867,3,75
+90,fipronil,fipronil,microsomes,37.82415225,1,75
+90,fipronil,fipronil,microsomes,32.32010713,2,75
+90,fipronil,fipronil,microsomes,45.93427684,3,75
+0,fipronil,fipronil,microsomes,32.55124669,1,100
+0,fipronil,fipronil,microsomes,72.28565415,2,100
+0,fipronil,fipronil,microsomes,50.30200713,3,100
+15,fipronil,fipronil,microsomes,65.75118371,1,100
+15,fipronil,fipronil,microsomes,61.03836189,2,100
+15,fipronil,fipronil,microsomes,86.42270417,3,100
+30,fipronil,fipronil,microsomes,18.77293974,1,100
+30,fipronil,fipronil,microsomes,84.04356305,2,100
+30,fipronil,fipronil,microsomes,89.30314297,3,100
+60,fipronil,fipronil,microsomes,60.95565287,1,100
+60,fipronil,fipronil,microsomes,89.79580177,2,100
+60,fipronil,fipronil,microsomes,90.59062961,3,100
+90,fipronil,fipronil,microsomes,56.03613412,1,100
+90,fipronil,fipronil,microsomes,94.58659729,2,100
+90,fipronil,fipronil,microsomes,89.70085579,3,100
+0,fipronil,fipronil,microsomes,58.45901219,1,125
+0,fipronil,fipronil,microsomes,51.85481179,2,125
+0,fipronil,fipronil,microsomes,53.89065136,3,125
+15,fipronil,fipronil,microsomes,62.24891641,1,125
+15,fipronil,fipronil,microsomes,54.68420677,2,125
+15,fipronil,fipronil,microsomes,91.10795719,3,125
+30,fipronil,fipronil,microsomes,51.66702524,1,125
+30,fipronil,fipronil,microsomes,65.6950903,2,125
+30,fipronil,fipronil,microsomes,112.1237445,3,125
+60,fipronil,fipronil,microsomes,62.81350539,1,125
+60,fipronil,fipronil,microsomes,74.14828799,2,125
+60,fipronil,fipronil,microsomes,93.87631612,3,125
+90,fipronil,fipronil,microsomes,59.80299767,1,125
+90,fipronil,fipronil,microsomes,82.33654045,2,125
+90,fipronil,fipronil,microsomes,89.20514072,3,125
+0,fipronil,fipronil,microsomes,80.1226913,1,150
+0,fipronil,fipronil,microsomes,96.90138648,2,150
+0,fipronil,fipronil,microsomes,94.88883577,3,150
+15,fipronil,fipronil,microsomes,37.15191594,1,150
+15,fipronil,fipronil,microsomes,76.95257401,2,150
+15,fipronil,fipronil,microsomes,82.83018255,3,150
+30,fipronil,fipronil,microsomes,89.28298886,1,150
+30,fipronil,fipronil,microsomes,103.9076465,2,150
+30,fipronil,fipronil,microsomes,88.89209516,3,150
+60,fipronil,fipronil,microsomes,75.20034761,1,150
+60,fipronil,fipronil,microsomes,99.21349783,2,150
+60,fipronil,fipronil,microsomes,86.10641447,3,150
+90,fipronil,fipronil,microsomes,85.35534061,1,150
+90,fipronil,fipronil,microsomes,86.89358929,2,150
+90,fipronil,fipronil,microsomes,19.45762438,3,150
+0,fipronil,fipronil,microsomes,161.3373216,1,200
+0,fipronil,fipronil,microsomes,140.3753919,2,200
+0,fipronil,fipronil,microsomes,143.641415,3,200
+15,fipronil,fipronil,microsomes,143.5820327,1,200
+15,fipronil,fipronil,microsomes,117.0381728,2,200
+15,fipronil,fipronil,microsomes,105.3992543,3,200
+30,fipronil,fipronil,microsomes,120.601107,1,200
+30,fipronil,fipronil,microsomes,115.1379412,2,200
+30,fipronil,fipronil,microsomes,126.1830373,3,200
+60,fipronil,fipronil,microsomes,91.91948648,1,200
+60,fipronil,fipronil,microsomes,106.6462813,2,200
+60,fipronil,fipronil,microsomes,72.50149496,3,200
+90,fipronil,fipronil,microsomes,112.4063583,1,200
+90,fipronil,fipronil,microsomes,105.3992543,2,200
+90,fipronil,fipronil,microsomes,111.7531537,3,200
+0,fipronil,fipronil,microsomes,94.37993663,1,250
+0,fipronil,fipronil,microsomes,113.4786371,2,250
+0,fipronil,fipronil,microsomes,91.29136792,3,250
+15,fipronil,fipronil,microsomes,105.2844752,1,250
+15,fipronil,fipronil,microsomes,83.9166222,2,250
+15,fipronil,fipronil,microsomes,57.25407999,3,250
+30,fipronil,fipronil,microsomes,71.31021926,1,250
+30,fipronil,fipronil,microsomes,93.93871253,2,250
+30,fipronil,fipronil,microsomes,36.95777127,3,250
+60,fipronil,fipronil,microsomes,77.4873567,1,250
+60,fipronil,fipronil,microsomes,101.3134582,2,250
+60,fipronil,fipronil,microsomes,91.54349597,3,250
+90,fipronil,fipronil,microsomes,58.38865626,1,250
+90,fipronil,fipronil,microsomes,74.14665992,2,250
+90,fipronil,fipronil,microsomes,61.1620649,3,250
+0,triadimefon,tdla,microsomes,0.776869584,1,0.68
+0,triadimefon,tdla,microsomes,0.395237886,2,0.68
+0,triadimefon,tdla,microsomes,2.220388898,3,0.68
+15,triadimefon,tdla,microsomes,0.124349504,1,0.68
+15,triadimefon,tdla,microsomes,0.14627783,2,0.68
+15,triadimefon,tdla,microsomes,0.089752887,3,0.68
+30,triadimefon,tdla,microsomes,0.107638677,1,0.68
+30,triadimefon,tdla,microsomes,0.159434476,2,0.68
+30,triadimefon,tdla,microsomes,0.159787554,3,0.68
+60,triadimefon,tdla,microsomes,0.099828091,1,0.68
+60,triadimefon,tdla,microsomes,0.225228369,2,0.68
+60,triadimefon,tdla,microsomes,0.139329405,3,0.68
+90,triadimefon,tdla,microsomes,0.072482112,1,0.68
+90,triadimefon,tdla,microsomes,0.09994686,2,0.68
+90,triadimefon,tdla,microsomes,0.061506341,3,0.68
+0,triadimefon,tdla,microsomes,0.964686974,1,10
+0,triadimefon,tdla,microsomes,0.95171618,2,10
+0,triadimefon,tdla,microsomes,0.951349197,3,10
+15,triadimefon,tdla,microsomes,0.562008549,1,10
+15,triadimefon,tdla,microsomes,0.514503123,2,10
+15,triadimefon,tdla,microsomes,0.553400833,3,10
+30,triadimefon,tdla,microsomes,0.914781067,1,10
+30,triadimefon,tdla,microsomes,0.896944628,2,10
+30,triadimefon,tdla,microsomes,0.854682343,3,10
+60,triadimefon,tdla,microsomes,0.640465968,1,10
+60,triadimefon,tdla,microsomes,1.46510307,2,10
+60,triadimefon,tdla,microsomes,1.529173181,3,10
+90,triadimefon,tdla,microsomes,1.670981262,1,10
+90,triadimefon,tdla,microsomes,1.594325825,2,10
+90,triadimefon,tdla,microsomes,1.598291535,3,10
+0,triadimefon,tdla,microsomes,0.504235051,1,2.89
+0,triadimefon,tdla,microsomes,0.597387774,2,2.89
+0,triadimefon,tdla,microsomes,0.684729101,3,2.89
+15,triadimefon,tdla,microsomes,0.587769932,1,2.89
+15,triadimefon,tdla,microsomes,0.500911907,2,2.89
+15,triadimefon,tdla,microsomes,2.390614252,3,2.89
+30,triadimefon,tdla,microsomes,0.732569141,1,2.89
+30,triadimefon,tdla,microsomes,0.819349521,2,2.89
+30,triadimefon,tdla,microsomes,0.882196657,3,2.89
+60,triadimefon,tdla,microsomes,1.272480799,1,2.89
+60,triadimefon,tdla,microsomes,1.332879865,2,2.89
+60,triadimefon,tdla,microsomes,1.171215513,3,2.89
+90,triadimefon,tdla,microsomes,1.284978616,1,2.89
+90,triadimefon,tdla,microsomes,1.466507839,2,2.89
+0,triadimefon,tdla,microsomes,4.958654666,1,50
+0,triadimefon,tdla,microsomes,5.087523701,2,50
+0,triadimefon,tdla,microsomes,4.465832565,3,50
+15,triadimefon,tdla,microsomes,2.366202494,1,50
+15,triadimefon,tdla,microsomes,2.316676352,2,50
+15,triadimefon,tdla,microsomes,2.98040696,3,50
+30,triadimefon,tdla,microsomes,2.746818134,1,50
+30,triadimefon,tdla,microsomes,3.431666105,2,50
+30,triadimefon,tdla,microsomes,3.294563534,3,50
+60,triadimefon,tdla,microsomes,3.820882667,1,50
+60,triadimefon,tdla,microsomes,4.627112685,2,50
+60,triadimefon,tdla,microsomes,4.219456142,3,50
+90,triadimefon,tdla,microsomes,4.7035697,1,50
+90,triadimefon,tdla,microsomes,4.419483485,2,50
+90,triadimefon,tdla,microsomes,4.677842802,3,50
+0,triadimefon,tdla,microsomes,2.568919585,1,75
+0,triadimefon,tdla,microsomes,2.306987426,2,75
+0,triadimefon,tdla,microsomes,2.580318005,3,75
+15,triadimefon,tdla,microsomes,2.219185884,1,75
+15,triadimefon,tdla,microsomes,2.155328801,2,75
+15,triadimefon,tdla,microsomes,2.202708256,3,75
+30,triadimefon,tdla,microsomes,2.811019032,1,75
+30,triadimefon,tdla,microsomes,2.229132105,2,75
+30,triadimefon,tdla,microsomes,2.319209877,3,75
+60,triadimefon,tdla,microsomes,3.438186485,1,75
+60,triadimefon,tdla,microsomes,3.239731804,2,75
+60,triadimefon,tdla,microsomes,3.112249253,3,75
+90,triadimefon,tdla,microsomes,3.973569475,1,75
+90,triadimefon,tdla,microsomes,3.922150065,2,75
+90,triadimefon,tdla,microsomes,3.990347195,3,75
+0,triadimefon,tdla,microsomes,3.426769825,1,100
+0,triadimefon,tdla,microsomes,4.801627038,2,100
+0,triadimefon,tdla,microsomes,5.167321476,3,100
+15,triadimefon,tdla,microsomes,2.973173898,1,100
+15,triadimefon,tdla,microsomes,4.278761105,2,100
+15,triadimefon,tdla,microsomes,5.203600328,3,100
+30,triadimefon,tdla,microsomes,3.752087918,1,100
+30,triadimefon,tdla,microsomes,4.489689601,2,100
+30,triadimefon,tdla,microsomes,4.3820044,3,100
+60,triadimefon,tdla,microsomes,4.18858056,1,100
+60,triadimefon,tdla,microsomes,4.787062374,2,100
+60,triadimefon,tdla,microsomes,4.819935077,3,100
+90,triadimefon,tdla,microsomes,5.229225315,1,100
+90,triadimefon,tdla,microsomes,5.541134166,2,100
+90,triadimefon,tdla,microsomes,5.363637277,3,100
+0,triadimefon,tdla,microsomes,2.777271491,1,125
+0,triadimefon,tdla,microsomes,5.313869486,2,125
+0,triadimefon,tdla,microsomes,5.064521305,3,125
+15,triadimefon,tdla,microsomes,3.664975002,1,125
+15,triadimefon,tdla,microsomes,5.128116042,2,125
+15,triadimefon,tdla,microsomes,3.342678541,3,125
+30,triadimefon,tdla,microsomes,3.909877303,1,125
+30,triadimefon,tdla,microsomes,3.131834777,2,125
+30,triadimefon,tdla,microsomes,6.184369077,3,125
+60,triadimefon,tdla,microsomes,5.034115174,1,125
+60,triadimefon,tdla,microsomes,6.997125798,2,125
+60,triadimefon,tdla,microsomes,5.513028895,3,125
+90,triadimefon,tdla,microsomes,5.609126979,1,125
+90,triadimefon,tdla,microsomes,6.565737598,2,125
+90,triadimefon,tdla,microsomes,6.051117386,3,125
+0,triadimefon,tdla,microsomes,4.971974528,1,150
+0,triadimefon,tdla,microsomes,4.282559204,2,150
+0,triadimefon,tdla,microsomes,4.289935015,3,150
+15,triadimefon,tdla,microsomes,4.690841414,1,150
+15,triadimefon,tdla,microsomes,4.417155339,2,150
+15,triadimefon,tdla,microsomes,6.21277087,3,150
+30,triadimefon,tdla,microsomes,3.839544319,1,150
+30,triadimefon,tdla,microsomes,4.519625245,2,150
+30,triadimefon,tdla,microsomes,6.760429619,3,150
+60,triadimefon,tdla,microsomes,7.2240805,1,150
+60,triadimefon,tdla,microsomes,3.468203577,2,150
+60,triadimefon,tdla,microsomes,4.462789205,3,150
+90,triadimefon,tdla,microsomes,8.035064896,1,150
+90,triadimefon,tdla,microsomes,8.748204845,2,150
+90,triadimefon,tdla,microsomes,7.504701282,3,150
+0,triadimefon,tdla,microsomes,13.83186168,1,250
+0,triadimefon,tdla,microsomes,18.22611755,3,250
+15,triadimefon,tdla,microsomes,17.81066063,1,250
+15,triadimefon,tdla,microsomes,14.08273374,3,250
+30,triadimefon,tdla,microsomes,20.76679639,1,250
+30,triadimefon,tdla,microsomes,16.9957259,3,250
+60,triadimefon,tdla,microsomes,18.08230553,1,250
+60,triadimefon,tdla,microsomes,16.51635254,2,250
+60,triadimefon,tdla,microsomes,17.9065353,3,250
+90,triadimefon,tdla,microsomes,19.61630031,1,250
+90,triadimefon,tdla,microsomes,17.39520371,3,250
+0,triadimefon,tdlb,microsomes,0.285757105,1,0.68
+0,triadimefon,tdlb,microsomes,0.146483192,2,0.68
+0,triadimefon,tdlb,microsomes,0.792173926,3,0.68
+15,triadimefon,tdlb,microsomes,0.159849035,1,0.68
+15,triadimefon,tdlb,microsomes,0.171671782,2,0.68
+15,triadimefon,tdlb,microsomes,0.137258352,3,0.68
+30,triadimefon,tdlb,microsomes,0.135498718,1,0.68
+30,triadimefon,tdlb,microsomes,0.166579942,2,0.68
+30,triadimefon,tdlb,microsomes,0.160555121,3,0.68
+60,triadimefon,tdlb,microsomes,0.085155894,1,0.68
+60,triadimefon,tdlb,microsomes,0.137641779,2,0.68
+60,triadimefon,tdlb,microsomes,0.101223849,3,0.68
+90,triadimefon,tdlb,microsomes,0.041122976,1,0.68
+90,triadimefon,tdlb,microsomes,0.056120989,2,0.68
+90,triadimefon,tdlb,microsomes,0.040770384,3,0.68
+0,triadimefon,tdlb,microsomes,0.525255948,1,10
+0,triadimefon,tdlb,microsomes,0.525187009,2,10
+0,triadimefon,tdlb,microsomes,0.531029336,3,10
+15,triadimefon,tdlb,microsomes,0.540578005,1,10
+15,triadimefon,tdlb,microsomes,0.535327972,2,10
+15,triadimefon,tdlb,microsomes,0.549947891,3,10
+30,triadimefon,tdlb,microsomes,0.963906807,1,10
+30,triadimefon,tdlb,microsomes,0.939249694,2,10
+30,triadimefon,tdlb,microsomes,0.8832653,3,10
+60,triadimefon,tdlb,microsomes,0.462660817,1,10
+60,triadimefon,tdlb,microsomes,1.424227752,2,10
+60,triadimefon,tdlb,microsomes,1.466547242,3,10
+90,triadimefon,tdlb,microsomes,1.470094516,1,10
+90,triadimefon,tdlb,microsomes,1.424845158,2,10
+90,triadimefon,tdlb,microsomes,1.471282702,3,10
+0,triadimefon,tdlb,microsomes,0.200115219,1,2.89
+0,triadimefon,tdlb,microsomes,0.242152252,2,2.89
+0,triadimefon,tdlb,microsomes,0.309582528,3,2.89
+15,triadimefon,tdlb,microsomes,0.502687773,1,2.89
+15,triadimefon,tdlb,microsomes,0.443748362,2,2.89
+15,triadimefon,tdlb,microsomes,1.739413295,3,2.89
+30,triadimefon,tdlb,microsomes,0.631006803,1,2.89
+30,triadimefon,tdlb,microsomes,0.676925019,2,2.89
+30,triadimefon,tdlb,microsomes,0.712219102,3,2.89
+60,triadimefon,tdlb,microsomes,0.887492395,1,2.89
+60,triadimefon,tdlb,microsomes,0.922424215,2,2.89
+60,triadimefon,tdlb,microsomes,0.774293903,3,2.89
+90,triadimefon,tdlb,microsomes,0.733501521,1,2.89
+90,triadimefon,tdlb,microsomes,0.837366651,2,2.89
+90,triadimefon,tdlb,microsomes,0.76078022,3,2.89
+0,triadimefon,tdlb,microsomes,3.951483646,1,50
+0,triadimefon,tdlb,microsomes,3.997004582,2,50
+0,triadimefon,tdlb,microsomes,3.271884585,3,50
+15,triadimefon,tdlb,microsomes,2.598887073,1,50
+15,triadimefon,tdlb,microsomes,2.355603277,2,50
+15,triadimefon,tdlb,microsomes,3.141649164,3,50
+30,triadimefon,tdlb,microsomes,3.674320887,1,50
+30,triadimefon,tdlb,microsomes,4.289723095,2,50
+30,triadimefon,tdlb,microsomes,4.280136564,3,50
+60,triadimefon,tdlb,microsomes,6.243599629,1,50
+60,triadimefon,tdlb,microsomes,6.734010485,2,50
+60,triadimefon,tdlb,microsomes,6.361017452,3,50
+90,triadimefon,tdlb,microsomes,7.195467955,1,50
+90,triadimefon,tdlb,microsomes,6.834134189,2,50
+90,triadimefon,tdlb,microsomes,6.9532999,3,50
+0,triadimefon,tdlb,microsomes,1.941666948,1,75
+0,triadimefon,tdlb,microsomes,1.681717791,2,75
+0,triadimefon,tdlb,microsomes,1.73936846,3,75
+15,triadimefon,tdlb,microsomes,2.526757358,1,75
+15,triadimefon,tdlb,microsomes,2.313637237,2,75
+15,triadimefon,tdlb,microsomes,2.49086012,3,75
+30,triadimefon,tdlb,microsomes,3.789628052,1,75
+30,triadimefon,tdlb,microsomes,3.174642429,2,75
+30,triadimefon,tdlb,microsomes,3.191438558,3,75
+60,triadimefon,tdlb,microsomes,5.432233942,1,75
+60,triadimefon,tdlb,microsomes,4.969157891,2,75
+60,triadimefon,tdlb,microsomes,5.064503301,3,75
+90,triadimefon,tdlb,microsomes,6.712664257,1,75
+90,triadimefon,tdlb,microsomes,6.597464296,2,75
+90,triadimefon,tdlb,microsomes,6.484914,3,75
+0,triadimefon,tdlb,microsomes,2.204827173,1,100
+0,triadimefon,tdlb,microsomes,3.695255037,2,100
+0,triadimefon,tdlb,microsomes,4.217693628,3,100
+15,triadimefon,tdlb,microsomes,2.987986855,1,100
+15,triadimefon,tdlb,microsomes,4.62322369,2,100
+15,triadimefon,tdlb,microsomes,5.738654903,3,100
+30,triadimefon,tdlb,microsomes,5.010985215,1,100
+30,triadimefon,tdlb,microsomes,6.920302664,2,100
+30,triadimefon,tdlb,microsomes,6.308852644,3,100
+60,triadimefon,tdlb,microsomes,8.11715413,1,100
+60,triadimefon,tdlb,microsomes,8.804687457,2,100
+60,triadimefon,tdlb,microsomes,8.950282552,3,100
+90,triadimefon,tdlb,microsomes,10.81651263,1,100
+90,triadimefon,tdlb,microsomes,11.45788264,2,100
+90,triadimefon,tdlb,microsomes,11.01782631,3,100
+0,triadimefon,tdlb,microsomes,2.580796931,1,125
+0,triadimefon,tdlb,microsomes,4.589962599,2,125
+0,triadimefon,tdlb,microsomes,4.339108289,3,125
+15,triadimefon,tdlb,microsomes,4.759629498,1,125
+15,triadimefon,tdlb,microsomes,6.081131385,2,125
+15,triadimefon,tdlb,microsomes,4.761075887,3,125
+30,triadimefon,tdlb,microsomes,6.970865526,1,125
+30,triadimefon,tdlb,microsomes,5.864292522,2,125
+30,triadimefon,tdlb,microsomes,8.990170569,3,125
+60,triadimefon,tdlb,microsomes,10.29254833,1,125
+60,triadimefon,tdlb,microsomes,11.89986315,2,125
+60,triadimefon,tdlb,microsomes,10.55439287,3,125
+90,triadimefon,tdlb,microsomes,12.66145718,1,125
+90,triadimefon,tdlb,microsomes,13.84087365,2,125
+90,triadimefon,tdlb,microsomes,12.77355717,3,125
+0,triadimefon,tdlb,microsomes,4.642200138,1,150
+0,triadimefon,tdlb,microsomes,4.107381982,2,150
+0,triadimefon,tdlb,microsomes,3.642209544,3,150
+15,triadimefon,tdlb,microsomes,6.090475637,1,150
+15,triadimefon,tdlb,microsomes,5.80525893,2,150
+15,triadimefon,tdlb,microsomes,8.98551562,3,150
+30,triadimefon,tdlb,microsomes,6.941039356,1,150
+30,triadimefon,tdlb,microsomes,7.206821805,2,150
+30,triadimefon,tdlb,microsomes,10.94796175,3,150
+60,triadimefon,tdlb,microsomes,13.80091931,1,150
+60,triadimefon,tdlb,microsomes,7.457397291,2,150
+60,triadimefon,tdlb,microsomes,9.668427529,3,150
+90,triadimefon,tdlb,microsomes,16.81467648,1,150
+90,triadimefon,tdlb,microsomes,18.96446187,2,150
+90,triadimefon,tdlb,microsomes,16.539466,3,150
+0,triadimefon,tdlb,microsomes,19.16500098,1,250
+0,triadimefon,tdlb,microsomes,25.91267967,3,250
+15,triadimefon,tdlb,microsomes,22.19280552,1,250
+15,triadimefon,tdlb,microsomes,17.62020275,3,250
+30,triadimefon,tdlb,microsomes,24.15778887,1,250
+30,triadimefon,tdlb,microsomes,20.49970666,3,250
+60,triadimefon,tdlb,microsomes,25.33183553,1,250
+60,triadimefon,tdlb,microsomes,23.63873667,2,250
+60,triadimefon,tdlb,microsomes,25.85088774,3,250
+90,triadimefon,tdlb,microsomes,28.34728168,1,250
+90,triadimefon,tdlb,microsomes,25.77673742,3,250
+0,triadimefon,triadimefon,microsomes,0.491983075,1,0.68082
+0,triadimefon,triadimefon,microsomes,0.401196591,2,0.68082
+0,triadimefon,triadimefon,microsomes,0.426789449,3,0.68082
+15,triadimefon,triadimefon,microsomes,0.399443695,1,0.68082
+15,triadimefon,triadimefon,microsomes,0.42224169,2,0.68082
+15,triadimefon,triadimefon,microsomes,0.36799564,3,0.68082
+30,triadimefon,triadimefon,microsomes,0.335043095,1,0.68082
+30,triadimefon,triadimefon,microsomes,0.307545884,2,0.68082
+30,triadimefon,triadimefon,microsomes,0.33049829,3,0.68082
+60,triadimefon,triadimefon,microsomes,0.298781298,1,0.68082
+60,triadimefon,triadimefon,microsomes,0.300851183,2,0.68082
+60,triadimefon,triadimefon,microsomes,0.297372843,3,0.68082
+90,triadimefon,triadimefon,microsomes,0.30988245,1,0.68082
+90,triadimefon,triadimefon,microsomes,0.29724505,2,0.68082
+90,triadimefon,triadimefon,microsomes,0.293730776,3,0.68082
+0,triadimefon,triadimefon,microsomes,1.66496797,1,10
+0,triadimefon,triadimefon,microsomes,1.809450976,2,10
+0,triadimefon,triadimefon,microsomes,2.047584443,3,10
+15,triadimefon,triadimefon,microsomes,3.796829723,1,10
+15,triadimefon,triadimefon,microsomes,3.995422538,2,10
+15,triadimefon,triadimefon,microsomes,4.084402023,3,10
+30,triadimefon,triadimefon,microsomes,3.689670522,1,10
+30,triadimefon,triadimefon,microsomes,3.770627455,2,10
+30,triadimefon,triadimefon,microsomes,3.708045842,3,10
+60,triadimefon,triadimefon,microsomes,2.923805377,2,10
+60,triadimefon,triadimefon,microsomes,2.81999575,3,10
+90,triadimefon,triadimefon,microsomes,1.627429272,1,10
+90,triadimefon,triadimefon,microsomes,1.556106647,2,10
+90,triadimefon,triadimefon,microsomes,1.615639352,3,10
+0,triadimefon,triadimefon,microsomes,0.953124823,1,2.89
+0,triadimefon,triadimefon,microsomes,0.851227037,2,2.89
+0,triadimefon,triadimefon,microsomes,0.735830293,3,2.89
+15,triadimefon,triadimefon,microsomes,1.438977536,1,2.89
+15,triadimefon,triadimefon,microsomes,1.147878572,2,2.89
+15,triadimefon,triadimefon,microsomes,1.273836719,3,2.89
+30,triadimefon,triadimefon,microsomes,1.170628317,1,2.89
+30,triadimefon,triadimefon,microsomes,1.153347335,2,2.89
+30,triadimefon,triadimefon,microsomes,0.90609785,3,2.89
+60,triadimefon,triadimefon,microsomes,0.796555881,1,2.89
+60,triadimefon,triadimefon,microsomes,0.724314066,2,2.89
+60,triadimefon,triadimefon,microsomes,0.705525399,3,2.89
+90,triadimefon,triadimefon,microsomes,0.684015583,1,2.89
+90,triadimefon,triadimefon,microsomes,0.645877009,2,2.89
+90,triadimefon,triadimefon,microsomes,0.633912406,3,2.89
+0,triadimefon,triadimefon,microsomes,24.40802225,1,50
+0,triadimefon,triadimefon,microsomes,24.82657815,2,50
+0,triadimefon,triadimefon,microsomes,23.72724558,3,50
+15,triadimefon,triadimefon,microsomes,25.6223204,1,50
+15,triadimefon,triadimefon,microsomes,24.15898057,2,50
+15,triadimefon,triadimefon,microsomes,24.97516518,3,50
+30,triadimefon,triadimefon,microsomes,26.62994332,2,50
+30,triadimefon,triadimefon,microsomes,26.25228145,3,50
+60,triadimefon,triadimefon,microsomes,25.95782864,2,50
+60,triadimefon,triadimefon,microsomes,28.59868326,3,50
+90,triadimefon,triadimefon,microsomes,22.32352998,1,50
+90,triadimefon,triadimefon,microsomes,22.61126729,2,50
+90,triadimefon,triadimefon,microsomes,22.93204565,3,50
+0,triadimefon,triadimefon,microsomes,40.78378417,1,75
+0,triadimefon,triadimefon,microsomes,39.14533446,2,75
+0,triadimefon,triadimefon,microsomes,37.19980911,3,75
+15,triadimefon,triadimefon,microsomes,39.60290919,1,75
+15,triadimefon,triadimefon,microsomes,36.37647057,2,75
+15,triadimefon,triadimefon,microsomes,38.41537648,3,75
+30,triadimefon,triadimefon,microsomes,41.36228948,1,75
+30,triadimefon,triadimefon,microsomes,39.60347726,2,75
+30,triadimefon,triadimefon,microsomes,37.05197615,3,75
+60,triadimefon,triadimefon,microsomes,38.79077057,1,75
+60,triadimefon,triadimefon,microsomes,39.14694989,2,75
+60,triadimefon,triadimefon,microsomes,38.88285882,3,75
+90,triadimefon,triadimefon,microsomes,38.84162326,1,75
+90,triadimefon,triadimefon,microsomes,38.38496898,2,75
+90,triadimefon,triadimefon,microsomes,38.08875118,3,75
+0,triadimefon,triadimefon,microsomes,48.8233658,1,100
+0,triadimefon,triadimefon,microsomes,45.64682255,2,100
+0,triadimefon,triadimefon,microsomes,49.68642703,3,100
+15,triadimefon,triadimefon,microsomes,49.24893567,1,100
+15,triadimefon,triadimefon,microsomes,52.23999837,2,100
+15,triadimefon,triadimefon,microsomes,54.94800062,3,100
+30,triadimefon,triadimefon,microsomes,51.63283427,1,100
+30,triadimefon,triadimefon,microsomes,55.62979138,2,100
+30,triadimefon,triadimefon,microsomes,53.25296347,3,100
+60,triadimefon,triadimefon,microsomes,57.2285182,1,100
+60,triadimefon,triadimefon,microsomes,52.25557462,2,100
+60,triadimefon,triadimefon,microsomes,57.56142454,3,100
+90,triadimefon,triadimefon,microsomes,55.15134637,1,100
+90,triadimefon,triadimefon,microsomes,52.80788424,2,100
+90,triadimefon,triadimefon,microsomes,54.77096052,3,100
+0,triadimefon,triadimefon,microsomes,61.59837616,1,125
+0,triadimefon,triadimefon,microsomes,58.92902388,2,125
+0,triadimefon,triadimefon,microsomes,62.18995319,3,125
+15,triadimefon,triadimefon,microsomes,54.97761564,1,125
+15,triadimefon,triadimefon,microsomes,64.19295623,2,125
+15,triadimefon,triadimefon,microsomes,61.97688614,3,125
+30,triadimefon,triadimefon,microsomes,68.89112849,1,125
+30,triadimefon,triadimefon,microsomes,56.33566744,2,125
+30,triadimefon,triadimefon,microsomes,71.31751913,3,125
+60,triadimefon,triadimefon,microsomes,66.04862513,1,125
+60,triadimefon,triadimefon,microsomes,69.71262134,3,125
+90,triadimefon,triadimefon,microsomes,57.48171016,1,125
+90,triadimefon,triadimefon,microsomes,60.79276739,2,125
+90,triadimefon,triadimefon,microsomes,57.42314849,3,125
+0,triadimefon,triadimefon,microsomes,65.77539856,2,150
+0,triadimefon,triadimefon,microsomes,67.99385172,3,150
+15,triadimefon,triadimefon,microsomes,78.63355587,1,150
+15,triadimefon,triadimefon,microsomes,62.93987056,2,150
+15,triadimefon,triadimefon,microsomes,106.7018113,3,150
+30,triadimefon,triadimefon,microsomes,73.37624336,1,150
+30,triadimefon,triadimefon,microsomes,66.9635187,2,150
+30,triadimefon,triadimefon,microsomes,95.5133834,3,150
+60,triadimefon,triadimefon,microsomes,69.7678651,1,150
+60,triadimefon,triadimefon,microsomes,58.53815945,2,150
+60,triadimefon,triadimefon,microsomes,61.06336245,3,150
+90,triadimefon,triadimefon,microsomes,82.43537943,1,150
+90,triadimefon,triadimefon,microsomes,75.76324133,2,150
+90,triadimefon,triadimefon,microsomes,73.77914496,3,150
+0,triadimefon,triadimefon,microsomes,293.4352803,1,200
+0,triadimefon,triadimefon,microsomes,357.1944002,2,200
+0,triadimefon,triadimefon,microsomes,335.0321393,3,200
+15,triadimefon,triadimefon,microsomes,338.7826757,1,200
+15,triadimefon,triadimefon,microsomes,357.9520843,2,200
+15,triadimefon,triadimefon,microsomes,202.0964578,3,200
+30,triadimefon,triadimefon,microsomes,422.3552358,1,200
+30,triadimefon,triadimefon,microsomes,340.5253492,2,200
+30,triadimefon,triadimefon,microsomes,345.8291382,3,200
+60,triadimefon,triadimefon,microsomes,359.4674526,1,200
+60,triadimefon,triadimefon,microsomes,377.2730298,2,200
+60,triadimefon,triadimefon,microsomes,186.1093226,3,200
+90,triadimefon,triadimefon,microsomes,471.6047045,1,200
+90,triadimefon,triadimefon,microsomes,376.1365036,2,200
+90,triadimefon,triadimefon,microsomes,190.6933116,3,200
+0,triadimefon,triadimefon,microsomes,222.4579985,1,250
+0,triadimefon,triadimefon,microsomes,180.8725406,2,250
+15,triadimefon,triadimefon,microsomes,186.8824662,1,250
+15,triadimefon,triadimefon,microsomes,208.9457498,2,250
+15,triadimefon,triadimefon,microsomes,167.0779465,3,250
+30,triadimefon,triadimefon,microsomes,229.5166359,1,250
+30,triadimefon,triadimefon,microsomes,99.11335239,2,250
+30,triadimefon,triadimefon,microsomes,263.0350796,3,250
+60,triadimefon,triadimefon,microsomes,59.52448054,1,250
+60,triadimefon,triadimefon,microsomes,46.29054385,2,250
+60,triadimefon,triadimefon,microsomes,51.98182232,3,250
+90,triadimefon,triadimefon,microsomes,162.0360626,1,250
+90,triadimefon,triadimefon,microsomes,200.5560551,2,250
+90,triadimefon,triadimefon,microsomes,187.8908429,3,250
