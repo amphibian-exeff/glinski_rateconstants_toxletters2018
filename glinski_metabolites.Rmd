@@ -28,6 +28,7 @@ print(Sys.info()[4])
 #install.packages(xtable)
 #install.packages(drc) # for fitting Michaelis Menten model
 #install.packages(ggplot2) # for drawing
+#install.packages(scatterplot3d) # for drawing
 #library(grofit)
 
 R.Version()$version.string
@@ -38,6 +39,7 @@ library(zoo, quietly = TRUE, warn.conflicts = FALSE)
 library(xtable, quietly = TRUE, warn.conflicts = FALSE)
 library(drc, quietly = TRUE, warn.conflicts = FALSE) # for fitting Michaelis Menten model
 library(ggplot2, quietly = TRUE, warn.conflicts = FALSE) # for drawing
+library(scatterplot3d)
 #library(grofit)
 print("list of loaded packages: ")
 print((.packages()))
@@ -84,7 +86,6 @@ str(micro)
 
 Set time and replicate fields as factors for later statistical inference.
 ```{r eval=TRUE, echo=FALSE}
-micro$time <- factor(micro$time)
 micro$replicate <- factor(micro$replicate)
 parents <- unique(micro$parent)
 analytes <- unique(micro$analyte)
@@ -108,7 +109,6 @@ str(microsome)
 
 Set time and replicate fields as factors for later statistical inference.
 ```{r eval=TRUE, echo=FALSE}
-microsome$time <- factor(microsome$time)
 microsome$replicate <- factor(microsome$replicate)
 omeparents <- unique(microsome$parent)
 omeanalytes <- unique(microsome$analyte)
@@ -117,13 +117,42 @@ microsome
 omeparents
 omeanalytes
 
+#estimate the rate
+
 str(microsome)
-microsome.atrazine <- microsome[which(microsome$analyte=="atrazine"),]
+
 ```
 
 analyze microsomal data
 =================================
-This data is observed from 0-90 minutes and has 3-4 replicates for each different micromolar concentration in a traditional Michaelis-Menton setup. Used to estimate slopes.
+The microsomal experiment has 3-4 replicates for each pesticide. The experiment progressively increases the concentration of the substrate (microMexp) and measures the enzyme velocity. At each substrate concentration the reaction is quenched after a specific period of time (0, 15, 30, 60, 90 minutes). This time series data is used to estimate a slope associated with each substrate concentration. Substrate concentration and linear velocity slopes are then fit using Michaelis-Menten kinetics to estimate reaction rates for each pesticide.
+
+```{r eval=TRUE, echo=FALSE}
+microsome.atrazine <- microsome[which(microsome$parent=="atrazine"),]
+microsome.atrazine.atrazine <- microsome.atrazine[which(microsome.atrazine$analyte=="atrazine"),]
+microsome.atrazine.dia <- microsome.atrazine[which(microsome.atrazine$analyte=="dia"),]
+microsome.atrazine.dea <- microsome.atrazine[which(microsome.atrazine$analyte=="dea"),]
+microsome.time <- microsome.atrazine.atrazine$time
+
+microsome.atrazine.atrazine$microMexp
+Substrate <- microsome.atrazine.atrazine$microMexp
+Time <- microsome.atrazine.atrazine$time
+Observed <- microsome.atrazine.atrazine$conc
+scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+              col.axis = "blue")
+```
+
+Therefore, we need to condition the pesticide data on the substrate concentrations used in the experiment to estimate the linear slopes.
+
+```{r eval=TRUE, echo=FALSE}
+
+```
+
+We are interested in the reaction rate, v, which is a function of available substrate (pesticide) and the presence of an enzyme. We get Vmax from the asymptote and K = 0.5*Vmax. Biochemical reactions with a single substrate are typically assumed to follow Michaelis-Menten kinetics even if they deviate from the basic model assumptions.
+
+We are fitting the 2-parameter model. 
+
+Used to estimate slopes.
 ```{r eval=TRUE, echo=FALSE}
 MM.2(c(microsome.atrazine$time, microsome$conc))
 ```
