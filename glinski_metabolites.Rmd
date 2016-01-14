@@ -59,7 +59,7 @@ if(Sys.info()[4]=="stp-air-3.local" || Sys.info()[4]=="stp-air.local" || Sys.inf
 }
 
 if(Sys.info()[4]=="DZ2626UTPURUCKE"){
-  micro.root <- path.expand("k:\\git\\glinski_metabolites\\")
+  micro.root <- "k:/git/glinski_metabolites/"
 }
 print(paste("Root directory location: ", micro.root, sep=""))
 
@@ -68,7 +68,8 @@ micro.csv.out <- paste(micro.root, "csv_out/", sep="")
 micro.graphics <- paste(micro.root, "graphics/", sep="")
 micro.tables <- paste(micro.root, "tables/", sep="")
 
-print(paste("check to see if R can access files OK: ", file.exists(micro.root), sep = ""))
+#maybe ok even if remote drive returns false
+print(paste("check to see if R can access files OK: ", file.exists(micro.csv.in), sep = ""))
 
 #import data
 micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header = TRUE, sep = ",")
@@ -86,7 +87,7 @@ str(micro)
 Set time and tank fields as factor for later statistical inference.
 ```{r eval=TRUE, echo=FALSE}
 micro$time <- factor(micro$time)
-micro$tank <- factor(micro$tank)
+micro$replicate <- factor(micro$replicate)
 parents <- unique(micro$parent)
 analytes <- unique(micro$analyte)
 

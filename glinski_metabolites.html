@@ -82,9 +82,9 @@ img {
 <div id="general-configuration" class="section level1">
 <h1>general configuration</h1>
 <p>Install and load supporting libraries.</p>
-<pre><code>##        nodename 
-## &quot;stp-air.local&quot;</code></pre>
-<pre><code>## [1] &quot;R version 3.2.2 (2015-08-14)&quot;</code></pre>
+<pre><code>##          nodename 
+## &quot;DZ2626UTPURUCKE&quot;</code></pre>
+<pre><code>## [1] &quot;R version 3.2.3 (2015-12-10)&quot;</code></pre>
 <pre><code>## 
 ## Attaching package: 'MASS'
 ## 
@@ -105,383 +105,383 @@ img {
 <div id="import-experimental-exposure-data" class="section level1">
 <h1>import experimental exposure data</h1>
 <p>Load csv file with experimental data.</p>
-<pre><code>## [1] &quot;Root directory location: /Users/puruckertom/git/glinski_metabolites/&quot;</code></pre>
-<pre><code>## [1] &quot;check to see if R can access files OK: TRUE&quot;</code></pre>
+<pre><code>## [1] &quot;Root directory location: k:/git/glinski_metabolites/&quot;</code></pre>
+<pre><code>## [1] &quot;check to see if R can access files OK: FALSE&quot;</code></pre>
 </div>
 <div id="data-structure" class="section level1">
 <h1>data structure</h1>
 <p>Check out structure of imported data set.</p>
 <pre class="r"><code>str(micro)</code></pre>
 <pre><code>## 'data.frame':    352 obs. of  6 variables:
-##  $ time   : int  2 2 2 2 4 4 4 4 12 12 ...
-##  $ parent : Factor w/ 3 levels &quot;atrazine&quot;,&quot;fipronil&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ analyte: Factor w/ 8 levels &quot;atrazine&quot;,&quot;dea&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ matrix : Factor w/ 2 levels &quot;amphib&quot;,&quot;soil&quot;: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ conc   : num  3.07 3.69 4.7 1.89 7.62 ...
-##  $ tank   : int  1 2 3 4 1 2 3 4 1 2 ...</code></pre>
+##  $ time     : int  2 2 2 2 4 4 4 4 12 12 ...
+##  $ parent   : Factor w/ 3 levels &quot;atrazine&quot;,&quot;fipronil&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ analyte  : Factor w/ 8 levels &quot;atrazine&quot;,&quot;dea&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ matrix   : Factor w/ 2 levels &quot;amphib&quot;,&quot;soil&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ conc     : num  3.07 3.69 4.7 1.89 7.62 ...
+##  $ replicate: int  1 2 3 4 1 2 3 4 1 2 ...</code></pre>
 <p>Set time and tank fields as factor for later statistical inference.</p>
-<pre><code>##     time      parent     analyte matrix         conc tank
-## 1      2    atrazine    atrazine amphib  3.068202720    1
-## 2      2    atrazine    atrazine amphib  3.689639699    2
-## 3      2    atrazine    atrazine amphib  4.701165885    3
-## 4      2    atrazine    atrazine amphib  1.892494228    4
-## 5      4    atrazine    atrazine amphib  7.624610214    1
-## 6      4    atrazine    atrazine amphib  4.134300250    2
-## 7      4    atrazine    atrazine amphib  2.050778713    3
-## 8      4    atrazine    atrazine amphib  7.626486309    4
-## 9     12    atrazine    atrazine amphib  2.452277711    1
-## 10    12    atrazine    atrazine amphib  3.786892753    2
-## 11    12    atrazine    atrazine amphib  4.514882392    3
-## 12    12    atrazine    atrazine amphib  1.741192334    4
-## 13    24    atrazine    atrazine amphib  2.272491609    1
-## 14    24    atrazine    atrazine amphib  1.843394997    2
-## 15    24    atrazine    atrazine amphib  1.124962070    3
-## 16    24    atrazine    atrazine amphib  0.978827141    4
-## 17    48    atrazine    atrazine amphib  0.961393825    1
-## 18    48    atrazine    atrazine amphib  0.631015591    2
-## 19    48    atrazine    atrazine amphib  0.930699420    3
-## 20    48    atrazine    atrazine amphib  1.484441109    4
-## 21     0    atrazine    atrazine   soil 19.700570600    1
-## 22     0    atrazine    atrazine   soil 13.843923390    2
-## 23     0    atrazine    atrazine   soil 14.806770820    3
-## 24     0    atrazine    atrazine   soil 15.372413960    4
-## 25     2    atrazine    atrazine   soil 17.793906810    1
-## 26     2    atrazine    atrazine   soil 13.702886520    2
-## 27     2    atrazine    atrazine   soil 23.958688150    3
-## 28     2    atrazine    atrazine   soil 20.660656170    4
-## 29     4    atrazine    atrazine   soil 19.532784590    1
-## 30     4    atrazine    atrazine   soil 22.258534700    2
-## 31     4    atrazine    atrazine   soil 16.704344630    3
-## 32     4    atrazine    atrazine   soil 16.584700400    4
-## 33    12    atrazine    atrazine   soil 17.407168350    1
-## 34    12    atrazine    atrazine   soil 26.235338160    2
-## 35    12    atrazine    atrazine   soil 18.840020800    3
-## 36    12    atrazine    atrazine   soil 19.974234140    4
-## 37    24    atrazine    atrazine   soil 20.551463100    1
-## 38    24    atrazine    atrazine   soil 28.937376380    2
-## 39    24    atrazine    atrazine   soil 28.706461340    3
-## 40    24    atrazine    atrazine   soil 21.789481310    4
-## 41    48    atrazine    atrazine   soil 26.568768970    1
-## 42    48    atrazine    atrazine   soil 22.364708440    2
-## 43    48    atrazine    atrazine   soil 24.331649030    3
-## 44    48    atrazine    atrazine   soil 32.473853160    4
-## 45     2    atrazine         dia amphib  0.244389746    1
-## 46     2    atrazine         dia amphib  0.272879769    2
-## 47     2    atrazine         dia amphib  0.514589655    3
-## 48     2    atrazine         dia amphib  0.283268223    4
-## 49     4    atrazine         dia amphib  1.982229434    1
-## 50     4    atrazine         dia amphib  0.706019584    2
-## 51     4    atrazine         dia amphib  0.169062053    3
-## 52     4    atrazine         dia amphib  0.910401654    4
-## 53    12    atrazine         dia amphib  1.307780816    1
-## 54    12    atrazine         dia amphib  1.686285381    2
-## 55    12    atrazine         dia amphib  0.593288516    3
-## 56    12    atrazine         dia amphib  0.746683696    4
-## 57    24    atrazine         dia amphib  3.606532664    1
-## 58    24    atrazine         dia amphib  2.500486811    2
-## 59    24    atrazine         dia amphib  1.317924499    3
-## 60    24    atrazine         dia amphib  0.528494822    4
-## 61    48    atrazine         dia amphib  0.397349802    1
-## 62    48    atrazine         dia amphib  0.044315560    2
-## 63    48    atrazine         dia amphib  1.071270148    3
-## 64    48    atrazine         dia amphib  1.136617318    4
-## 65     0    atrazine         dia   soil  0.000000000    1
-## 66     0    atrazine         dia   soil  0.000000000    2
-## 67     0    atrazine         dia   soil  0.000000000    3
-## 68     0    atrazine         dia   soil  0.000000000    4
-## 69     2    atrazine         dia   soil -0.011723298    1
-## 70     2    atrazine         dia   soil  0.003224536    2
-## 71     2    atrazine         dia   soil -0.009974494    3
-## 72     2    atrazine         dia   soil -0.012435889    4
-## 73     4    atrazine         dia   soil  0.046538524    1
-## 74     4    atrazine         dia   soil  0.010483432    2
-## 75     4    atrazine         dia   soil  0.000000000    3
-## 76     4    atrazine         dia   soil  0.025132442    4
-## 77    12    atrazine         dia   soil  0.011765248    1
-## 78    12    atrazine         dia   soil  0.168468591    2
-## 79    12    atrazine         dia   soil  0.043744516    3
-## 80    12    atrazine         dia   soil  0.084169328    4
-## 81    24    atrazine         dia   soil  0.050701196    1
-## 82    24    atrazine         dia   soil  0.000000000    2
-## 83    24    atrazine         dia   soil  0.051286893    3
-## 84    24    atrazine         dia   soil  0.069915129    4
-## 85    48    atrazine         dia   soil  0.125882428    1
-## 86    48    atrazine         dia   soil  0.024368532    2
-## 87    48    atrazine         dia   soil  0.004821991    3
-## 88    48    atrazine         dia   soil  0.099700217    4
-## 89     2    atrazine         dea amphib  0.009437480    1
-## 90     2    atrazine         dea amphib  0.012003438    2
-## 91     2    atrazine         dea amphib  0.021445946    3
-## 92     2    atrazine         dea amphib  0.012708201    4
-## 93     4    atrazine         dea amphib  0.076295567    1
-## 94     4    atrazine         dea amphib  0.041485918    2
-## 95     4    atrazine         dea amphib  0.007758374    3
-## 96     4    atrazine         dea amphib  0.051928588    4
-## 97    12    atrazine         dea amphib  0.055173181    1
-## 98    12    atrazine         dea amphib  0.070717539    2
-## 99    12    atrazine         dea amphib  0.039906640    3
-## 100   12    atrazine         dea amphib  0.050289903    4
-## 101   24    atrazine         dea amphib  0.046811263    1
-## 102   24    atrazine         dea amphib  0.048255391    2
-## 103   24    atrazine         dea amphib  0.029340308    3
-## 104   24    atrazine         dea amphib  0.021691946    4
-## 105   48    atrazine         dea amphib  0.008370958    1
-## 106   48    atrazine         dea amphib  0.002795645    2
-## 107   48    atrazine         dea amphib  0.020051727    3
-## 108   48    atrazine         dea amphib  0.046841701    4
-## 109    0    atrazine         dea   soil  0.000000000    1
-## 110    0    atrazine         dea   soil  0.000000000    2
-## 111    0    atrazine         dea   soil  0.000000000    3
-## 112    0    atrazine         dea   soil  0.000000000    4
-## 113    2    atrazine         dea   soil  0.001317307    1
-## 114    2    atrazine         dea   soil  0.000999847    2
-## 115    2    atrazine         dea   soil  0.002468708    3
-## 116    2    atrazine         dea   soil  0.001495855    4
-## 117    4    atrazine         dea   soil  0.005037970    1
-## 118    4    atrazine         dea   soil  0.003331162    2
-## 119    4    atrazine         dea   soil  0.001723567    3
-## 120    4    atrazine         dea   soil  0.001904164    4
-## 121   12    atrazine         dea   soil  0.002454305    1
-## 122   12    atrazine         dea   soil  0.011558467    2
-## 123   12    atrazine         dea   soil  0.005136987    3
-## 124   12    atrazine         dea   soil  0.002726303    4
-## 125   24    atrazine         dea   soil  0.005887520    1
-## 126   24    atrazine         dea   soil  0.005828620    2
-## 127   24    atrazine         dea   soil  0.009318840    3
-## 128   24    atrazine         dea   soil  0.008198778    4
-## 129   48    atrazine         dea   soil  0.008965608    1
-## 130   48    atrazine         dea   soil  0.007806889    2
-## 131   48    atrazine         dea   soil  0.004634089    3
-## 132   48    atrazine         dea   soil  0.013731943    4
-## 133    2 triadimenon triadimenon amphib  0.489601403    1
-## 134    2 triadimenon triadimenon amphib  0.306581872    2
-## 135    2 triadimenon triadimenon amphib  0.376458575    3
-## 136    2 triadimenon triadimenon amphib  0.374511404    4
-## 137    4 triadimenon triadimenon amphib  0.978048430    1
-## 138    4 triadimenon triadimenon amphib  0.335365342    2
-## 139    4 triadimenon triadimenon amphib  0.347101261    3
-## 140    4 triadimenon triadimenon amphib  0.533983287    4
-## 141   12 triadimenon triadimenon amphib  0.487313921    1
-## 142   12 triadimenon triadimenon amphib  1.163882256    2
-## 143   12 triadimenon triadimenon amphib  0.518446024    3
-## 144   12 triadimenon triadimenon amphib  0.850015349    4
-## 145   24 triadimenon triadimenon amphib  0.753354385    1
-## 146   24 triadimenon triadimenon amphib  0.268774096    2
-## 147   24 triadimenon triadimenon amphib  0.324932505    3
-## 148   24 triadimenon triadimenon amphib  2.114540569    4
-## 149   48 triadimenon triadimenon amphib  0.337985638    1
-## 150   48 triadimenon triadimenon amphib  0.188123620    2
-## 151   48 triadimenon triadimenon amphib  0.174854226    3
-## 152   48 triadimenon triadimenon amphib  0.293786440    4
-## 153    0 triadimenon triadimenon   soil  2.627567728    1
-## 154    0 triadimenon triadimenon   soil  2.341914656    2
-## 155    0 triadimenon triadimenon   soil  4.266025689    3
-## 156    0 triadimenon triadimenon   soil  3.190696114    4
-## 157    2 triadimenon triadimenon   soil  3.915163994    1
-## 158    2 triadimenon triadimenon   soil  4.450902463    2
-## 159    2 triadimenon triadimenon   soil  1.688343156    3
-## 160    2 triadimenon triadimenon   soil  4.577359522    4
-## 161    4 triadimenon triadimenon   soil  5.783319171    1
-## 162    4 triadimenon triadimenon   soil  4.935462785    2
-## 163    4 triadimenon triadimenon   soil  5.065177266    3
-## 164    4 triadimenon triadimenon   soil  5.316094756    4
-## 165   12 triadimenon triadimenon   soil  4.923943959    1
-## 166   12 triadimenon triadimenon   soil  6.277397501    2
-## 167   12 triadimenon triadimenon   soil  5.355520847    3
-## 168   12 triadimenon triadimenon   soil  7.160118125    4
-## 169   24 triadimenon triadimenon   soil  4.987433206    1
-## 170   24 triadimenon triadimenon   soil  4.742588571    2
-## 171   24 triadimenon triadimenon   soil  5.137942579    3
-## 172   24 triadimenon triadimenon   soil  4.412886734    4
-## 173   48 triadimenon triadimenon   soil  3.554977820    1
-## 174   48 triadimenon triadimenon   soil  4.545502603    2
-## 175   48 triadimenon triadimenon   soil  4.412475335    3
-## 176   48 triadimenon triadimenon   soil  4.208369195    4
-## 177    2 triadimenon     triadla amphib  0.080559356    1
-## 178    2 triadimenon     triadla amphib  0.060537280    2
-## 179    2 triadimenon     triadla amphib  0.030128407    3
-## 180    2 triadimenon     triadla amphib  0.049353776    4
-## 181    4 triadimenon     triadla amphib  0.147613164    1
-## 182    4 triadimenon     triadla amphib  0.040359532    2
-## 183    4 triadimenon     triadla amphib  0.073149364    3
-## 184    4 triadimenon     triadla amphib  0.064884946    4
-## 185   12 triadimenon     triadla amphib  0.036723652    1
-## 186   12 triadimenon     triadla amphib  0.056514982    2
-## 187   12 triadimenon     triadla amphib  0.019889379    3
-## 188   12 triadimenon     triadla amphib  0.032167350    4
-## 189   24 triadimenon     triadla amphib  0.029743557    1
-## 190   24 triadimenon     triadla amphib  0.021140814    2
-## 191   24 triadimenon     triadla amphib  0.014682658    3
-## 192   24 triadimenon     triadla amphib  0.030464554    4
-## 193   48 triadimenon     triadla amphib  0.021376313    1
-## 194   48 triadimenon     triadla amphib  0.010355493    2
-## 195   48 triadimenon     triadla amphib  0.012990360    3
-## 196   48 triadimenon     triadla amphib  0.017274138    4
-## 197    0 triadimenon     triadla   soil  0.000000000    1
-## 198    0 triadimenon     triadla   soil  0.000000000    2
-## 199    0 triadimenon     triadla   soil  0.000000000    3
-## 200    0 triadimenon     triadla   soil  0.000000000    4
-## 201    2 triadimenon     triadla   soil  0.004506936    1
-## 202    2 triadimenon     triadla   soil  0.003252988    2
-## 203    2 triadimenon     triadla   soil  0.004757199    3
-## 204    2 triadimenon     triadla   soil  0.004134749    4
-## 205    4 triadimenon     triadla   soil  0.005510975    1
-## 206    4 triadimenon     triadla   soil  0.002785258    2
-## 207    4 triadimenon     triadla   soil  0.003033360    3
-## 208    4 triadimenon     triadla   soil  0.004866444    4
-## 209   12 triadimenon     triadla   soil  0.005938954    1
-## 210   12 triadimenon     triadla   soil  0.004355670    2
-## 211   12 triadimenon     triadla   soil  0.006983082    3
-## 212   12 triadimenon     triadla   soil  0.004676642    4
-## 213   24 triadimenon     triadla   soil  0.006815213    1
-## 214   24 triadimenon     triadla   soil  0.003700975    2
-## 215   24 triadimenon     triadla   soil  0.004949822    3
-## 216   24 triadimenon     triadla   soil  0.008802852    4
-## 217   48 triadimenon     triadla   soil  0.014072554    1
-## 218   48 triadimenon     triadla   soil  0.008794405    2
-## 219   48 triadimenon     triadla   soil  0.015805502    3
-## 220   48 triadimenon     triadla   soil  0.013171673    4
-## 221    2 triadimenon     triadlb amphib  0.105002487    1
-## 222    2 triadimenon     triadlb amphib  0.081704724    2
-## 223    2 triadimenon     triadlb amphib  0.065137384    3
-## 224    2 triadimenon     triadlb amphib  0.082663977    4
-## 225    4 triadimenon     triadlb amphib  0.201894814    1
-## 226    4 triadimenon     triadlb amphib  0.073686020    2
-## 227    4 triadimenon     triadlb amphib  0.108347245    3
-## 228    4 triadimenon     triadlb amphib  0.136453648    4
-## 229   12 triadimenon     triadlb amphib  0.064217836    1
-## 230   12 triadimenon     triadlb amphib  0.148402181    2
-## 231   12 triadimenon     triadlb amphib  0.049121626    3
-## 232   12 triadimenon     triadlb amphib  0.044845295    4
-## 233   24 triadimenon     triadlb amphib  0.048825628    1
-## 234   24 triadimenon     triadlb amphib  0.042128253    2
-## 235   24 triadimenon     triadlb amphib  0.025308202    3
-## 236   24 triadimenon     triadlb amphib  0.051067334    4
-## 237   48 triadimenon     triadlb amphib  0.033756743    1
-## 238   48 triadimenon     triadlb amphib  0.026100913    2
-## 239   48 triadimenon     triadlb amphib  0.027425357    3
-## 240   48 triadimenon     triadlb amphib  0.030725531    4
-## 241    0 triadimenon     triadlb   soil  0.000000000    1
-## 242    0 triadimenon     triadlb   soil  0.000000000    2
-## 243    0 triadimenon     triadlb   soil  0.000000000    3
-## 244    0 triadimenon     triadlb   soil  0.000000000    4
-## 245    2 triadimenon     triadlb   soil  0.012628568    1
-## 246    2 triadimenon     triadlb   soil  0.010550136    2
-## 247    2 triadimenon     triadlb   soil  0.015678888    3
-## 248    2 triadimenon     triadlb   soil  0.013142759    4
-## 249    4 triadimenon     triadlb   soil  0.015947156    1
-## 250    4 triadimenon     triadlb   soil  0.011937089    2
-## 251    4 triadimenon     triadlb   soil  0.009870682    3
-## 252    4 triadimenon     triadlb   soil  0.015618315    4
-## 253   12 triadimenon     triadlb   soil  0.017419404    1
-## 254   12 triadimenon     triadlb   soil  0.012318035    2
-## 255   12 triadimenon     triadlb   soil  0.021212691    3
-## 256   12 triadimenon     triadlb   soil  0.015421158    4
-## 257   24 triadimenon     triadlb   soil  0.018114878    1
-## 258   24 triadimenon     triadlb   soil  0.012111372    2
-## 259   24 triadimenon     triadlb   soil  0.014276863    3
-## 260   24 triadimenon     triadlb   soil  0.026123427    4
-## 261   48 triadimenon     triadlb   soil  0.039798593    1
-## 262   48 triadimenon     triadlb   soil  0.024603969    2
-## 263   48 triadimenon     triadlb   soil  0.045398845    3
-## 264   48 triadimenon     triadlb   soil  0.040261110    4
-## 265    2    fipronil    fipronil amphib  3.719393647    1
-## 266    2    fipronil    fipronil amphib  1.880936052    2
-## 267    2    fipronil    fipronil amphib  0.570034283    3
-## 268    2    fipronil    fipronil amphib  1.297795327    4
-## 269    4    fipronil    fipronil amphib  0.889141030    1
-## 270    4    fipronil    fipronil amphib  2.023821797    2
-## 271    4    fipronil    fipronil amphib  0.949591323    3
-## 272    4    fipronil    fipronil amphib  1.339780158    4
-## 273   12    fipronil    fipronil amphib  0.608268662    1
-## 274   12    fipronil    fipronil amphib  0.870180984    2
-## 275   12    fipronil    fipronil amphib  0.489633965    3
-## 276   12    fipronil    fipronil amphib  0.295742250    4
-## 277   24    fipronil    fipronil amphib  0.329936663    1
-## 278   24    fipronil    fipronil amphib  0.278098705    2
-## 279   24    fipronil    fipronil amphib  0.255766754    3
-## 280   24    fipronil    fipronil amphib  0.206890648    4
-## 281   48    fipronil    fipronil amphib  0.083283566    1
-## 282   48    fipronil    fipronil amphib  0.389202422    2
-## 283   48    fipronil    fipronil amphib  0.224047561    3
-## 284   48    fipronil    fipronil amphib  0.151268165    4
-## 285    2    fipronil    fipronil   soil  0.000000000    1
-## 286    2    fipronil    fipronil   soil  0.000000000    2
-## 287    2    fipronil    fipronil   soil  0.000000000    3
-## 288    2    fipronil    fipronil   soil  0.000000000    4
-## 289    2    fipronil    fipronil   soil  0.922936959    1
-## 290    2    fipronil    fipronil   soil  0.786142128    2
-## 291    2    fipronil    fipronil   soil  0.610054177    3
-## 292    2    fipronil    fipronil   soil  0.942316574    4
-## 293    4    fipronil    fipronil   soil  0.979801855    1
-## 294    4    fipronil    fipronil   soil  0.566936486    2
-## 295    4    fipronil    fipronil   soil  0.793391982    3
-## 296    4    fipronil    fipronil   soil  1.132922299    4
-## 297   12    fipronil    fipronil   soil  0.591377077    1
-## 298   12    fipronil    fipronil   soil  0.847497739    2
-## 299   12    fipronil    fipronil   soil  1.002544970    3
-## 300   12    fipronil    fipronil   soil  0.828102962    4
-## 301   24    fipronil    fipronil   soil  0.654154588    1
-## 302   24    fipronil    fipronil   soil  0.768446185    2
-## 303   24    fipronil    fipronil   soil  0.812837755    3
-## 304   24    fipronil    fipronil   soil  0.573596558    4
-## 305   48    fipronil    fipronil   soil  0.329859411    1
-## 306   48    fipronil    fipronil   soil  0.285849162    2
-## 307   48    fipronil    fipronil   soil  0.413147995    3
-## 308   48    fipronil    fipronil   soil  0.393581363    4
-## 309    2    fipronil     fipsulf amphib  0.740847394    1
-## 310    2    fipronil     fipsulf amphib  0.377801366    2
-## 311    2    fipronil     fipsulf amphib  0.120668105    3
-## 312    2    fipronil     fipsulf amphib  0.146976860    4
-## 313    4    fipronil     fipsulf amphib  0.189683270    1
-## 314    4    fipronil     fipsulf amphib  1.110909232    2
-## 315    4    fipronil     fipsulf amphib  0.111692858    3
-## 316    4    fipronil     fipsulf amphib  0.174150376    4
-## 317   12    fipronil     fipsulf amphib  0.298904759    1
-## 318   12    fipronil     fipsulf amphib  1.450132923    2
-## 319   12    fipronil     fipsulf amphib  0.509686221    3
-## 320   12    fipronil     fipsulf amphib  0.192921608    4
-## 321   24    fipronil     fipsulf amphib  1.957822003    1
-## 322   24    fipronil     fipsulf amphib  1.344345249    2
-## 323   24    fipronil     fipsulf amphib  0.787747639    3
-## 324   24    fipronil     fipsulf amphib  0.921356636    4
-## 325   48    fipronil     fipsulf amphib  0.349277216    1
-## 326   48    fipronil     fipsulf amphib  0.895785043    2
-## 327   48    fipronil     fipsulf amphib  1.685148312    3
-## 328   48    fipronil     fipsulf amphib  0.696639860    4
-## 329    2    fipronil     fipsulf   soil  0.000000000    1
-## 330    2    fipronil     fipsulf   soil  0.000000000    2
-## 331    2    fipronil     fipsulf   soil  0.000000000    3
-## 332    2    fipronil     fipsulf   soil  0.000000000    4
-## 333    2    fipronil     fipsulf   soil  0.024149276    1
-## 334    2    fipronil     fipsulf   soil  0.033141576    2
-## 335    2    fipronil     fipsulf   soil  0.009163762    3
-## 336    2    fipronil     fipsulf   soil  0.015343707    4
-## 337    4    fipronil     fipsulf   soil  0.028073427    1
-## 338    4    fipronil     fipsulf   soil  0.014994213    2
-## 339    4    fipronil     fipsulf   soil  0.010907956    3
-## 340    4    fipronil     fipsulf   soil  0.033777643    4
-## 341   12    fipronil     fipsulf   soil  0.024738982    1
-## 342   12    fipronil     fipsulf   soil  0.012500561    2
-## 343   12    fipronil     fipsulf   soil  0.017739606    3
-## 344   12    fipronil     fipsulf   soil  0.018216555    4
-## 345   24    fipronil     fipsulf   soil  0.022140690    1
-## 346   24    fipronil     fipsulf   soil  0.007420443    2
-## 347   24    fipronil     fipsulf   soil  0.017881386    3
-## 348   24    fipronil     fipsulf   soil  0.029271395    4
-## 349   48    fipronil     fipsulf   soil  0.005423041    1
-## 350   48    fipronil     fipsulf   soil  0.012001621    2
-## 351   48    fipronil     fipsulf   soil  0.018586164    3
-## 352   48    fipronil     fipsulf   soil  0.014504668    4</code></pre>
-<pre><code>## [1] atrazine    triadimenon fipronil   
-## Levels: atrazine fipronil triadimenon</code></pre>
-<pre><code>## [1] atrazine    dia         dea         triadimenon triadla     triadlb    
+<pre><code>##     time      parent     analyte matrix         conc replicate
+## 1      2    atrazine    atrazine amphib  3.068202720         1
+## 2      2    atrazine    atrazine amphib  3.689639699         2
+## 3      2    atrazine    atrazine amphib  4.701165885         3
+## 4      2    atrazine    atrazine amphib  1.892494228         4
+## 5      4    atrazine    atrazine amphib  7.624610214         1
+## 6      4    atrazine    atrazine amphib  4.134300250         2
+## 7      4    atrazine    atrazine amphib  2.050778713         3
+## 8      4    atrazine    atrazine amphib  7.626486309         4
+## 9     12    atrazine    atrazine amphib  2.452277711         1
+## 10    12    atrazine    atrazine amphib  3.786892753         2
+## 11    12    atrazine    atrazine amphib  4.514882392         3
+## 12    12    atrazine    atrazine amphib  1.741192334         4
+## 13    24    atrazine    atrazine amphib  2.272491609         1
+## 14    24    atrazine    atrazine amphib  1.843394997         2
+## 15    24    atrazine    atrazine amphib  1.124962070         3
+## 16    24    atrazine    atrazine amphib  0.978827141         4
+## 17    48    atrazine    atrazine amphib  0.961393825         1
+## 18    48    atrazine    atrazine amphib  0.631015591         2
+## 19    48    atrazine    atrazine amphib  0.930699420         3
+## 20    48    atrazine    atrazine amphib  1.484441109         4
+## 21     0    atrazine    atrazine   soil 19.700570600         1
+## 22     0    atrazine    atrazine   soil 13.843923390         2
+## 23     0    atrazine    atrazine   soil 14.806770820         3
+## 24     0    atrazine    atrazine   soil 15.372413960         4
+## 25     2    atrazine    atrazine   soil 17.793906810         1
+## 26     2    atrazine    atrazine   soil 13.702886520         2
+## 27     2    atrazine    atrazine   soil 23.958688150         3
+## 28     2    atrazine    atrazine   soil 20.660656170         4
+## 29     4    atrazine    atrazine   soil 19.532784590         1
+## 30     4    atrazine    atrazine   soil 22.258534700         2
+## 31     4    atrazine    atrazine   soil 16.704344630         3
+## 32     4    atrazine    atrazine   soil 16.584700400         4
+## 33    12    atrazine    atrazine   soil 17.407168350         1
+## 34    12    atrazine    atrazine   soil 26.235338160         2
+## 35    12    atrazine    atrazine   soil 18.840020800         3
+## 36    12    atrazine    atrazine   soil 19.974234140         4
+## 37    24    atrazine    atrazine   soil 20.551463100         1
+## 38    24    atrazine    atrazine   soil 28.937376380         2
+## 39    24    atrazine    atrazine   soil 28.706461340         3
+## 40    24    atrazine    atrazine   soil 21.789481310         4
+## 41    48    atrazine    atrazine   soil 26.568768970         1
+## 42    48    atrazine    atrazine   soil 22.364708440         2
+## 43    48    atrazine    atrazine   soil 24.331649030         3
+## 44    48    atrazine    atrazine   soil 32.473853160         4
+## 45     2    atrazine         dia amphib  0.244389746         1
+## 46     2    atrazine         dia amphib  0.272879769         2
+## 47     2    atrazine         dia amphib  0.514589655         3
+## 48     2    atrazine         dia amphib  0.283268223         4
+## 49     4    atrazine         dia amphib  1.982229434         1
+## 50     4    atrazine         dia amphib  0.706019584         2
+## 51     4    atrazine         dia amphib  0.169062053         3
+## 52     4    atrazine         dia amphib  0.910401654         4
+## 53    12    atrazine         dia amphib  1.307780816         1
+## 54    12    atrazine         dia amphib  1.686285381         2
+## 55    12    atrazine         dia amphib  0.593288516         3
+## 56    12    atrazine         dia amphib  0.746683696         4
+## 57    24    atrazine         dia amphib  3.606532664         1
+## 58    24    atrazine         dia amphib  2.500486811         2
+## 59    24    atrazine         dia amphib  1.317924499         3
+## 60    24    atrazine         dia amphib  0.528494822         4
+## 61    48    atrazine         dia amphib  0.397349802         1
+## 62    48    atrazine         dia amphib  0.044315560         2
+## 63    48    atrazine         dia amphib  1.071270148         3
+## 64    48    atrazine         dia amphib  1.136617318         4
+## 65     0    atrazine         dia   soil  0.000000000         1
+## 66     0    atrazine         dia   soil  0.000000000         2
+## 67     0    atrazine         dia   soil  0.000000000         3
+## 68     0    atrazine         dia   soil  0.000000000         4
+## 69     2    atrazine         dia   soil -0.011723298         1
+## 70     2    atrazine         dia   soil  0.003224536         2
+## 71     2    atrazine         dia   soil -0.009974494         3
+## 72     2    atrazine         dia   soil -0.012435889         4
+## 73     4    atrazine         dia   soil  0.046538524         1
+## 74     4    atrazine         dia   soil  0.010483432         2
+## 75     4    atrazine         dia   soil  0.000000000         3
+## 76     4    atrazine         dia   soil  0.025132442         4
+## 77    12    atrazine         dia   soil  0.011765248         1
+## 78    12    atrazine         dia   soil  0.168468591         2
+## 79    12    atrazine         dia   soil  0.043744516         3
+## 80    12    atrazine         dia   soil  0.084169328         4
+## 81    24    atrazine         dia   soil  0.050701196         1
+## 82    24    atrazine         dia   soil  0.000000000         2
+## 83    24    atrazine         dia   soil  0.051286893         3
+## 84    24    atrazine         dia   soil  0.069915129         4
+## 85    48    atrazine         dia   soil  0.125882428         1
+## 86    48    atrazine         dia   soil  0.024368532         2
+## 87    48    atrazine         dia   soil  0.004821991         3
+## 88    48    atrazine         dia   soil  0.099700217         4
+## 89     2    atrazine         dea amphib  0.009437480         1
+## 90     2    atrazine         dea amphib  0.012003438         2
+## 91     2    atrazine         dea amphib  0.021445946         3
+## 92     2    atrazine         dea amphib  0.012708201         4
+## 93     4    atrazine         dea amphib  0.076295567         1
+## 94     4    atrazine         dea amphib  0.041485918         2
+## 95     4    atrazine         dea amphib  0.007758374         3
+## 96     4    atrazine         dea amphib  0.051928588         4
+## 97    12    atrazine         dea amphib  0.055173181         1
+## 98    12    atrazine         dea amphib  0.070717539         2
+## 99    12    atrazine         dea amphib  0.039906640         3
+## 100   12    atrazine         dea amphib  0.050289903         4
+## 101   24    atrazine         dea amphib  0.046811263         1
+## 102   24    atrazine         dea amphib  0.048255391         2
+## 103   24    atrazine         dea amphib  0.029340308         3
+## 104   24    atrazine         dea amphib  0.021691946         4
+## 105   48    atrazine         dea amphib  0.008370958         1
+## 106   48    atrazine         dea amphib  0.002795645         2
+## 107   48    atrazine         dea amphib  0.020051727         3
+## 108   48    atrazine         dea amphib  0.046841701         4
+## 109    0    atrazine         dea   soil  0.000000000         1
+## 110    0    atrazine         dea   soil  0.000000000         2
+## 111    0    atrazine         dea   soil  0.000000000         3
+## 112    0    atrazine         dea   soil  0.000000000         4
+## 113    2    atrazine         dea   soil  0.001317307         1
+## 114    2    atrazine         dea   soil  0.000999847         2
+## 115    2    atrazine         dea   soil  0.002468708         3
+## 116    2    atrazine         dea   soil  0.001495855         4
+## 117    4    atrazine         dea   soil  0.005037970         1
+## 118    4    atrazine         dea   soil  0.003331162         2
+## 119    4    atrazine         dea   soil  0.001723567         3
+## 120    4    atrazine         dea   soil  0.001904164         4
+## 121   12    atrazine         dea   soil  0.002454305         1
+## 122   12    atrazine         dea   soil  0.011558467         2
+## 123   12    atrazine         dea   soil  0.005136987         3
+## 124   12    atrazine         dea   soil  0.002726303         4
+## 125   24    atrazine         dea   soil  0.005887520         1
+## 126   24    atrazine         dea   soil  0.005828620         2
+## 127   24    atrazine         dea   soil  0.009318840         3
+## 128   24    atrazine         dea   soil  0.008198778         4
+## 129   48    atrazine         dea   soil  0.008965608         1
+## 130   48    atrazine         dea   soil  0.007806889         2
+## 131   48    atrazine         dea   soil  0.004634089         3
+## 132   48    atrazine         dea   soil  0.013731943         4
+## 133    2 triadimefon triadimefon amphib  0.489601403         1
+## 134    2 triadimefon triadimefon amphib  0.306581872         2
+## 135    2 triadimefon triadimefon amphib  0.376458575         3
+## 136    2 triadimefon triadimefon amphib  0.374511404         4
+## 137    4 triadimefon triadimefon amphib  0.978048430         1
+## 138    4 triadimefon triadimefon amphib  0.335365342         2
+## 139    4 triadimefon triadimefon amphib  0.347101261         3
+## 140    4 triadimefon triadimefon amphib  0.533983287         4
+## 141   12 triadimefon triadimefon amphib  0.487313921         1
+## 142   12 triadimefon triadimefon amphib  1.163882256         2
+## 143   12 triadimefon triadimefon amphib  0.518446024         3
+## 144   12 triadimefon triadimefon amphib  0.850015349         4
+## 145   24 triadimefon triadimefon amphib  0.753354385         1
+## 146   24 triadimefon triadimefon amphib  0.268774096         2
+## 147   24 triadimefon triadimefon amphib  0.324932505         3
+## 148   24 triadimefon triadimefon amphib  2.114540569         4
+## 149   48 triadimefon triadimefon amphib  0.337985638         1
+## 150   48 triadimefon triadimefon amphib  0.188123620         2
+## 151   48 triadimefon triadimefon amphib  0.174854226         3
+## 152   48 triadimefon triadimefon amphib  0.293786440         4
+## 153    0 triadimefon triadimefon   soil  2.627567728         1
+## 154    0 triadimefon triadimefon   soil  2.341914656         2
+## 155    0 triadimefon triadimefon   soil  4.266025689         3
+## 156    0 triadimefon triadimefon   soil  3.190696114         4
+## 157    2 triadimefon triadimefon   soil  3.915163994         1
+## 158    2 triadimefon triadimefon   soil  4.450902463         2
+## 159    2 triadimefon triadimefon   soil  1.688343156         3
+## 160    2 triadimefon triadimefon   soil  4.577359522         4
+## 161    4 triadimefon triadimefon   soil  5.783319171         1
+## 162    4 triadimefon triadimefon   soil  4.935462785         2
+## 163    4 triadimefon triadimefon   soil  5.065177266         3
+## 164    4 triadimefon triadimefon   soil  5.316094756         4
+## 165   12 triadimefon triadimefon   soil  4.923943959         1
+## 166   12 triadimefon triadimefon   soil  6.277397501         2
+## 167   12 triadimefon triadimefon   soil  5.355520847         3
+## 168   12 triadimefon triadimefon   soil  7.160118125         4
+## 169   24 triadimefon triadimefon   soil  4.987433206         1
+## 170   24 triadimefon triadimefon   soil  4.742588571         2
+## 171   24 triadimefon triadimefon   soil  5.137942579         3
+## 172   24 triadimefon triadimefon   soil  4.412886734         4
+## 173   48 triadimefon triadimefon   soil  3.554977820         1
+## 174   48 triadimefon triadimefon   soil  4.545502603         2
+## 175   48 triadimefon triadimefon   soil  4.412475335         3
+## 176   48 triadimefon triadimefon   soil  4.208369195         4
+## 177    2 triadimefon        tdla amphib  0.080559356         1
+## 178    2 triadimefon        tdla amphib  0.060537280         2
+## 179    2 triadimefon        tdla amphib  0.030128407         3
+## 180    2 triadimefon        tdla amphib  0.049353776         4
+## 181    4 triadimefon        tdla amphib  0.147613164         1
+## 182    4 triadimefon        tdla amphib  0.040359532         2
+## 183    4 triadimefon        tdla amphib  0.073149364         3
+## 184    4 triadimefon        tdla amphib  0.064884946         4
+## 185   12 triadimefon        tdla amphib  0.036723652         1
+## 186   12 triadimefon        tdla amphib  0.056514982         2
+## 187   12 triadimefon        tdla amphib  0.019889379         3
+## 188   12 triadimefon        tdla amphib  0.032167350         4
+## 189   24 triadimefon        tdla amphib  0.029743557         1
+## 190   24 triadimefon        tdla amphib  0.021140814         2
+## 191   24 triadimefon        tdla amphib  0.014682658         3
+## 192   24 triadimefon        tdla amphib  0.030464554         4
+## 193   48 triadimefon        tdla amphib  0.021376313         1
+## 194   48 triadimefon        tdla amphib  0.010355493         2
+## 195   48 triadimefon        tdla amphib  0.012990360         3
+## 196   48 triadimefon        tdla amphib  0.017274138         4
+## 197    0 triadimefon        tdla   soil  0.000000000         1
+## 198    0 triadimefon        tdla   soil  0.000000000         2
+## 199    0 triadimefon        tdla   soil  0.000000000         3
+## 200    0 triadimefon        tdla   soil  0.000000000         4
+## 201    2 triadimefon        tdla   soil  0.004506936         1
+## 202    2 triadimefon        tdla   soil  0.003252988         2
+## 203    2 triadimefon        tdla   soil  0.004757199         3
+## 204    2 triadimefon        tdla   soil  0.004134749         4
+## 205    4 triadimefon        tdla   soil  0.005510975         1
+## 206    4 triadimefon        tdla   soil  0.002785258         2
+## 207    4 triadimefon        tdla   soil  0.003033360         3
+## 208    4 triadimefon        tdla   soil  0.004866444         4
+## 209   12 triadimefon        tdla   soil  0.005938954         1
+## 210   12 triadimefon        tdla   soil  0.004355670         2
+## 211   12 triadimefon        tdla   soil  0.006983082         3
+## 212   12 triadimefon        tdla   soil  0.004676642         4
+## 213   24 triadimefon        tdla   soil  0.006815213         1
+## 214   24 triadimefon        tdla   soil  0.003700975         2
+## 215   24 triadimefon        tdla   soil  0.004949822         3
+## 216   24 triadimefon        tdla   soil  0.008802852         4
+## 217   48 triadimefon        tdla   soil  0.014072554         1
+## 218   48 triadimefon        tdla   soil  0.008794405         2
+## 219   48 triadimefon        tdla   soil  0.015805502         3
+## 220   48 triadimefon        tdla   soil  0.013171673         4
+## 221    2 triadimefon        tdlb amphib  0.105002487         1
+## 222    2 triadimefon        tdlb amphib  0.081704724         2
+## 223    2 triadimefon        tdlb amphib  0.065137384         3
+## 224    2 triadimefon        tdlb amphib  0.082663977         4
+## 225    4 triadimefon        tdlb amphib  0.201894814         1
+## 226    4 triadimefon        tdlb amphib  0.073686020         2
+## 227    4 triadimefon        tdlb amphib  0.108347245         3
+## 228    4 triadimefon        tdlb amphib  0.136453648         4
+## 229   12 triadimefon        tdlb amphib  0.064217836         1
+## 230   12 triadimefon        tdlb amphib  0.148402181         2
+## 231   12 triadimefon        tdlb amphib  0.049121626         3
+## 232   12 triadimefon        tdlb amphib  0.044845295         4
+## 233   24 triadimefon        tdlb amphib  0.048825628         1
+## 234   24 triadimefon        tdlb amphib  0.042128253         2
+## 235   24 triadimefon        tdlb amphib  0.025308202         3
+## 236   24 triadimefon        tdlb amphib  0.051067334         4
+## 237   48 triadimefon        tdlb amphib  0.033756743         1
+## 238   48 triadimefon        tdlb amphib  0.026100913         2
+## 239   48 triadimefon        tdlb amphib  0.027425357         3
+## 240   48 triadimefon        tdlb amphib  0.030725531         4
+## 241    0 triadimefon        tdlb   soil  0.000000000         1
+## 242    0 triadimefon        tdlb   soil  0.000000000         2
+## 243    0 triadimefon        tdlb   soil  0.000000000         3
+## 244    0 triadimefon        tdlb   soil  0.000000000         4
+## 245    2 triadimefon        tdlb   soil  0.012628568         1
+## 246    2 triadimefon        tdlb   soil  0.010550136         2
+## 247    2 triadimefon        tdlb   soil  0.015678888         3
+## 248    2 triadimefon        tdlb   soil  0.013142759         4
+## 249    4 triadimefon        tdlb   soil  0.015947156         1
+## 250    4 triadimefon        tdlb   soil  0.011937089         2
+## 251    4 triadimefon        tdlb   soil  0.009870682         3
+## 252    4 triadimefon        tdlb   soil  0.015618315         4
+## 253   12 triadimefon        tdlb   soil  0.017419404         1
+## 254   12 triadimefon        tdlb   soil  0.012318035         2
+## 255   12 triadimefon        tdlb   soil  0.021212691         3
+## 256   12 triadimefon        tdlb   soil  0.015421158         4
+## 257   24 triadimefon        tdlb   soil  0.018114878         1
+## 258   24 triadimefon        tdlb   soil  0.012111372         2
+## 259   24 triadimefon        tdlb   soil  0.014276863         3
+## 260   24 triadimefon        tdlb   soil  0.026123427         4
+## 261   48 triadimefon        tdlb   soil  0.039798593         1
+## 262   48 triadimefon        tdlb   soil  0.024603969         2
+## 263   48 triadimefon        tdlb   soil  0.045398845         3
+## 264   48 triadimefon        tdlb   soil  0.040261110         4
+## 265    2    fipronil    fipronil amphib  3.719393647         1
+## 266    2    fipronil    fipronil amphib  1.880936052         2
+## 267    2    fipronil    fipronil amphib  0.570034283         3
+## 268    2    fipronil    fipronil amphib  1.297795327         4
+## 269    4    fipronil    fipronil amphib  0.889141030         1
+## 270    4    fipronil    fipronil amphib  2.023821797         2
+## 271    4    fipronil    fipronil amphib  0.949591323         3
+## 272    4    fipronil    fipronil amphib  1.339780158         4
+## 273   12    fipronil    fipronil amphib  0.608268662         1
+## 274   12    fipronil    fipronil amphib  0.870180984         2
+## 275   12    fipronil    fipronil amphib  0.489633965         3
+## 276   12    fipronil    fipronil amphib  0.295742250         4
+## 277   24    fipronil    fipronil amphib  0.329936663         1
+## 278   24    fipronil    fipronil amphib  0.278098705         2
+## 279   24    fipronil    fipronil amphib  0.255766754         3
+## 280   24    fipronil    fipronil amphib  0.206890648         4
+## 281   48    fipronil    fipronil amphib  0.083283566         1
+## 282   48    fipronil    fipronil amphib  0.389202422         2
+## 283   48    fipronil    fipronil amphib  0.224047561         3
+## 284   48    fipronil    fipronil amphib  0.151268165         4
+## 285    2    fipronil    fipronil   soil  0.000000000         1
+## 286    2    fipronil    fipronil   soil  0.000000000         2
+## 287    2    fipronil    fipronil   soil  0.000000000         3
+## 288    2    fipronil    fipronil   soil  0.000000000         4
+## 289    2    fipronil    fipronil   soil  0.922936959         1
+## 290    2    fipronil    fipronil   soil  0.786142128         2
+## 291    2    fipronil    fipronil   soil  0.610054177         3
+## 292    2    fipronil    fipronil   soil  0.942316574         4
+## 293    4    fipronil    fipronil   soil  0.979801855         1
+## 294    4    fipronil    fipronil   soil  0.566936486         2
+## 295    4    fipronil    fipronil   soil  0.793391982         3
+## 296    4    fipronil    fipronil   soil  1.132922299         4
+## 297   12    fipronil    fipronil   soil  0.591377077         1
+## 298   12    fipronil    fipronil   soil  0.847497739         2
+## 299   12    fipronil    fipronil   soil  1.002544970         3
+## 300   12    fipronil    fipronil   soil  0.828102962         4
+## 301   24    fipronil    fipronil   soil  0.654154588         1
+## 302   24    fipronil    fipronil   soil  0.768446185         2
+## 303   24    fipronil    fipronil   soil  0.812837755         3
+## 304   24    fipronil    fipronil   soil  0.573596558         4
+## 305   48    fipronil    fipronil   soil  0.329859411         1
+## 306   48    fipronil    fipronil   soil  0.285849162         2
+## 307   48    fipronil    fipronil   soil  0.413147995         3
+## 308   48    fipronil    fipronil   soil  0.393581363         4
+## 309    2    fipronil     fipsulf amphib  0.740847394         1
+## 310    2    fipronil     fipsulf amphib  0.377801366         2
+## 311    2    fipronil     fipsulf amphib  0.120668105         3
+## 312    2    fipronil     fipsulf amphib  0.146976860         4
+## 313    4    fipronil     fipsulf amphib  0.189683270         1
+## 314    4    fipronil     fipsulf amphib  1.110909232         2
+## 315    4    fipronil     fipsulf amphib  0.111692858         3
+## 316    4    fipronil     fipsulf amphib  0.174150376         4
+## 317   12    fipronil     fipsulf amphib  0.298904759         1
+## 318   12    fipronil     fipsulf amphib  1.450132923         2
+## 319   12    fipronil     fipsulf amphib  0.509686221         3
+## 320   12    fipronil     fipsulf amphib  0.192921608         4
+## 321   24    fipronil     fipsulf amphib  1.957822003         1
+## 322   24    fipronil     fipsulf amphib  1.344345249         2
+## 323   24    fipronil     fipsulf amphib  0.787747639         3
+## 324   24    fipronil     fipsulf amphib  0.921356636         4
+## 325   48    fipronil     fipsulf amphib  0.349277216         1
+## 326   48    fipronil     fipsulf amphib  0.895785043         2
+## 327   48    fipronil     fipsulf amphib  1.685148312         3
+## 328   48    fipronil     fipsulf amphib  0.696639860         4
+## 329    2    fipronil     fipsulf   soil  0.000000000         1
+## 330    2    fipronil     fipsulf   soil  0.000000000         2
+## 331    2    fipronil     fipsulf   soil  0.000000000         3
+## 332    2    fipronil     fipsulf   soil  0.000000000         4
+## 333    2    fipronil     fipsulf   soil  0.024149276         1
+## 334    2    fipronil     fipsulf   soil  0.033141576         2
+## 335    2    fipronil     fipsulf   soil  0.009163762         3
+## 336    2    fipronil     fipsulf   soil  0.015343707         4
+## 337    4    fipronil     fipsulf   soil  0.028073427         1
+## 338    4    fipronil     fipsulf   soil  0.014994213         2
+## 339    4    fipronil     fipsulf   soil  0.010907956         3
+## 340    4    fipronil     fipsulf   soil  0.033777643         4
+## 341   12    fipronil     fipsulf   soil  0.024738982         1
+## 342   12    fipronil     fipsulf   soil  0.012500561         2
+## 343   12    fipronil     fipsulf   soil  0.017739606         3
+## 344   12    fipronil     fipsulf   soil  0.018216555         4
+## 345   24    fipronil     fipsulf   soil  0.022140690         1
+## 346   24    fipronil     fipsulf   soil  0.007420443         2
+## 347   24    fipronil     fipsulf   soil  0.017881386         3
+## 348   24    fipronil     fipsulf   soil  0.029271395         4
+## 349   48    fipronil     fipsulf   soil  0.005423041         1
+## 350   48    fipronil     fipsulf   soil  0.012001621         2
+## 351   48    fipronil     fipsulf   soil  0.018586164         3
+## 352   48    fipronil     fipsulf   soil  0.014504668         4</code></pre>
+<pre><code>## [1] atrazine    triadimefon fipronil   
+## Levels: atrazine fipronil triadimefon</code></pre>
+<pre><code>## [1] atrazine    dia         dea         triadimefon tdla        tdlb       
 ## [7] fipronil    fipsulf    
-## 8 Levels: atrazine dea dia fipronil fipsulf triadimenon ... triadlb</code></pre>
+## Levels: atrazine dea dia fipronil fipsulf tdla tdlb triadimefon</code></pre>
 </div>
 <div id="import-experimental-microsomal-data" class="section level1">
 <h1>import experimental microsomal data</h1>
-<p>This data is observed from 0-90 minutes and has 3-4 replicates for each different micromolar concentration in a traditional Michaelis-Menton setup.</p>
+<p>This data is observed from 0-90 minutes and has 3-4 replicates for each different micromolar concentration in a traditional Michaelis-Menton setup. Used to estimate slopes.</p>
 </div>
 <div id="exposure-experiment-analysis" class="section level1">
 <h1>exposure experiment analysis</h1>
@@ -490,12 +490,12 @@ img {
 <p>Microsomal analysis of soil and amphibian data for 0 (soil only), 2, 4, 12, 24, and 48 hours after exposure.</p>
 <p>Database has factors for time, parent (mapped to analyte), analyte (can be either parent or metabolite), matrix (amphibian or soil), and tank (potentially a nuisance variable).</p>
 <pre><code>## Classes 'grouped_df', 'tbl_df', 'tbl' and 'data.frame':  352 obs. of  6 variables:
-##  $ time   : Factor w/ 6 levels &quot;0&quot;,&quot;2&quot;,&quot;4&quot;,&quot;12&quot;,..: 2 2 2 2 3 3 3 3 4 4 ...
-##  $ parent : Factor w/ 3 levels &quot;atrazine&quot;,&quot;fipronil&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ analyte: Factor w/ 8 levels &quot;atrazine&quot;,&quot;dea&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ matrix : Factor w/ 2 levels &quot;amphib&quot;,&quot;soil&quot;: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ conc   : num  3.07 3.69 4.7 1.89 7.62 ...
-##  $ tank   : Factor w/ 4 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;: 1 2 3 4 1 2 3 4 1 2 ...
+##  $ time     : Factor w/ 6 levels &quot;0&quot;,&quot;2&quot;,&quot;4&quot;,&quot;12&quot;,..: 2 2 2 2 3 3 3 3 4 4 ...
+##  $ parent   : Factor w/ 3 levels &quot;atrazine&quot;,&quot;fipronil&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ analyte  : Factor w/ 8 levels &quot;atrazine&quot;,&quot;dea&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ matrix   : Factor w/ 2 levels &quot;amphib&quot;,&quot;soil&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ conc     : num  3.07 3.69 4.7 1.89 7.62 ...
+##  $ replicate: Factor w/ 4 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;: 1 2 3 4 1 2 3 4 1 2 ...
 ##  - attr(*, &quot;vars&quot;)=List of 4
 ##   ..$ : symbol parent
 ##   ..$ : symbol analyte
@@ -556,17 +556,6 @@ img {
 ##   ..$ : int  340 341 342 343
 ##   ..$ : int  344 345 346 347
 ##   ..$ : int  348 349 350 351
-##   ..$ : int  132 133 134 135
-##   ..$ : int  136 137 138 139
-##   ..$ : int  140 141 142 143
-##   ..$ : int  144 145 146 147
-##   ..$ : int  148 149 150 151
-##   ..$ : int  152 153 154 155
-##   ..$ : int  156 157 158 159
-##   ..$ : int  160 161 162 163
-##   ..$ : int  164 165 166 167
-##   ..$ : int  168 169 170 171
-##   ..$ : int  172 173 174 175
 ##   ..$ : int  176 177 178 179
 ##   ..$ : int  180 181 182 183
 ##   ..$ : int  184 185 186 187
@@ -589,6 +578,17 @@ img {
 ##   ..$ : int  252 253 254 255
 ##   ..$ : int  256 257 258 259
 ##   ..$ : int  260 261 262 263
+##   ..$ : int  132 133 134 135
+##   ..$ : int  136 137 138 139
+##   ..$ : int  140 141 142 143
+##   ..$ : int  144 145 146 147
+##   ..$ : int  148 149 150 151
+##   ..$ : int  152 153 154 155
+##   ..$ : int  156 157 158 159
+##   ..$ : int  160 161 162 163
+##   ..$ : int  164 165 166 167
+##   ..$ : int  168 169 170 171
+##   ..$ : int  172 173 174 175
 ##  - attr(*, &quot;group_sizes&quot;)= int  4 4 4 4 4 4 4 4 4 4 ...
 ##  - attr(*, &quot;biggest_group_size&quot;)= int 8
 ##  - attr(*, &quot;labels&quot;)='data.frame':   86 obs. of  4 variables:
@@ -605,19 +605,19 @@ img {
 <pre><code>## Source: local data frame [352 x 6]
 ## Groups: parent, analyte, matrix, time [86]
 ## 
-##      time   parent  analyte matrix     conc   tank
-##    (fctr)   (fctr)   (fctr) (fctr)    (dbl) (fctr)
-## 1       2 atrazine atrazine amphib 3.068203      1
-## 2       2 atrazine atrazine amphib 3.689640      2
-## 3       2 atrazine atrazine amphib 4.701166      3
-## 4       2 atrazine atrazine amphib 1.892494      4
-## 5       4 atrazine atrazine amphib 7.624610      1
-## 6       4 atrazine atrazine amphib 4.134300      2
-## 7       4 atrazine atrazine amphib 2.050779      3
-## 8       4 atrazine atrazine amphib 7.626486      4
-## 9      12 atrazine atrazine amphib 2.452278      1
-## 10     12 atrazine atrazine amphib 3.786893      2
-## ..    ...      ...      ...    ...      ...    ...</code></pre>
+##      time   parent  analyte matrix     conc replicate
+##    (fctr)   (fctr)   (fctr) (fctr)    (dbl)    (fctr)
+## 1       2 atrazine atrazine amphib 3.068203         1
+## 2       2 atrazine atrazine amphib 3.689640         2
+## 3       2 atrazine atrazine amphib 4.701166         3
+## 4       2 atrazine atrazine amphib 1.892494         4
+## 5       4 atrazine atrazine amphib 7.624610         1
+## 6       4 atrazine atrazine amphib 4.134300         2
+## 7       4 atrazine atrazine amphib 2.050779         3
+## 8       4 atrazine atrazine amphib 7.626486         4
+## 9      12 atrazine atrazine amphib 2.452278         1
+## 10     12 atrazine atrazine amphib 3.786893         2
+## ..    ...      ...      ...    ...      ...       ...</code></pre>
 <pre><code>## Source: local data frame [86 x 7]
 ## Groups: parent, analyte, matrix [?]
 ## 
@@ -634,8 +634,8 @@ img {
 ## 9  atrazine atrazine   soil     12     4 20.614190 3.8918511
 ## 10 atrazine atrazine   soil     24     4 24.996196 4.4473828
 ## ..      ...      ...    ...    ...   ...       ...       ...</code></pre>
-<pre><code>## &lt;!-- html table generated in R 3.2.2 by xtable 1.8-0 package --&gt;
-## &lt;!-- Tue Jan  5 23:32:02 2016 --&gt;
+<pre><code>## &lt;!-- html table generated in R 3.2.3 by xtable 1.8-0 package --&gt;
+## &lt;!-- Thu Jan 14 12:59:03 2016 --&gt;
 ## &lt;table border=1&gt;
 ## &lt;tr&gt; &lt;th&gt;  &lt;/th&gt; &lt;th&gt; parent &lt;/th&gt; &lt;th&gt; analyte &lt;/th&gt; &lt;th&gt; matrix &lt;/th&gt; &lt;th&gt; time &lt;/th&gt; &lt;th&gt; count &lt;/th&gt; &lt;th&gt; ConcMean &lt;/th&gt; &lt;th&gt; ConcSD &lt;/th&gt;  &lt;/tr&gt;
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 1 &lt;/td&gt; &lt;td&gt; atrazine &lt;/td&gt; &lt;td&gt; atrazine &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.34 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.18 &lt;/td&gt; &lt;/tr&gt;
@@ -691,39 +691,39 @@ img {
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 51 &lt;/td&gt; &lt;td&gt; fipronil &lt;/td&gt; &lt;td&gt; fipsulf &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 52 &lt;/td&gt; &lt;td&gt; fipronil &lt;/td&gt; &lt;td&gt; fipsulf &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 53 &lt;/td&gt; &lt;td&gt; fipronil &lt;/td&gt; &lt;td&gt; fipsulf &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 54 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.39 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 55 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.55 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.30 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 56 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.75 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.32 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 57 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.87 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.86 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 58 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.25 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 59 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 0 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.11 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.85 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 60 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.66 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.34 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 61 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 5.28 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.37 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 62 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 5.93 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 63 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.82 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.32 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 64 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.18 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.44 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 65 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.06 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 66 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.05 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 67 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.04 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 68 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 69 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 70 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 0 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 71 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 72 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 73 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 74 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 75 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 76 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 77 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.13 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.05 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 78 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.05 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 79 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.04 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 80 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.03 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 81 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 0 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 82 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 83 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 84 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 85 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 86 &lt;/td&gt; &lt;td&gt; triadimenon &lt;/td&gt; &lt;td&gt; triadlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.04 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 54 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.06 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 55 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.05 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 56 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.04 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 57 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 58 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 59 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 0 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 60 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 61 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 62 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 63 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 64 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdla &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 65 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 66 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.13 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.05 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 67 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.05 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 68 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.04 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 69 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.03 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 70 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 0 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 71 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 72 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 73 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 74 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 75 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; tdlb &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.04 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 76 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.39 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 77 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.55 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.30 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 78 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.75 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.32 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 79 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.87 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.86 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 80 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; amphib &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.25 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.08 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 81 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 0 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.11 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.85 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 82 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.66 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.34 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 83 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 5.28 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.37 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 84 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 5.93 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 85 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.82 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.32 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 86 &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; triadimefon &lt;/td&gt; &lt;td&gt; soil &lt;/td&gt; &lt;td&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.18 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.44 &lt;/td&gt; &lt;/tr&gt;
 ##    &lt;/table&gt;</code></pre>
 <p>The amphibian data set summary statistics. Atrazine peaks at 4 hours and then declines monotonically. DEA peaks at 12 hours and DIA at 24. Fipronil steadily declines from its first observation at 2 hours with fipronil sulfone not peaking until 24 hours. Triadimenon peaks at 24 hours with its metabolites tdla and tdlb peaking at 4 hours.</p>
 <pre><code>## Classes 'grouped_df', 'tbl_df', 'tbl' and 'data.frame':  86 obs. of  7 variables:
@@ -788,26 +788,11 @@ img {
 ## 8  fipronil  fipsulf amphib     12     4 0.6129114 0.57346517
 ## 9  fipronil  fipsulf amphib     24     4 1.2528179 0.52648677
 ## 10 fipronil  fipsulf amphib     48     4 0.9067126 0.56596417</code></pre>
-<pre><code>## Source: local data frame [15 x 7]
-## Groups: parent, analyte, matrix [3]
+<pre><code>## Source: local data frame [0 x 7]
+## Groups: parent, analyte, matrix [0]
 ## 
-##         parent     analyte matrix   time count   ConcMean      ConcSD
-##         (fctr)      (fctr) (fctr) (fctr) (int)      (dbl)       (dbl)
-## 1  triadimenon triadimenon amphib      2     4 0.38678831 0.075852995
-## 2  triadimenon triadimenon amphib      4     4 0.54862458 0.300394386
-## 3  triadimenon triadimenon amphib     12     4 0.75491439 0.318237965
-## 4  triadimenon triadimenon amphib     24     4 0.86540039 0.860421208
-## 5  triadimenon triadimenon amphib     48     4 0.24868748 0.079848623
-## 6  triadimenon     triadla amphib      2     4 0.05514470 0.021089764
-## 7  triadimenon     triadla amphib      4     4 0.08150175 0.046221502
-## 8  triadimenon     triadla amphib     12     4 0.03632384 0.015222899
-## 9  triadimenon     triadla amphib     24     4 0.02400790 0.007522554
-## 10 triadimenon     triadla amphib     48     4 0.01549908 0.004845715
-## 11 triadimenon     triadlb amphib      2     4 0.08362714 0.016364595
-## 12 triadimenon     triadlb amphib      4     4 0.13009543 0.054315693
-## 13 triadimenon     triadlb amphib     12     4 0.07664673 0.048553355
-## 14 triadimenon     triadlb amphib     24     4 0.04183235 0.011652266
-## 15 triadimenon     triadlb amphib     48     4 0.02950214 0.003438978</code></pre>
+## Variables not shown: parent (fctr), analyte (fctr), matrix (fctr), time
+##   (fctr), count (int), ConcMean (dbl), ConcSD (dbl)</code></pre>
 <p>The soil data set summary statistics. Atrazine in soil showing an upwards trend (need to test if significant) with dia and dea levels very low indicating little degradation in soil over the 48 hour period. Fipronil and triadimenon data also indicating little degradation in soil.</p>
 <pre><code>## Source: local data frame [18 x 7]
 ## Groups: parent, analyte, matrix [3]
@@ -847,34 +832,16 @@ img {
 ## 8  fipronil  fipsulf   soil     12     4 0.01829893 0.005013814
 ## 9  fipronil  fipsulf   soil     24     4 0.01917848 0.009139211
 ## 10 fipronil  fipsulf   soil     48     4 0.01262887 0.005517408</code></pre>
-<pre><code>## Source: local data frame [18 x 7]
-## Groups: parent, analyte, matrix [3]
+<pre><code>## Source: local data frame [0 x 7]
+## Groups: parent, analyte, matrix [0]
 ## 
-##         parent     analyte matrix   time count    ConcMean       ConcSD
-##         (fctr)      (fctr) (fctr) (fctr) (int)       (dbl)        (dbl)
-## 1  triadimenon triadimenon   soil      0     4 3.106551047 0.8496186729
-## 2  triadimenon triadimenon   soil      2     4 3.657942284 1.3440731176
-## 3  triadimenon triadimenon   soil      4     4 5.275013494 0.3738931478
-## 4  triadimenon triadimenon   soil     12     4 5.929245108 0.9960000670
-## 5  triadimenon triadimenon   soil     24     4 4.820212772 0.3166780287
-## 6  triadimenon triadimenon   soil     48     4 4.180331238 0.4393533248
-## 7  triadimenon     triadla   soil      0     4 0.000000000 0.0000000000
-## 8  triadimenon     triadla   soil      2     4 0.004162968 0.0006583526
-## 9  triadimenon     triadla   soil      4     4 0.004049009 0.0013458769
-## 10 triadimenon     triadla   soil     12     4 0.005488587 0.0012081806
-## 11 triadimenon     triadla   soil     24     4 0.006067215 0.0022279190
-## 12 triadimenon     triadla   soil     48     4 0.012961034 0.0029850539
-## 13 triadimenon     triadlb   soil      0     4 0.000000000 0.0000000000
-## 14 triadimenon     triadlb   soil      2     4 0.013000088 0.0021084446
-## 15 triadimenon     triadlb   soil      4     4 0.013343311 0.0029434823
-## 16 triadimenon     triadlb   soil     12     4 0.016592822 0.0037270644
-## 17 triadimenon     triadlb   soil     24     4 0.017656635 0.0061662888
-## 18 triadimenon     triadlb   soil     48     4 0.037515629 0.0089741415</code></pre>
+## Variables not shown: parent (fctr), analyte (fctr), matrix (fctr), time
+##   (fctr), count (int), ConcMean (dbl), ConcSD (dbl)</code></pre>
 <pre class="r"><code>pdf(paste(micro.graphics,&quot;data_mean_scatterplot&quot;,&quot;.pdf&quot;, sep=&quot;&quot;))
   par(mfrow=c(3,1))
   print(parents)</code></pre>
-<pre><code>## [1] atrazine    triadimenon fipronil   
-## Levels: atrazine fipronil triadimenon</code></pre>
+<pre><code>## [1] atrazine    triadimefon fipronil   
+## Levels: atrazine fipronil triadimefon</code></pre>
 <pre class="r"><code>  for(parent in parents){
     i=0
     print(parent)
@@ -935,33 +902,33 @@ img {
 ## [1] &quot;dea&quot;
 ## [1] &quot;atrazine&quot;
 ## [1] &quot;dia&quot;
-## [1] &quot;triadimenon&quot;
+## [1] &quot;triadimefon&quot;
 ## Source: local data frame [15 x 7]
 ## Groups: parent, analyte, matrix [3]
 ## 
 ##         parent     analyte matrix   time count   ConcMean      ConcSD
 ##         (fctr)      (fctr) (fctr) (fctr) (int)      (dbl)       (dbl)
-## 1  triadimenon triadimenon amphib      2     4 0.38678831 0.075852995
-## 2  triadimenon triadimenon amphib      4     4 0.54862458 0.300394386
-## 3  triadimenon triadimenon amphib     12     4 0.75491439 0.318237965
-## 4  triadimenon triadimenon amphib     24     4 0.86540039 0.860421208
-## 5  triadimenon triadimenon amphib     48     4 0.24868748 0.079848623
-## 6  triadimenon     triadla amphib      2     4 0.05514470 0.021089764
-## 7  triadimenon     triadla amphib      4     4 0.08150175 0.046221502
-## 8  triadimenon     triadla amphib     12     4 0.03632384 0.015222899
-## 9  triadimenon     triadla amphib     24     4 0.02400790 0.007522554
-## 10 triadimenon     triadla amphib     48     4 0.01549908 0.004845715
-## 11 triadimenon     triadlb amphib      2     4 0.08362714 0.016364595
-## 12 triadimenon     triadlb amphib      4     4 0.13009543 0.054315693
-## 13 triadimenon     triadlb amphib     12     4 0.07664673 0.048553355
-## 14 triadimenon     triadlb amphib     24     4 0.04183235 0.011652266
-## 15 triadimenon     triadlb amphib     48     4 0.02950214 0.003438978
-## [1] &quot;triadimenon&quot;
-## [1] &quot;triadimenon&quot;</code></pre>
-<pre><code>## [1] &quot;triadimenon&quot;
-## [1] &quot;triadla&quot;
-## [1] &quot;triadimenon&quot;
-## [1] &quot;triadlb&quot;
+## 1  triadimefon        tdla amphib      2     4 0.05514470 0.021089764
+## 2  triadimefon        tdla amphib      4     4 0.08150175 0.046221502
+## 3  triadimefon        tdla amphib     12     4 0.03632384 0.015222899
+## 4  triadimefon        tdla amphib     24     4 0.02400790 0.007522554
+## 5  triadimefon        tdla amphib     48     4 0.01549908 0.004845715
+## 6  triadimefon        tdlb amphib      2     4 0.08362714 0.016364595
+## 7  triadimefon        tdlb amphib      4     4 0.13009543 0.054315693
+## 8  triadimefon        tdlb amphib     12     4 0.07664673 0.048553355
+## 9  triadimefon        tdlb amphib     24     4 0.04183235 0.011652266
+## 10 triadimefon        tdlb amphib     48     4 0.02950214 0.003438978
+## 11 triadimefon triadimefon amphib      2     4 0.38678831 0.075852995
+## 12 triadimefon triadimefon amphib      4     4 0.54862458 0.300394386
+## 13 triadimefon triadimefon amphib     12     4 0.75491439 0.318237965
+## 14 triadimefon triadimefon amphib     24     4 0.86540039 0.860421208
+## 15 triadimefon triadimefon amphib     48     4 0.24868748 0.079848623
+## [1] &quot;triadimefon&quot;
+## [1] &quot;tdla&quot;</code></pre>
+<pre><code>## [1] &quot;triadimefon&quot;
+## [1] &quot;tdlb&quot;
+## [1] &quot;triadimefon&quot;
+## [1] &quot;triadimefon&quot;
 ## [1] &quot;fipronil&quot;
 ## Source: local data frame [10 x 7]
 ## Groups: parent, analyte, matrix [2]
@@ -983,8 +950,8 @@ img {
 <pre><code>## [1] &quot;fipronil&quot;
 ## [1] &quot;fipsulf&quot;</code></pre>
 <pre class="r"><code>dev.off()</code></pre>
-<pre><code>## quartz_off_screen 
-##                 2</code></pre>
+<pre><code>## png 
+##   2</code></pre>
 <p>la de da</p>
 </div>
 <div id="turn-times-series-to-zoo-objects" class="section level1">
