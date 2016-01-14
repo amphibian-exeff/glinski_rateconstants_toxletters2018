@@ -9,8 +9,6 @@ tested hypotheses
 
 things to do
 ============
-- load actual microsome data into csv
-- negative and zero concentration values in exposure experiment data
 - michaelis menton first order comparison for both experiments
 
 general configuration
@@ -45,9 +43,9 @@ print("list of loaded packages: ")
 print((.packages()))
 ```
 
-import experimental exposure data
+import experimental exposure and microsomal data
 =================================
-Load csv file with experimental data.
+Load csv files with experimental data and microsome data sets. The beolw may return false but still be OK if rstudio does not have privileges to data directory (e.g., attached drive).
 
 ```{r eval=TRUE, echo=FALSE}
 if(Sys.info()[4]=="DONNA-PC"){
@@ -76,15 +74,15 @@ micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header
 microsome <- read.table(paste(micro.csv.in,"microsome_experiment.csv",sep=""), header = TRUE, sep = ",")
 ```
 
-data structure
-==============
-Check out structure of imported data set. 
+experimental exposure data structure
+====================================
+Check out structure of imported data sets. 
 
 ```{r eval=TRUE, echo=TRUE}
 str(micro)
 ```
 
-Set time and tank fields as factor for later statistical inference.
+Set time and replicate fields as factors for later statistical inference.
 ```{r eval=TRUE, echo=FALSE}
 micro$time <- factor(micro$time)
 micro$replicate <- factor(micro$replicate)
@@ -98,12 +96,36 @@ analytes
 micro.amphib <- micro[which(micro$matrix=="amphib"),]
 micro.soil <- micro[which(micro$matrix=="soil"),]
 
-#need to get actual microsome data and run michaelis menton kinetics
 ```
 
-import experimental microsomal data
+microsome experiment data structure
+====================================
+Check out structure of imported data set for the microsome analysis. 
+
+```{r eval=TRUE, echo=TRUE}
+str(microsome)
+```
+
+Set time and replicate fields as factors for later statistical inference.
+```{r eval=TRUE, echo=FALSE}
+microsome$time <- factor(microsome$time)
+microsome$replicate <- factor(microsome$replicate)
+omeparents <- unique(microsome$parent)
+omeanalytes <- unique(microsome$analyte)
+
+microsome
+omeparents
+omeanalytes
+
+microsome.atrazine <- microsome[which(microsome$analytes=="atrazine"),]
+```
+
+analyze microsomal data
 =================================
 This data is observed from 0-90 minutes and has 3-4 replicates for each different micromolar concentration in a traditional Michaelis-Menton setup. Used to estimate slopes.
+```{r eval=TRUE, echo=FALSE}
+
+```
 
 exposure experiment analysis
 ============================
