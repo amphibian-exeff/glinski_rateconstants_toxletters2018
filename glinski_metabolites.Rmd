@@ -117,14 +117,15 @@ microsome
 omeparents
 omeanalytes
 
-microsome.atrazine <- microsome[which(microsome$analytes=="atrazine"),]
+str(microsome)
+microsome.atrazine <- microsome[which(microsome$analyte=="atrazine"),]
 ```
 
 analyze microsomal data
 =================================
 This data is observed from 0-90 minutes and has 3-4 replicates for each different micromolar concentration in a traditional Michaelis-Menton setup. Used to estimate slopes.
 ```{r eval=TRUE, echo=FALSE}
-
+MM.2(c(microsome.atrazine$time, microsome$conc))
 ```
 
 exposure experiment analysis
