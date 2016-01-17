@@ -154,7 +154,7 @@ We are fitting the 2-parameter model.
 
 Used to estimate slopes.
 ```{r eval=TRUE, echo=FALSE}
-MM.2(c(microsome.atrazine$time, microsome$conc))
+#MM.2(c(microsome.atrazine$time, microsome$conc))
 ```
 
 exposure experiment analysis
