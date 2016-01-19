@@ -11,7 +11,8 @@ things to do
 ============
 - michaelis menton first order comparison for both experiments
 - what are conc units
-
+picomoles/minute/mg protein
+micromoles
 general configuration
 =====================
 Install and load supporting libraries.
@@ -166,6 +167,10 @@ for (s in Substrates){
   print(confint(mfit))
   print("##################################################")
 }
+
+#collect slopes
+#multiply by negative 1, multiple by a 1000, divide by 0.2
+#x,y for mm
 ```
 
 We are interested in the reaction rate, v, which is a function of available substrate (pesticide) and the presence of an enzyme. We get Vmax from the asymptote and K = 0.5*Vmax. Biochemical reactions with a single substrate are typically assumed to follow Michaelis-Menten kinetics even if they deviate from the basic model assumptions.
