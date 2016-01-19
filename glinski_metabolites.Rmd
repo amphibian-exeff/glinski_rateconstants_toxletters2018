@@ -151,14 +151,20 @@ The above figure shows a three-dimensional plot of pesticide substrate concentra
 Substrates <- unique(Substrate)
 print("Substrates:")
 for (s in Substrates){
+  print("##################################################")
   print(paste("Substrate = ", s))
   ind <- which(Substrate==s)
   print(paste("Indices = ", ind))
   print(paste("Times =", Time[ind]))
   print(paste("Concs =", Observed[ind]))
   mfit <- lm(Observed[ind] ~ Time[ind])
+  print(mfit)
   print(summary(mfit))
   plot(Time[ind],Observed[ind], main = paste("Atrazine Substrate =", s))
+  abline(mfit)
+  print(coefficients(mfit))
+  print(confint(mfit))
+  print("##################################################")
 }
 ```
 
