@@ -150,8 +150,13 @@ The above figure shows a three-dimensional plot of pesticide substrate concentra
 
 ```{r eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
+n_substrates <- length(Substrates)
+sub <- vector(mode = "numeric", length = n_substrates)
+vel <- vector(mode = "numeric", length = n_substrates)
 print("Substrates:")
+i <- 0
 for (s in Substrates){
+  i <- i + 1
   print("##################################################")
   print(paste("Substrate = ", s))
   ind <- which(Substrate==s)
@@ -165,8 +170,12 @@ for (s in Substrates){
   abline(mfit)
   print(coefficients(mfit))
   print(confint(mfit))
+  sub[i] <- s
+  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
   print("##################################################")
 }
+
+plot(sub, vel)
 
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
