@@ -175,8 +175,23 @@ for (s in Substrates){
   print("##################################################")
 }
 
-plot(sub, vel)
+plot(vel ~ sub)
+model.drm <- drm(vel ~ sub, fct = MM.2())
 
+mm <- as.data.frame(cbind(sub,vel))
+str(mm)
+#redo substrate concs for plotting
+mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml$vel <- predict(model.drm, newdata = mml)
+
+ggplot(mm, aes(x = sub, y = vel)) +
+  theme_bw() +
+  xlab("Concentration [mM]") +
+  ylab("Speed [dE/min]") +
+  ggtitle("Michaelis-Menten kinetics") +
+  geom_point(alpha = 0.5) +
+  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+ggsave("mm_atrazine.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
 #x,y for mm
