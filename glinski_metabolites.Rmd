@@ -14,6 +14,8 @@ things to do
 picomoles/minute/mg protein
 micromoles
 general configuration
+- how related are the replicates?
+
 =====================
 Install and load supporting libraries.
 
@@ -175,11 +177,13 @@ for (s in Substrates){
   print("##################################################")
 }
 
+mm <- as.data.frame(cbind(sub,vel))
+str(mm)
+print(mm)
+
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
 
-mm <- as.data.frame(cbind(sub,vel))
-str(mm)
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
 mml$vel <- predict(model.drm, newdata = mml)
@@ -187,7 +191,7 @@ mml$vel <- predict(model.drm, newdata = mml)
 ggplot(mm, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
-  ylab("Speed [dE/min?]") +
+  ylab("Speed [picomoles/minute/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
   geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
