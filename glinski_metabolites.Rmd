@@ -186,8 +186,8 @@ mml$vel <- predict(model.drm, newdata = mml)
 
 ggplot(mm, aes(x = sub, y = vel)) +
   theme_bw() +
-  xlab("Concentration [mM]") +
-  ylab("Speed [dE/min]") +
+  xlab("Concentration [uM]") +
+  ylab("Speed [dE/min?]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
   geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
