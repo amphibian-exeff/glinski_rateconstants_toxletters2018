@@ -73,6 +73,11 @@ print(paste("check to see if R can access files OK: ", file.exists(micro.csv.in)
 #import data
 micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header = TRUE, sep = ",")
 microsome <- read.table(paste(micro.csv.in,"microsome_experiment2.csv",sep=""), header = TRUE, sep = ",")
+#drop outliers
+print("outliers:")
+rowstodrop <- c(96,99,125:139)
+microsome[rowstodrop,]
+microsome <- microsome[-rowstodrop,]
 ```
 
 experimental exposure data structure
