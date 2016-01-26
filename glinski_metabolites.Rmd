@@ -5,20 +5,15 @@ output: html_document
 tested hypotheses
 ============
 - observed vivo versus in vitro degradation rates are the same, or observed vivo rates are lower than in vitro rates (due to other degradation processes, uptake kinetics?)
-- first order kinetics are michaelis-menton, second order?
+- first order kinetics are michaelis-menton, second order
+- are in vitro indicative of in vivo
 
 things to do
 ============
 - michaelis menton first order comparison for both experiments
-- what are conc units
-picomoles/minute/mg protein
-micromoles
-general configuration
-- how related are the replicates?
 
-=====================
-Install and load supporting libraries.
-
+install and load supporting libraries
+======================================
 ```{r eval=TRUE, echo=FALSE}
 print(Sys.info()[4])
 
@@ -77,7 +72,7 @@ print(paste("check to see if R can access files OK: ", file.exists(micro.csv.in)
 
 #import data
 micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header = TRUE, sep = ",")
-microsome <- read.table(paste(micro.csv.in,"microsome_experiment.csv",sep=""), header = TRUE, sep = ",")
+microsome <- read.table(paste(micro.csv.in,"microsome_experiment2.csv",sep=""), header = TRUE, sep = ",")
 ```
 
 experimental exposure data structure
@@ -210,6 +205,81 @@ Used to estimate slopes.
 #MM.2(c(microsome.atrazine$time, microsome$conc))
 ```
 
+dea
+=================================
+```{r eval=TRUE, echo=FALSE}
+microsome.time <- microsome.atrazine.dea$time
+
+#microsome.atrazine.atrazine$microMexp
+Substrate <- microsome.atrazine.dea$microMexp
+Time <- microsome.atrazine.dea$time
+Observed <- microsome.atrazine.dea$conc
+scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+              col.axis = "blue")
+```
+
+The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 minute period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
+
+```{r eval=TRUE, echo=FALSE}
+Substrates <- unique(Substrate)
+n_substrates <- length(Substrates)
+sub <- vector(mode = "numeric", length = n_substrates)
+vel <- vector(mode = "numeric", length = n_substrates)
+print("Substrates:")
+i <- 0
+for (s in Substrates){
+  i <- i + 1
+  print("##################################################")
+  print(paste("Substrate = ", s))
+  ind <- which(Substrate==s)
+  print(paste("Indices = ", ind))
+  print(paste("Times =", Time[ind]))
+  print(paste("Concs =", Observed[ind]))
+  mfit <- lm(Observed[ind] ~ Time[ind])
+  print(mfit)
+  print(summary(mfit))
+  plot(Time[ind],Observed[ind], main = paste("DEA Substrate =", s))
+  abline(mfit)
+  print(coefficients(mfit))
+  print(confint(mfit))
+  sub[i] <- s
+  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
+  print("##################################################")
+}
+
+mm <- as.data.frame(cbind(sub,vel))
+str(mm)
+print(mm)
+
+plot(vel ~ sub)
+model.drm <- drm(vel ~ sub, fct = MM.2())
+
+#redo substrate concs for plotting
+mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml$vel <- predict(model.drm, newdata = mml)
+
+ggplot(mm, aes(x = sub, y = vel)) +
+  theme_bw() +
+  xlab("Concentration [uM]") +
+  ylab("Speed [picomoles/minute/mg protein]") +
+  ggtitle("Michaelis-Menten kinetics") +
+  geom_point(alpha = 0.5) +
+  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+ggsave("mm_dea.pdf", width = 6, height = 4)
+#collect slopes
+#multiply by negative 1, multiple by a 1000, divide by 0.2
+#x,y for mm
+```
+
+We are interested in the reaction rate, v, which is a function of available substrate (pesticide) and the presence of an enzyme. We get Vmax from the asymptote and K = 0.5*Vmax. Biochemical reactions with a single substrate are typically assumed to follow Michaelis-Menten kinetics even if they deviate from the basic model assumptions.
+
+We are fitting the 2-parameter model. 
+
+Used to estimate slopes.
+```{r eval=TRUE, echo=FALSE}
+#MM.2(c(microsome.atrazine$time, microsome$conc))
+```
+
 dia
 =================================
 ```{r eval=TRUE, echo=FALSE}
@@ -284,6 +354,7 @@ Used to estimate slopes.
 ```{r eval=TRUE, echo=FALSE}
 #MM.2(c(microsome.atrazine$time, microsome$conc))
 ```
+
 
 exposure experiment analysis
 ============================
