@@ -553,6 +553,140 @@ ggsave("mm_tdlb.pdf", width = 6, height = 4)
 #x,y for mm
 ```
 
+fipronil
+=================================
+```{r eval=TRUE, echo=FALSE}
+microsome.fipronil <- microsome[which(microsome$parent=="fipronil"),]
+microsome.fipronil.fipronil <- microsome.fipronil[which(microsome.fipronil$analyte=="fipronil"),]
+microsome.fipronil.fipsulf <- microsome.fipronil[which(microsome.fipronil$analyte=="fipsulf"),]
+microsome.time <- microsome.fipronil.fipronil$time
+
+#microsome.atrazine.atrazine$microMexp
+Substrate <- microsome.fipronil.fipronil$microMexp
+Time <- microsome.fipronil.fipronil$time
+Observed <- microsome.fipronil.fipronil$conc
+scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+              col.axis = "blue")
+```
+
+The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
+
+```{r eval=TRUE, echo=FALSE}
+Substrates <- unique(Substrate)
+n_substrates <- length(Substrates)
+sub <- vector(mode = "numeric", length = n_substrates)
+vel <- vector(mode = "numeric", length = n_substrates)
+print("Substrates:")
+i <- 0
+for (s in Substrates){
+  i <- i + 1
+  print("##################################################")
+  print(paste("Substrate = ", s))
+  ind <- which(Substrate==s)
+  print(paste("Indices = ", ind))
+  print(paste("Times =", Time[ind]))
+  print(paste("Concs =", Observed[ind]))
+  mfit <- lm(Observed[ind] ~ Time[ind])
+  print(mfit)
+  print(summary(mfit))
+  plot(Time[ind],Observed[ind], main = paste("Fipronil Substrate =", s))
+  abline(mfit)
+  print(coefficients(mfit))
+  print(confint(mfit))
+  sub[i] <- s
+  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
+  print("##################################################")
+}
+
+mm <- as.data.frame(cbind(sub,vel))
+str(mm)
+print(mm)
+
+plot(vel ~ sub)
+model.drm <- drm(vel ~ sub, fct = MM.2())
+
+#redo substrate concs for plotting
+mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml$vel <- predict(model.drm, newdata = mml)
+
+ggplot(mm, aes(x = sub, y = vel)) +
+  theme_bw() +
+  xlab("Concentration [uM]") +
+  ylab("Velocity [pmol/min/mg protein]") +
+  ggtitle("Michaelis-Menten kinetics") +
+  geom_point(alpha = 0.5) +
+  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+ggsave("mm_fipronil.pdf", width = 6, height = 4)
+#collect slopes
+#multiply by negative 1, multiple by a 1000, divide by 0.2
+#x,y for mm
+```
+
+fipsulf
+=================================
+```{r eval=TRUE, echo=FALSE}
+
+#microsome.atrazine.atrazine$microMexp
+Substrate <- microsome.triadimefon.tdla$microMexp
+Time <- microsome.triadimefon.tdla$time
+Observed <- microsome.triadimefon.tdla$conc
+scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+              col.axis = "blue")
+```
+
+The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
+
+```{r eval=TRUE, echo=FALSE}
+Substrates <- unique(Substrate)
+n_substrates <- length(Substrates)
+sub <- vector(mode = "numeric", length = n_substrates)
+vel <- vector(mode = "numeric", length = n_substrates)
+print("Substrates:")
+i <- 0
+for (s in Substrates){
+  i <- i + 1
+  print("##################################################")
+  print(paste("Substrate = ", s))
+  ind <- which(Substrate==s)
+  print(paste("Indices = ", ind))
+  print(paste("Times =", Time[ind]))
+  print(paste("Concs =", Observed[ind]))
+  mfit <- lm(Observed[ind] ~ Time[ind])
+  print(mfit)
+  print(summary(mfit))
+  plot(Time[ind],Observed[ind], main = paste("tdla Substrate =", s))
+  abline(mfit)
+  print(coefficients(mfit))
+  print(confint(mfit))
+  sub[i] <- s
+  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  print("##################################################")
+}
+
+mm <- as.data.frame(cbind(sub,vel))
+str(mm)
+print(mm)
+
+plot(vel ~ sub)
+model.drm <- drm(vel ~ sub, fct = MM.2())
+
+#redo substrate concs for plotting
+mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml$vel <- predict(model.drm, newdata = mml)
+
+ggplot(mm, aes(x = sub, y = vel)) +
+  theme_bw() +
+  xlab("Concentration [uM]") +
+  ylab("Velocity [pmol/min/mg protein]") +
+  ggtitle("Michaelis-Menten kinetics") +
+  geom_point(alpha = 0.5) +
+  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+ggsave("mm_tdla.pdf", width = 6, height = 4)
+#collect slopes
+#multiply by negative 1, multiple by a 1000, divide by 0.2
+#x,y for mm
+```
+
 exposure experiment analysis
 ============================
 Results presentation and discussion for parent analytes (atrazine, triadimenon, and fipronil) and their xenobiotic metabolites.
