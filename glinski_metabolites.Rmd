@@ -11,6 +11,7 @@ tested hypotheses
 things to do
 ============
 - michaelis menton first order comparison for both experiments
+- non-linear goodness of fit
 
 install and load supporting libraries
 ======================================
@@ -627,9 +628,9 @@ fipsulf
 ```{r eval=TRUE, echo=FALSE}
 
 #microsome.atrazine.atrazine$microMexp
-Substrate <- microsome.triadimefon.tdla$microMexp
-Time <- microsome.triadimefon.tdla$time
-Observed <- microsome.triadimefon.tdla$conc
+Substrate <- microsome.fipronil.fipsulf$microMexp
+Time <- microsome.fipronil.fipsulf$time
+Observed <- microsome.fipronil.fipsulf$conc
 scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
               col.axis = "blue")
 ```
@@ -654,7 +655,7 @@ for (s in Substrates){
   mfit <- lm(Observed[ind] ~ Time[ind])
   print(mfit)
   print(summary(mfit))
-  plot(Time[ind],Observed[ind], main = paste("tdla Substrate =", s))
+  plot(Time[ind],Observed[ind], main = paste("fipsulf Substrate =", s))
   abline(mfit)
   print(coefficients(mfit))
   print(confint(mfit))
@@ -681,7 +682,7 @@ ggplot(mm, aes(x = sub, y = vel)) +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
   geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
-ggsave("mm_tdla.pdf", width = 6, height = 4)
+ggsave("mm_fipsulf.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
 #x,y for mm
