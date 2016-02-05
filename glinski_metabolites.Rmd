@@ -15,7 +15,7 @@ things to do
 
 install and load supporting libraries
 ======================================
-```{r eval=TRUE, echo=FALSE}
+```{r setup, eval=TRUE, echo=FALSE, }
 print(Sys.info()[4])
 
 #original data sources are available on dropbox
@@ -49,7 +49,7 @@ import experimental exposure and microsomal data
 =================================
 Load csv files with experimental data and microsome data sets. The beolw may return false but still be OK if rstudio does not have privileges to data directory (e.g., attached drive).
 
-```{r eval=TRUE, echo=FALSE}
+```{r import_data, eval=TRUE, echo=FALSE}
 if(Sys.info()[4]=="DONNA-PC"){
   micro.root <- path.expand("C:/Users/Donna/Documents/Github/glinski_metabolites/")
 }
@@ -74,11 +74,43 @@ print(paste("check to see if R can access files OK: ", file.exists(micro.csv.in)
 #import data
 micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header = TRUE, sep = ",")
 microsome <- read.table(paste(micro.csv.in,"microsome_experiment2.csv",sep=""), header = TRUE, sep = ",")
-#drop outliers
-print("outliers:")
-rowstodrop <- c(96,99,125:139)
-microsome[rowstodrop,]
-microsome <- microsome[-rowstodrop,]
+
+#atrazine data breakouts
+microsome.atrazine <- microsome[which(microsome$parent=="atrazine"),]
+microsome.atrazine.atrazine <- microsome.atrazine[which(microsome.atrazine$analyte=="atrazine"),]
+microsome.atrazine.dia <- microsome.atrazine[which(microsome.atrazine$analyte=="dia"),]
+microsome.atrazine.dea <- microsome.atrazine[which(microsome.atrazine$analyte=="dea"),]
+#fix time zeroes for parents and daughters
+microsome.atrazine.atrazine$conc[which(microsome.atrazine.atrazine$time==0)] = 
+    microsome.atrazine.atrazine$microMexp[which(microsome.atrazine.atrazine$time==0)]
+microsome.atrazine.dia$conc[which(microsome.atrazine.dia$time==0)] = 0
+microsome.atrazine.dea$conc[which(microsome.atrazine.dea$time==0)] = 0
+
+#triadimefon data breakouts
+microsome.triadimefon <- microsome[which(microsome$parent=="triadimefon"),]
+microsome.triadimefon.triadimefon <- microsome.triadimefon[which(microsome.triadimefon$analyte=="triadimefon"),]
+microsome.triadimefon.tdla <- microsome.triadimefon[which(microsome.triadimefon$analyte=="tdla"),]
+microsome.triadimefon.tdlb <- microsome.triadimefon[which(microsome.triadimefon$analyte=="tdlb"),]
+#fix time zeroes for parents and daughters
+microsome.triadimefon.triadimefon$conc[which(microsome.triadimefon.triadimefon$time==0)] = 
+    microsome.triadimefon.triadimefon$microMexp[which(microsome.triadimefon.triadimefon$time==0)]
+microsome.triadimefon.tdla$conc[which(microsome.triadimefon.tdla$time==0)] = 0
+microsome.triadimefon.tdlb$conc[which(microsome.triadimefon.tdlb$time==0)] = 0
+
+#fipronil data breakouts
+microsome.fipronil <- microsome[which(microsome$parent=="fipronil"),]
+microsome.fipronil.fipronil <- microsome.fipronil[which(microsome.fipronil$analyte=="fipronil"),]
+microsome.fipronil.fipsulf <- microsome.fipronil[which(microsome.fipronil$analyte=="fipsulf"),]
+#fix time zeroes for parents and daughters
+microsome.fipronil.fipronil$conc[which(microsome.fipronil.fipronil$time==0)] = 
+    microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
+microsome.fipronil.fipsulf$conc[which(microsome.fipronil.fipsulf$time==0)] = 0
+
+#drop outliers per dg
+#print("outliers:")
+#rowstodrop <- c(96,99,125:139)
+#microsome[rowstodrop,]
+#microsome <- microsome[-rowstodrop,]
 #triadimefon at conc =250
 #tdla at time=0, conc 0.68, replicate =3
 ```
@@ -87,12 +119,12 @@ experimental exposure data structure
 ====================================
 Check out structure of imported data sets. 
 
-```{r eval=TRUE, echo=TRUE}
+```{r data_structure, eval=TRUE, echo=TRUE}
 str(micro)
 ```
 
 Set time and replicate fields as factors for later statistical inference.
-```{r eval=TRUE, echo=FALSE}
+```{r set_factors, eval=TRUE, echo=FALSE}
 micro$replicate <- factor(micro$replicate)
 parents <- unique(micro$parent)
 analytes <- unique(micro$analyte)
@@ -110,12 +142,12 @@ microsome experiment data structure
 ====================================
 Check out structure of imported data set for the microsome analysis. 
 
-```{r eval=TRUE, echo=TRUE}
+```{r microsome_structure, eval=TRUE, echo=TRUE}
 str(microsome)
 ```
 
 Set time and replicate fields as factors for later statistical inference.
-```{r eval=TRUE, echo=FALSE}
+```{r microsome_factors, eval=TRUE, echo=FALSE}
 microsome$replicate <- factor(microsome$replicate)
 omeparents <- unique(microsome$parent)
 omeanalytes <- unique(microsome$analyte)
@@ -136,13 +168,7 @@ The microsomal experiment has 3-4 replicates for each pesticide. The experiment 
 
 atrazine
 =================================
-```{r eval=TRUE, echo=FALSE}
-microsome.atrazine <- microsome[which(microsome$parent=="atrazine"),]
-microsome.atrazine.atrazine <- microsome.atrazine[which(microsome.atrazine$analyte=="atrazine"),]
-microsome.atrazine.dia <- microsome.atrazine[which(microsome.atrazine$analyte=="dia"),]
-microsome.atrazine.dea <- microsome.atrazine[which(microsome.atrazine$analyte=="dea"),]
-microsome.time <- microsome.atrazine.atrazine$time
-
+```{r atrazine_mm, eval=TRUE, echo=FALSE}
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.atrazine.atrazine$microMexp
 Time <- microsome.atrazine.atrazine$time
@@ -216,8 +242,6 @@ Used to estimate slopes.
 dea
 =================================
 ```{r eval=TRUE, echo=FALSE}
-microsome.time <- microsome.atrazine.dea$time
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.atrazine.dea$microMexp
 Time <- microsome.atrazine.dea$time
@@ -357,12 +381,6 @@ ggsave("mm_dia.pdf", width = 6, height = 4)
 triadimefon
 =================================
 ```{r eval=TRUE, echo=FALSE}
-microsome.triadimefon <- microsome[which(microsome$parent=="triadimefon"),]
-microsome.triadimefon.triadimefon <- microsome.triadimefon[which(microsome.triadimefon$analyte=="triadimefon"),]
-microsome.triadimefon.tdla <- microsome.triadimefon[which(microsome.triadimefon$analyte=="tdla"),]
-microsome.triadimefon.tdlb <- microsome.triadimefon[which(microsome.triadimefon$analyte=="tdlb"),]
-microsome.time <- microsome.triadimefon.triadimefon$time
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.triadimefon$microMexp
 Time <- microsome.triadimefon.triadimefon$time
@@ -427,7 +445,6 @@ ggsave("mm_triadimefon.pdf", width = 6, height = 4)
 tdla
 =================================
 ```{r eval=TRUE, echo=FALSE}
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.tdla$microMexp
 Time <- microsome.triadimefon.tdla$time
@@ -492,7 +509,6 @@ ggsave("mm_tdla.pdf", width = 6, height = 4)
 tdlb
 =================================
 ```{r eval=TRUE, echo=FALSE}
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.tdlb$microMexp
 Time <- microsome.triadimefon.tdlb$time
@@ -557,11 +573,6 @@ ggsave("mm_tdlb.pdf", width = 6, height = 4)
 fipronil
 =================================
 ```{r eval=TRUE, echo=FALSE}
-microsome.fipronil <- microsome[which(microsome$parent=="fipronil"),]
-microsome.fipronil.fipronil <- microsome.fipronil[which(microsome.fipronil$analyte=="fipronil"),]
-microsome.fipronil.fipsulf <- microsome.fipronil[which(microsome.fipronil$analyte=="fipsulf"),]
-microsome.time <- microsome.fipronil.fipronil$time
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.fipronil.fipronil$microMexp
 Time <- microsome.fipronil.fipronil$time
@@ -626,7 +637,6 @@ ggsave("mm_fipronil.pdf", width = 6, height = 4)
 fipsulf
 =================================
 ```{r eval=TRUE, echo=FALSE}
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.fipronil.fipsulf$microMexp
 Time <- microsome.fipronil.fipsulf$time
