@@ -202,7 +202,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -275,7 +275,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -350,7 +350,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -414,7 +414,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -478,7 +478,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -542,7 +542,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -606,7 +606,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -670,7 +670,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
