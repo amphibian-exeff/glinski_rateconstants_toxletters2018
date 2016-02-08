@@ -868,5 +868,4 @@ MLexp.halflife.CI <- function(times,data){
 }
 
 microsome experiment analysis
-============================
-data in csv format
+==============================
