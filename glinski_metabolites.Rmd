@@ -15,7 +15,7 @@ things to do
 
 install and load supporting libraries
 ======================================
-```{r setup, eval=TRUE, echo=FALSE}
+```{r setup, eval=TRUE, echo=FALSE, }
 print(Sys.info()[4])
 
 #original data sources are available on dropbox
@@ -26,10 +26,12 @@ print(Sys.info()[4])
 #install.packages(knitr)
 #install.packages(zoo)
 #install.packages(xtable)
-#install.packages(drc) # for fitting Michaelis Menten model
+#install.packages(drc, dependencies=TRUE) # for fitting Michaelis Menten model
 #install.packages(ggplot2) # for drawing
 #install.packages(scatterplot3d) # for drawing
+#install.packages(pbkrtest)
 #library(grofit)
+
 
 R.Version()$version.string
 library(rmarkdown, quietly = TRUE, warn.conflicts = FALSE)
@@ -40,6 +42,8 @@ library(xtable, quietly = TRUE, warn.conflicts = FALSE)
 library(drc, quietly = TRUE, warn.conflicts = FALSE) # for fitting Michaelis Menten model
 library(ggplot2, quietly = TRUE, warn.conflicts = FALSE) # for drawing
 library(scatterplot3d)
+library(pbkrtest)
+
 #library(grofit)
 print("list of loaded packages: ")
 print((.packages()))
@@ -74,13 +78,6 @@ print(paste("check to see if R can access files OK: ", file.exists(micro.csv.in)
 #import data
 micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header = TRUE, sep = ",")
 microsome <- read.table(paste(micro.csv.in,"microsome_experiment2.csv",sep=""), header = TRUE, sep = ",")
-#drop outliers per dg
-#print("outliers:")
-#rowstodrop <- c(96,99,125:139)
-#microsome[rowstodrop,]
-#microsome <- microsome[-rowstodrop,]
-#triadimefon at conc =250
-#tdla at time=0, conc 0.68, replicate =3
 
 #atrazine data breakouts
 microsome.atrazine <- microsome[which(microsome$parent=="atrazine"),]
@@ -89,7 +86,7 @@ microsome.atrazine.dia <- microsome.atrazine[which(microsome.atrazine$analyte=="
 microsome.atrazine.dea <- microsome.atrazine[which(microsome.atrazine$analyte=="dea"),]
 #fix time zeroes for parents and daughters
 microsome.atrazine.atrazine$conc[which(microsome.atrazine.atrazine$time==0)] = 
-microsome.atrazine.atrazine$microMexp[which(microsome.atrazine.atrazine$time==0)]
+    microsome.atrazine.atrazine$microMexp[which(microsome.atrazine.atrazine$time==0)]
 microsome.atrazine.dia$conc[which(microsome.atrazine.dia$time==0)] = 0
 microsome.atrazine.dea$conc[which(microsome.atrazine.dea$time==0)] = 0
 
@@ -100,7 +97,7 @@ microsome.triadimefon.tdla <- microsome.triadimefon[which(microsome.triadimefon$
 microsome.triadimefon.tdlb <- microsome.triadimefon[which(microsome.triadimefon$analyte=="tdlb"),]
 #fix time zeroes for parents and daughters
 microsome.triadimefon.triadimefon$conc[which(microsome.triadimefon.triadimefon$time==0)] = 
-microsome.triadimefon.triadimefon$microMexp[which(microsome.triadimefon.triadimefon$time==0)]
+    microsome.triadimefon.triadimefon$microMexp[which(microsome.triadimefon.triadimefon$time==0)]
 microsome.triadimefon.tdla$conc[which(microsome.triadimefon.tdla$time==0)] = 0
 microsome.triadimefon.tdlb$conc[which(microsome.triadimefon.tdlb$time==0)] = 0
 
@@ -108,22 +105,30 @@ microsome.triadimefon.tdlb$conc[which(microsome.triadimefon.tdlb$time==0)] = 0
 microsome.fipronil <- microsome[which(microsome$parent=="fipronil"),]
 microsome.fipronil.fipronil <- microsome.fipronil[which(microsome.fipronil$analyte=="fipronil"),]
 microsome.fipronil.fipsulf <- microsome.fipronil[which(microsome.fipronil$analyte=="fipsulf"),]
- #fix time zeroes for parents and daughters
- microsome.fipronil.fipronil$conc[which(microsome.fipronil.fipronil$time==0)] = 
- microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
- microsome.fipronil.fipsulf$conc[which(microsome.fipronil.fipsulf$time==0)] = 0
+#fix time zeroes for parents and daughters
+microsome.fipronil.fipronil$conc[which(microsome.fipronil.fipronil$time==0)] = 
+    microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
+microsome.fipronil.fipsulf$conc[which(microsome.fipronil.fipsulf$time==0)] = 0
+
+#drop outliers per dg
+#print("outliers:")
+#rowstodrop <- c(96,99,125:139)
+#microsome[rowstodrop,]
+#microsome <- microsome[-rowstodrop,]
+#triadimefon at conc =250
+#tdla at time=0, conc 0.68, replicate =3
 ```
 
 experimental exposure data structure
 ====================================
 Check out structure of imported data sets. 
 
-```{r eval=TRUE, echo=TRUE}
+```{r data_structure, eval=TRUE, echo=TRUE}
 str(micro)
 ```
 
 Set time and replicate fields as factors for later statistical inference.
-```{r eval=TRUE, echo=FALSE}
+```{r set_factors, eval=TRUE, echo=FALSE}
 micro$replicate <- factor(micro$replicate)
 parents <- unique(micro$parent)
 analytes <- unique(micro$analyte)
@@ -141,12 +146,12 @@ microsome experiment data structure
 ====================================
 Check out structure of imported data set for the microsome analysis. 
 
-```{r eval=TRUE, echo=TRUE}
+```{r microsome_structure, eval=TRUE, echo=TRUE}
 str(microsome)
 ```
 
 Set time and replicate fields as factors for later statistical inference.
-```{r eval=TRUE, echo=FALSE}
+```{r microsome_factors, eval=TRUE, echo=FALSE}
 microsome$replicate <- factor(microsome$replicate)
 omeparents <- unique(microsome$parent)
 omeanalytes <- unique(microsome$analyte)
@@ -165,11 +170,18 @@ analyze microsomal data
 =================================
 The microsomal experiment has 3-4 replicates for each pesticide. The experiment progressively increases the concentration of the substrate (microMexp) and measures the enzyme velocity. At each substrate concentration the reaction is quenched after a specific period of time (0, 15, 30, 60, 90 mins). This time series data is used to estimate a slope associated with each substrate concentration. Substrate concentration and linear velocity slopes are then fit using Michaelis-Menten kinetics to estimate reaction rates for each pesticide.
 
+non-linear fitting
+==================
+We use the dose-response model (drm) package from R for the fitting of the rate constant. We provide it the 2-parameter Michaelis-Menton function (mm2) as an argument. It uses the MM.2 function that is in the drc package and therefore is a drc object that contains a list of class drcMean, containing the mean function, the self starter function, the parameter names
+and other components such as derivatives and a function for calculating ED values. It is not shifted (??) so uses the fit f(x,(c,d,e)) = c + (d-c)/(1+e/x). Where x is the dose, it is a strictly increasing function so we reverse the sign of the slopes for the parents. e is the dose halfway between c and d, for the 2-parameter model c = 0.
+
+```{r mm_function, eval=TRUE, echo=FALSE}
+getMeanFunctions(fname = "MM.2")
+```
+
 atrazine
 =================================
-```{r eval=TRUE, echo=FALSE}
-microsome.time <- microsome.atrazine.atrazine$time
-
+```{r atrazine_mm, eval=TRUE, echo=FALSE}
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.atrazine.atrazine$microMexp
 Time <- microsome.atrazine.atrazine$time
@@ -213,6 +225,7 @@ print(mm)
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
+summary(model.drm)
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -243,8 +256,6 @@ Used to estimate slopes.
 dea
 =================================
 ```{r eval=TRUE, echo=FALSE}
-microsome.time <- microsome.atrazine.dea$time
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.atrazine.dea$microMexp
 Time <- microsome.atrazine.dea$time
@@ -278,7 +289,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -288,6 +299,7 @@ print(mm)
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
+summary(model.drm)
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -353,7 +365,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -363,6 +375,7 @@ print(mm)
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
+summary(model.drm)
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -384,8 +397,6 @@ ggsave("mm_dia.pdf", width = 6, height = 4)
 triadimefon
 =================================
 ```{r eval=TRUE, echo=FALSE}
-microsome.time <- microsome.triadimefon.triadimefon$time
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.triadimefon$microMexp
 Time <- microsome.triadimefon.triadimefon$time
@@ -419,7 +430,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -429,6 +440,7 @@ print(mm)
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
+summary(model.drm)
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -450,7 +462,6 @@ ggsave("mm_triadimefon.pdf", width = 6, height = 4)
 tdla
 =================================
 ```{r eval=TRUE, echo=FALSE}
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.tdla$microMexp
 Time <- microsome.triadimefon.tdla$time
@@ -484,7 +495,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -494,6 +505,7 @@ print(mm)
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
+summary(model.drm)
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -515,7 +527,6 @@ ggsave("mm_tdla.pdf", width = 6, height = 4)
 tdlb
 =================================
 ```{r eval=TRUE, echo=FALSE}
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.tdlb$microMexp
 Time <- microsome.triadimefon.tdlb$time
@@ -549,7 +560,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -559,6 +570,7 @@ print(mm)
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
+summary(model.drm)
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -580,8 +592,6 @@ ggsave("mm_tdlb.pdf", width = 6, height = 4)
 fipronil
 =================================
 ```{r eval=TRUE, echo=FALSE}
-microsome.time <- microsome.fipronil.fipronil$time
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.fipronil.fipronil$microMexp
 Time <- microsome.fipronil.fipronil$time
@@ -615,7 +625,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -625,6 +635,7 @@ print(mm)
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
+summary(model.drm)
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -646,7 +657,6 @@ ggsave("mm_fipronil.pdf", width = 6, height = 4)
 fipsulf
 =================================
 ```{r eval=TRUE, echo=FALSE}
-
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.fipronil.fipsulf$microMexp
 Time <- microsome.fipronil.fipsulf$time
@@ -680,7 +690,7 @@ for (s in Substrates){
   print(coefficients(mfit))
   print(confint(mfit))
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * (1) * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
   print("##################################################")
 }
 
@@ -690,6 +700,7 @@ print(mm)
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
+summary(model.drm)
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -888,4 +899,5 @@ MLexp.halflife.CI <- function(times,data){
 }
 
 microsome experiment analysis
-==============================
+============================
+data in csv format
