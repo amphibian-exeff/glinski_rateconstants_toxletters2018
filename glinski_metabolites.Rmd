@@ -16,7 +16,12 @@ things to do
 install and load supporting libraries
 ======================================
 ```{r setup, eval=TRUE, echo=FALSE, }
-print(Sys.info()[4])
+verbose_output = FALSE
+
+if(verbose_output){
+  print(Sys.info()[4])
+  R.Version()$version.string
+}
 
 #original data sources are available on dropbox
 #/amphib_glinski_micosomes
@@ -32,8 +37,6 @@ print(Sys.info()[4])
 #install.packages(pbkrtest)
 #library(grofit)
 
-
-R.Version()$version.string
 library(rmarkdown, quietly = TRUE, warn.conflicts = FALSE)
 library(dplyr, quietly = TRUE, warn.conflicts = FALSE)
 library(knitr, quietly = TRUE, warn.conflicts = FALSE)
@@ -45,8 +48,10 @@ library(scatterplot3d)
 library(pbkrtest)
 
 #library(grofit)
-print("list of loaded packages: ")
-print((.packages()))
+if(verbose_output){
+  print("list of loaded packages: ")
+  print((.packages()))
+}
 ```
 
 import experimental exposure and microsomal data
@@ -65,7 +70,10 @@ if(Sys.info()[4]=="stp-air-3.local" || Sys.info()[4]=="stp-air.local" || Sys.inf
 if(Sys.info()[4]=="DZ2626UTPURUCKE"){
   micro.root <- "k:/git/glinski_metabolites/"
 }
-print(paste("Root directory location: ", micro.root, sep=""))
+
+if(verbose_output){
+  print(paste("Root directory location: ", micro.root, sep=""))
+}
 
 micro.csv.in <- paste(micro.root, "csv_in/", sep="")
 micro.csv.out <- paste(micro.root, "csv_out/", sep="")
@@ -73,7 +81,9 @@ micro.graphics <- paste(micro.root, "graphics/", sep="")
 micro.tables <- paste(micro.root, "tables/", sep="")
 
 #maybe ok even if remote drive returns false
-print(paste("check to see if R can access files OK: ", file.exists(micro.csv.in), sep = ""))
+if(verbose_output){
+  print(paste("check to see if R can access files OK: ", file.exists(micro.csv.in), sep = ""))
+}
 
 #import data
 micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header = TRUE, sep = ",")
@@ -97,7 +107,7 @@ microsome.triadimefon.tdla <- microsome.triadimefon[which(microsome.triadimefon$
 microsome.triadimefon.tdlb <- microsome.triadimefon[which(microsome.triadimefon$analyte=="tdlb"),]
 #fix time zeroes for parents and daughters
 microsome.triadimefon.triadimefon$conc[which(microsome.triadimefon.triadimefon$time==0)] = 
-    microsome.triadimefon.triadimefon$microMexp[which(microsome.triadimefon.triadimefon$time==0)]
+microsome.triadimefon.triadimefon$microMexp[which(microsome.triadimefon.triadimefon$time==0)]
 microsome.triadimefon.tdla$conc[which(microsome.triadimefon.tdla$time==0)] = 0
 microsome.triadimefon.tdlb$conc[which(microsome.triadimefon.tdlb$time==0)] = 0
 
@@ -107,7 +117,7 @@ microsome.fipronil.fipronil <- microsome.fipronil[which(microsome.fipronil$analy
 microsome.fipronil.fipsulf <- microsome.fipronil[which(microsome.fipronil$analyte=="fipsulf"),]
 #fix time zeroes for parents and daughters
 microsome.fipronil.fipronil$conc[which(microsome.fipronil.fipronil$time==0)] = 
-    microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
+microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
 microsome.fipronil.fipsulf$conc[which(microsome.fipronil.fipsulf$time==0)] = 0
 
 #drop outliers per dg
@@ -123,8 +133,10 @@ experimental exposure data structure
 ====================================
 Check out structure of imported data sets. 
 
-```{r data_structure, eval=TRUE, echo=TRUE}
-str(micro)
+```{r data_structure, eval=TRUE, echo=FALSE}
+if(verbose_output){
+  str(micro)
+}
 ```
 
 Set time and replicate fields as factors for later statistical inference.
@@ -146,8 +158,10 @@ microsome experiment data structure
 ====================================
 Check out structure of imported data set for the microsome analysis. 
 
-```{r microsome_structure, eval=TRUE, echo=TRUE}
-str(microsome)
+```{r microsome_structure, eval=TRUE, echo=FALSE}
+if(verbose_output){
+  str(microsome)
+}
 ```
 
 Set time and replicate fields as factors for later statistical inference.
@@ -161,8 +175,9 @@ omeanalytes <- unique(microsome$analyte)
 #omeanalytes
 
 #estimate the rate
-
-str(microsome)
+if(verbose_output){
+  str(microsome)
+}
 
 ```
 
@@ -186,8 +201,10 @@ atrazine
 Substrate <- microsome.atrazine.atrazine$microMexp
 Time <- microsome.atrazine.atrazine$time
 Observed <- microsome.atrazine.atrazine$conc
-scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
-              col.axis = "blue")
+if(verbose_output){
+  scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+                col.axis = "blue")
+}
 ```
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
@@ -201,43 +218,61 @@ print("Substrates:")
 i <- 0
 for (s in Substrates){
   i <- i + 1
-  print("##################################################")
-  print(paste("Substrate = ", s))
+  if(verbose_output){
+    print("##################################################")
+    print(paste("Substrate = ", s))
+  }
   ind <- which(Substrate==s)
-  print(cbind(ind, Time[ind], Observed[ind]))
+  if(verbose_output){
+    print(cbind(ind, Time[ind], Observed[ind]))
+  }
   #linear regressions
-  print(paste("least squares linear regression for substrate =", s))
+  if(verbose_output){
+    print(paste("least squares linear regression for substrate =", s))
+  }
   lmfit <- lm(Observed[ind] ~ Time[ind])
-  print(lmfit)
-  print(summary(lmfit))
-  print(coefficients(lmfit))
-  print(confint(lmfit))
-  par(mfrow = c(2,2), oma = c(0, 0, 1.1, 0))
-  plot(lmfit, las = 1)
-  #robust regression
-  print(paste("weighted linear regression for substrate =", s))
-  par(mfrow = c(1,1), oma = c(0, 0, 1.1, 0))
+  if(verbose_output){
+    print(lmfit)
+    print(summary(lmfit))
+    print(coefficients(lmfit))
+    print(confint(lmfit))
+    par(mfrow = c(2,2), oma = c(0, 0, 1.1, 0))
+    plot(lmfit, las = 1)
+    #robust regression
+    print(paste("weighted linear regression for substrate =", s))
+    par(mfrow = c(1,1), oma = c(0, 0, 1.1, 0))
+  }
   mfit <- rlm(Observed[ind] ~ Time[ind])
-  print(mfit)
-  print(summary(mfit))
+  if(verbose_output){
+    print(mfit)
+    print(summary(mfit))
+  }
   plot(Time[ind],Observed[ind], main = paste("Atrazine Substrate =", s))
   text(Time[ind], Observed[ind], labels=ind, cex= 0.8, pos=4)
   abline(mfit)
-  print(coefficients(mfit))
-  print(confint(mfit))
+  if(verbose_output){
+    print(coefficients(mfit))
+    print(confint(mfit))
+  }
   sub[i] <- s
   vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
-  print("##################################################")
+  if(verbose_output){
+    print("##################################################")
+  }
 }
 
 mm <- as.data.frame(cbind(sub,vel))
-str(mm)
-print(mm)
+if(verbose_output){
+  str(mm)
+  print(mm)
+}
 
-plot(vel ~ sub)
+#plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-print("here are the rates")
-print(summary(model.drm))
+if(verbose_output){
+  print("here are the rates")
+  print(summary(model.drm))
+}
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -272,8 +307,10 @@ dea
 Substrate <- microsome.atrazine.dea$microMexp
 Time <- microsome.atrazine.dea$time
 Observed <- microsome.atrazine.dea$conc
-scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
-              col.axis = "blue")
+if(verbose_output){
+  scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+                col.axis = "blue")
+}
 ```
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
@@ -287,32 +324,46 @@ print("Substrates:")
 i <- 0
 for (s in Substrates){
   i <- i + 1
-  print("##################################################")
-  print(paste("Substrate = ", s))
+  if(verbose_output){
+    print("##################################################")
+    print(paste("Substrate = ", s))
+  }
   ind <- which(Substrate==s)
-  print(paste("Indices = ", ind))
-  print(paste("Times =", Time[ind]))
-  print(paste("Concs =", Observed[ind]))
+  if(verbose_output){
+    print(paste("Indices = ", ind))
+    print(paste("Times =", Time[ind]))
+    print(paste("Concs =", Observed[ind]))
+  }
   mfit <- rlm(Observed[ind] ~ Time[ind])
-  print(mfit)
-  print(summary(mfit))
+  if(verbose_output){
+    print(mfit)
+    print(summary(mfit))
+  }
   plot(Time[ind],Observed[ind], main = paste("DEA Substrate =", s))
   text(Time[ind], Observed[ind], labels=ind, cex= 0.8, pos=4)
   abline(mfit)
-  print(coefficients(mfit))
-  print(confint(mfit))
+  if(verbose_output){
+    print(coefficients(mfit))
+    print(confint(mfit))
+  }
   sub[i] <- s
   vel[i] <- coefficients(mfit)[2] * 1000 /0.2
-  print("##################################################")
+  if(verbose_output){
+    print("##################################################")
+  }
 }
 
 mm <- as.data.frame(cbind(sub,vel))
-str(mm)
-print(mm)
+if(verbose_output){
+  str(mm)
+  print(mm)
+}
 
-plot(vel ~ sub)
+#plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-summary(model.drm)
+if(verbose_output){
+  summary(model.drm)
+}
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -349,8 +400,10 @@ microsome.time <- microsome.atrazine.dia$time
 Substrate <- microsome.atrazine.dia$microMexp
 Time <- microsome.atrazine.dia$time
 Observed <- microsome.atrazine.dia$conc
-scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
-              col.axis = "blue")
+if(verbose_output){
+  scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+                col.axis = "blue")
+}
 ```
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
@@ -364,32 +417,46 @@ print("Substrates:")
 i <- 0
 for (s in Substrates){
   i <- i + 1
-  print("##################################################")
-  print(paste("Substrate = ", s))
+  if(verbose_output){
+    print("##################################################")
+    print(paste("Substrate = ", s))
+  }
   ind <- which(Substrate==s)
-  print(paste("Indices = ", ind))
-  print(paste("Times =", Time[ind]))
-  print(paste("Concs =", Observed[ind]))
+  if(verbose_output){
+    print(paste("Indices = ", ind))
+    print(paste("Times =", Time[ind]))
+    print(paste("Concs =", Observed[ind]))
+  }
   mfit <- rlm(Observed[ind] ~ Time[ind])
-  print(mfit)
-  print(summary(mfit))
+  if(verbose_output){
+    print(mfit)
+    print(summary(mfit))
+  }
   plot(Time[ind],Observed[ind], main = paste("DIA Substrate =", s))
   text(Time[ind], Observed[ind], labels=ind, cex= 0.8, pos=4)
   abline(mfit)
-  print(coefficients(mfit))
-  print(confint(mfit))
+  if(verbose_output){
+    print(coefficients(mfit))
+    print(confint(mfit))
+  }
   sub[i] <- s
   vel[i] <- coefficients(mfit)[2] * 1000 /0.2
-  print("##################################################")
+  if(verbose_output){
+    print("##################################################")
+  }
 }
 
 mm <- as.data.frame(cbind(sub,vel))
-str(mm)
-print(mm)
+if(verbose_output){
+  str(mm)
+  print(mm)
+}
 
-plot(vel ~ sub)
+#plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-summary(model.drm)
+if(verbose_output){
+  summary(model.drm)
+}
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -415,8 +482,10 @@ triadimefon
 Substrate <- microsome.triadimefon.triadimefon$microMexp
 Time <- microsome.triadimefon.triadimefon$time
 Observed <- microsome.triadimefon.triadimefon$conc
-scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
-              col.axis = "blue")
+if(verbose_output){
+  scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+                col.axis = "blue")
+}
 ```
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
@@ -430,32 +499,46 @@ print("Substrates:")
 i <- 0
 for (s in Substrates){
   i <- i + 1
-  print("##################################################")
-  print(paste("Substrate = ", s))
+  if(verbose_output){
+    print("##################################################")
+    print(paste("Substrate = ", s))
+  }
   ind <- which(Substrate==s)
-  print(paste("Indices = ", ind))
-  print(paste("Times =", Time[ind]))
-  print(paste("Concs =", Observed[ind]))
+  if(verbose_output){
+    print(paste("Indices = ", ind))
+    print(paste("Times =", Time[ind]))
+    print(paste("Concs =", Observed[ind]))
+  }
   mfit <- rlm(Observed[ind] ~ Time[ind])
-  print(mfit)
-  print(summary(mfit))
+  if(verbose_output){
+    print(mfit)
+    print(summary(mfit))
+  }
   plot(Time[ind],Observed[ind], main = paste("Triadimefon Substrate =", s))
   text(Time[ind], Observed[ind], labels=ind, cex= 0.8, pos=4)
   abline(mfit)
-  print(coefficients(mfit))
-  print(confint(mfit))
+  if(verbose_output){
+    print(coefficients(mfit))
+    print(confint(mfit))
+  }
   sub[i] <- s
   vel[i] <- coefficients(mfit)[2] * 1000 /0.2
-  print("##################################################")
+  if(verbose_output){
+    print("##################################################")
+  }
 }
 
 mm <- as.data.frame(cbind(sub,vel))
-str(mm)
-print(mm)
+if(verbose_output){
+  str(mm)
+  print(mm)
+}
 
-plot(vel ~ sub)
+#plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-summary(model.drm)
+if(verbose_output){
+  summary(model.drm)
+}
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -481,8 +564,10 @@ tdla
 Substrate <- microsome.triadimefon.tdla$microMexp
 Time <- microsome.triadimefon.tdla$time
 Observed <- microsome.triadimefon.tdla$conc
-scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
-              col.axis = "blue")
+if(verbose_output){
+  scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+                col.axis = "blue")
+}
 ```
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
@@ -496,32 +581,46 @@ print("Substrates:")
 i <- 0
 for (s in Substrates){
   i <- i + 1
-  print("##################################################")
-  print(paste("Substrate = ", s))
+  if(verbose_output){
+    print("##################################################")
+    print(paste("Substrate = ", s))
+  }
   ind <- which(Substrate==s)
-  print(paste("Indices = ", ind))
-  print(paste("Times =", Time[ind]))
-  print(paste("Concs =", Observed[ind]))
+  if(verbose_output){
+    print(paste("Indices = ", ind))
+    print(paste("Times =", Time[ind]))
+    print(paste("Concs =", Observed[ind]))
+  }
   mfit <- rlm(Observed[ind] ~ Time[ind])
-  print(mfit)
-  print(summary(mfit))
+  if(verbose_output){
+    print(mfit)
+    print(summary(mfit))
+  }
   plot(Time[ind],Observed[ind], main = paste("tdla Substrate =", s))
   text(Time[ind], Observed[ind], labels=ind, cex= 0.8, pos=4)
   abline(mfit)
-  print(coefficients(mfit))
-  print(confint(mfit))
+  if(verbose_output){
+    print(coefficients(mfit))
+    print(confint(mfit))
+  }
   sub[i] <- s
   vel[i] <- coefficients(mfit)[2] * 1000 /0.2
-  print("##################################################")
+  if(verbose_output){
+    print("##################################################")
+  }
 }
 
 mm <- as.data.frame(cbind(sub,vel))
-str(mm)
-print(mm)
+if(verbose_output){
+  str(mm)
+  print(mm)
+}
 
-plot(vel ~ sub)
+#plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-summary(model.drm)
+if(verbose_output){
+  summary(model.drm)
+}
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -547,8 +646,10 @@ tdlb
 Substrate <- microsome.triadimefon.tdlb$microMexp
 Time <- microsome.triadimefon.tdlb$time
 Observed <- microsome.triadimefon.tdlb$conc
-scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
-              col.axis = "blue")
+if(verbose_output){
+  scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+                col.axis = "blue")
+}
 ```
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
@@ -562,32 +663,46 @@ print("Substrates:")
 i <- 0
 for (s in Substrates){
   i <- i + 1
-  print("##################################################")
-  print(paste("Substrate = ", s))
+  if(verbose_output){
+    print("##################################################")
+    print(paste("Substrate = ", s))
+  }
   ind <- which(Substrate==s)
-  print(paste("Indices = ", ind))
-  print(paste("Times =", Time[ind]))
-  print(paste("Concs =", Observed[ind]))
+  if(verbose_output){
+    print(paste("Indices = ", ind))
+    print(paste("Times =", Time[ind]))
+    print(paste("Concs =", Observed[ind]))
+  }
   mfit <- rlm(Observed[ind] ~ Time[ind])
-  print(mfit)
-  print(summary(mfit))
+  if(verbose_output){
+    print(mfit)
+    print(summary(mfit))
+  }
   plot(Time[ind],Observed[ind], main = paste("tdlb Substrate =", s))
   text(Time[ind], Observed[ind], labels=ind, cex= 0.8, pos=4)
   abline(mfit)
-  print(coefficients(mfit))
-  print(confint(mfit))
+  if(verbose_output){
+    print(coefficients(mfit))
+    print(confint(mfit))
+  }
   sub[i] <- s
   vel[i] <- coefficients(mfit)[2] * 1000 /0.2
-  print("##################################################")
+  if(verbose_output){
+    print("##################################################")
+  }
 }
 
 mm <- as.data.frame(cbind(sub,vel))
-str(mm)
-print(mm)
+if(verbose_output){
+  str(mm)
+  print(mm)
+}
 
-plot(vel ~ sub)
+#plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-summary(model.drm)
+if(verbose_output){
+  summary(model.drm)
+}
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -613,8 +728,10 @@ fipronil
 Substrate <- microsome.fipronil.fipronil$microMexp
 Time <- microsome.fipronil.fipronil$time
 Observed <- microsome.fipronil.fipronil$conc
-scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
-              col.axis = "blue")
+if(verbose_output){
+  scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+                col.axis = "blue")
+}
 ```
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
@@ -628,32 +745,46 @@ print("Substrates:")
 i <- 0
 for (s in Substrates){
   i <- i + 1
-  print("##################################################")
-  print(paste("Substrate = ", s))
+  if(verbose_output){
+    print("##################################################")
+    print(paste("Substrate = ", s))
+  }
   ind <- which(Substrate==s)
-  print(paste("Indices = ", ind))
-  print(paste("Times =", Time[ind]))
-  print(paste("Concs =", Observed[ind]))
+  if(verbose_output){
+    print(paste("Indices = ", ind))
+    print(paste("Times =", Time[ind]))
+    print(paste("Concs =", Observed[ind]))
+  }
   mfit <- rlm(Observed[ind] ~ Time[ind])
-  print(mfit)
-  print(summary(mfit))
+  if(verbose_output){
+    print(mfit)
+    print(summary(mfit))
+  }
   plot(Time[ind],Observed[ind], main = paste("Fipronil Substrate =", s))
   text(Time[ind], Observed[ind], labels=ind, cex= 0.8, pos=4)
   abline(mfit)
-  print(coefficients(mfit))
-  print(confint(mfit))
+  if(verbose_output){
+    print(coefficients(mfit))
+    print(confint(mfit))
+  }
   sub[i] <- s
   vel[i] <- coefficients(mfit)[2] * 1000 /0.2
-  print("##################################################")
+  if(verbose_output){
+    print("##################################################")
+  }
 }
 
 mm <- as.data.frame(cbind(sub,vel))
-str(mm)
-print(mm)
+if(verbose_output){
+  str(mm)
+  print(mm)
+}
 
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-summary(model.drm)
+if(verbose_output){
+  summary(model.drm)
+}
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -679,8 +810,10 @@ fipsulf
 Substrate <- microsome.fipronil.fipsulf$microMexp
 Time <- microsome.fipronil.fipsulf$time
 Observed <- microsome.fipronil.fipsulf$conc
-scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
-              col.axis = "blue")
+if(verbose_output){
+  scatterplot3d(Substrate, Time, Observed, highlight.3d = TRUE, col.grid = "lightblue", 
+                col.axis = "blue")
+}
 ```
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
@@ -694,32 +827,46 @@ print("Substrates:")
 i <- 0
 for (s in Substrates){
   i <- i + 1
-  print("##################################################")
-  print(paste("Substrate = ", s))
+  if(verbose_output){
+    print("##################################################")
+    print(paste("Substrate = ", s))
+  }
   ind <- which(Substrate==s)
-  print(paste("Indices = ", ind))
-  print(paste("Times =", Time[ind]))
-  print(paste("Concs =", Observed[ind]))
+  if(verbose_output){
+    print(paste("Indices = ", ind))
+    print(paste("Times =", Time[ind]))
+    print(paste("Concs =", Observed[ind]))
+  }
   mfit <- rlm(Observed[ind] ~ Time[ind])
-  print(mfit)
-  print(summary(mfit))
+  if(verbose_output){
+    print(mfit)
+    print(summary(mfit))
+  }
   plot(Time[ind],Observed[ind], main = paste("fipsulf Substrate =", s))
   text(Time[ind], Observed[ind], labels=ind, cex= 0.8, pos=4)
   abline(mfit)
-  print(coefficients(mfit))
-  print(confint(mfit))
+  if(verbose_output){
+    print(coefficients(mfit))
+    print(confint(mfit))
+  }
   sub[i] <- s
   vel[i] <- coefficients(mfit)[2] * 1000 /0.2
-  print("##################################################")
+  if(verbose_output){
+    print("##################################################")
+  }
 }
 
 mm <- as.data.frame(cbind(sub,vel))
-str(mm)
-print(mm)
+if(verbose_output){
+  str(mm)
+  print(mm)
+}
 
-plot(vel ~ sub)
+#plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-summary(model.drm)
+if(verbose_output){
+  summary(model.drm)
+}
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
