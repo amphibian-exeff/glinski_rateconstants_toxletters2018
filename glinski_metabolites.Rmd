@@ -237,7 +237,7 @@ print(mm)
 plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-summary(model.drm)
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
