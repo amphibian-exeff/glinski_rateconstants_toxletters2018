@@ -89,6 +89,15 @@ if(verbose_output){
 micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header = TRUE, sep = ",")
 microsome <- read.table(paste(micro.csv.in,"microsome_experiment2.csv",sep=""), header = TRUE, sep = ",")
 
+#drop outliers per dg
+#print("outliers:")
+#View(microsome)
+#rowstodrop <- c(96,99,125:139)
+#microsome[rowstodrop,]
+#microsome <- microsome[-rowstodrop,]
+#triadimefon at conc =250
+#tdla at time=0, conc 0.68, replicate =3
+
 #atrazine data breakouts
 microsome.atrazine <- microsome[which(microsome$parent=="atrazine"),]
 microsome.atrazine.atrazine <- microsome.atrazine[which(microsome.atrazine$analyte=="atrazine"),]
@@ -120,13 +129,6 @@ microsome.fipronil.fipronil$conc[which(microsome.fipronil.fipronil$time==0)] =
 microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
 microsome.fipronil.fipsulf$conc[which(microsome.fipronil.fipsulf$time==0)] = 0
 
-#drop outliers per dg
-#print("outliers:")
-#rowstodrop <- c(96,99,125:139)
-#microsome[rowstodrop,]
-#microsome <- microsome[-rowstodrop,]
-#triadimefon at conc =250
-#tdla at time=0, conc 0.68, replicate =3
 ```
 
 experimental exposure data structure
@@ -269,10 +271,8 @@ if(verbose_output){
 
 #plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-if(verbose_output){
-  print("here are the rates")
-  print(summary(model.drm))
-}
+print("here are the rates")
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -361,9 +361,8 @@ if(verbose_output){
 
 #plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-if(verbose_output){
-  summary(model.drm)
-}
+print("here are the rates")
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -454,9 +453,8 @@ if(verbose_output){
 
 #plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-if(verbose_output){
-  summary(model.drm)
-}
+print("here are the rates")
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -522,7 +520,7 @@ for (s in Substrates){
     print(confint(mfit))
   }
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
   if(verbose_output){
     print("##################################################")
   }
@@ -536,9 +534,8 @@ if(verbose_output){
 
 #plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-if(verbose_output){
-  summary(model.drm)
-}
+print("here are the rates")
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -618,9 +615,8 @@ if(verbose_output){
 
 #plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-if(verbose_output){
-  summary(model.drm)
-}
+print("here are the rates")
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -700,9 +696,8 @@ if(verbose_output){
 
 #plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-if(verbose_output){
-  summary(model.drm)
-}
+print("here are the rates")
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -768,7 +763,7 @@ for (s in Substrates){
     print(confint(mfit))
   }
   sub[i] <- s
-  vel[i] <- coefficients(mfit)[2] * 1000 /0.2
+  vel[i] <- coefficients(mfit)[2] * (-1) * 1000 /0.2
   if(verbose_output){
     print("##################################################")
   }
@@ -780,11 +775,10 @@ if(verbose_output){
   print(mm)
 }
 
-plot(vel ~ sub)
+#plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-if(verbose_output){
-  summary(model.drm)
-}
+print("here are the rates")
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -864,9 +858,8 @@ if(verbose_output){
 
 #plot(vel ~ sub)
 model.drm <- drm(vel ~ sub, fct = MM.2())
-if(verbose_output){
-  summary(model.drm)
-}
+print("here are the rates")
+print(summary(model.drm))
 
 #redo substrate concs for plotting
 mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
