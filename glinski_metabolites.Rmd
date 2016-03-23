@@ -104,10 +104,10 @@ microsome.atrazine.atrazine <- microsome.atrazine[which(microsome.atrazine$analy
 microsome.atrazine.dia <- microsome.atrazine[which(microsome.atrazine$analyte=="dia"),]
 microsome.atrazine.dea <- microsome.atrazine[which(microsome.atrazine$analyte=="dea"),]
 #fix time zeroes for parents and daughters
-microsome.atrazine.atrazine$conc[which(microsome.atrazine.atrazine$time==0)] = 
-    microsome.atrazine.atrazine$microMexp[which(microsome.atrazine.atrazine$time==0)]
-microsome.atrazine.dia$conc[which(microsome.atrazine.dia$time==0)] = 0
-microsome.atrazine.dea$conc[which(microsome.atrazine.dea$time==0)] = 0
+#microsome.atrazine.atrazine$conc[which(microsome.atrazine.atrazine$time==0)] = 
+#    microsome.atrazine.atrazine$microMexp[which(microsome.atrazine.atrazine$time==0)]
+#microsome.atrazine.dia$conc[which(microsome.atrazine.dia$time==0)] = 0
+#microsome.atrazine.dea$conc[which(microsome.atrazine.dea$time==0)] = 0
 
 #triadimefon data breakouts
 microsome.triadimefon <- microsome[which(microsome$parent=="triadimefon"),]
@@ -115,19 +115,19 @@ microsome.triadimefon.triadimefon <- microsome.triadimefon[which(microsome.triad
 microsome.triadimefon.tdla <- microsome.triadimefon[which(microsome.triadimefon$analyte=="tdla"),]
 microsome.triadimefon.tdlb <- microsome.triadimefon[which(microsome.triadimefon$analyte=="tdlb"),]
 #fix time zeroes for parents and daughters
-microsome.triadimefon.triadimefon$conc[which(microsome.triadimefon.triadimefon$time==0)] = 
-microsome.triadimefon.triadimefon$microMexp[which(microsome.triadimefon.triadimefon$time==0)]
-microsome.triadimefon.tdla$conc[which(microsome.triadimefon.tdla$time==0)] = 0
-microsome.triadimefon.tdlb$conc[which(microsome.triadimefon.tdlb$time==0)] = 0
+#microsome.triadimefon.triadimefon$conc[which(microsome.triadimefon.triadimefon$time==0)] = 
+#microsome.triadimefon.triadimefon$microMexp[which(microsome.triadimefon.triadimefon$time==0)]
+#microsome.triadimefon.tdla$conc[which(microsome.triadimefon.tdla$time==0)] = 0
+#microsome.triadimefon.tdlb$conc[which(microsome.triadimefon.tdlb$time==0)] = 0
 
 #fipronil data breakouts
 microsome.fipronil <- microsome[which(microsome$parent=="fipronil"),]
 microsome.fipronil.fipronil <- microsome.fipronil[which(microsome.fipronil$analyte=="fipronil"),]
 microsome.fipronil.fipsulf <- microsome.fipronil[which(microsome.fipronil$analyte=="fipsulf"),]
 #fix time zeroes for parents and daughters
-microsome.fipronil.fipronil$conc[which(microsome.fipronil.fipronil$time==0)] = 
-microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
-microsome.fipronil.fipsulf$conc[which(microsome.fipronil.fipsulf$time==0)] = 0
+#microsome.fipronil.fipronil$conc[which(microsome.fipronil.fipronil$time==0)] = 
+#microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
+#microsome.fipronil.fipsulf$conc[which(microsome.fipronil.fipsulf$time==0)] = 0
 
 ```
 
@@ -211,7 +211,7 @@ if(verbose_output){
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
 
-```{r eval=TRUE, echo=FALSE}
+```{r atrazine_plots, eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
 n_substrates <- length(Substrates)
 sub <- vector(mode = "numeric", length = n_substrates)
@@ -263,28 +263,28 @@ for (s in Substrates){
   }
 }
 
-mm <- as.data.frame(cbind(sub,vel))
+mm.atrazine <- as.data.frame(cbind(sub,vel))
 if(verbose_output){
-  str(mm)
-  print(mm)
+  str(mm.atrazine)
+  print(mm.atrazine)
 }
 
 #plot(vel ~ sub)
-model.drm <- drm(vel ~ sub, fct = MM.2())
+model.atrazine.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-print(summary(model.drm))
+print(summary(model.atrazine.drm))
 
 #redo substrate concs for plotting
-mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
-mml$vel <- predict(model.drm, newdata = mml)
+mml.atrazine <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml.atrazine$vel <- predict(model.atrazine.drm, newdata = mml.atrazine)
 
-ggplot(mm, aes(x = sub, y = vel)) +
+ggplot(mm.atrazine, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
   ylab("Velocity [pmol/min/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
-  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+  geom_line(data = mml.atrazine, aes(x = sub, y = vel), colour = "red")
 ggsave("mm_atrazine.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
@@ -296,13 +296,13 @@ We are interested in the reaction rate, v, which is a function of available subs
 We are fitting the 2-parameter model. 
 
 Used to estimate slopes.
-```{r eval=TRUE, echo=FALSE}
+```{r nada, eval=TRUE, echo=FALSE}
 #MM.2(c(microsome.atrazine$time, microsome$conc))
 ```
 
 dea
 =================================
-```{r eval=TRUE, echo=FALSE}
+```{r dea_setup, eval=TRUE, echo=FALSE}
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.atrazine.dea$microMexp
 Time <- microsome.atrazine.dea$time
@@ -315,7 +315,7 @@ if(verbose_output){
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
 
-```{r eval=TRUE, echo=FALSE}
+```{r dea_plots, eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
 n_substrates <- length(Substrates)
 sub <- vector(mode = "numeric", length = n_substrates)
@@ -353,28 +353,28 @@ for (s in Substrates){
   }
 }
 
-mm <- as.data.frame(cbind(sub,vel))
+mm.dea <- as.data.frame(cbind(sub,vel))
 if(verbose_output){
-  str(mm)
-  print(mm)
+  str(mm.dea)
+  print(mm.dea)
 }
 
 #plot(vel ~ sub)
-model.drm <- drm(vel ~ sub, fct = MM.2())
+model.dea.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-print(summary(model.drm))
+print(summary(model.dea.drm))
 
 #redo substrate concs for plotting
-mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
-mml$vel <- predict(model.drm, newdata = mml)
+mml.dea <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml.dea$vel <- predict(model.dea.drm, newdata = mml.dea)
 
-ggplot(mm, aes(x = sub, y = vel)) +
+ggplot(mm.dea, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
   ylab("Velocity [pmol/min/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
-  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+  geom_line(data = mml.dea, aes(x = sub, y = vel), colour = "red")
 ggsave("mm_dea.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
@@ -386,13 +386,13 @@ We are interested in the reaction rate, v, which is a function of available subs
 We are fitting the 2-parameter model. 
 
 Used to estimate slopes.
-```{r eval=TRUE, echo=FALSE}
+```{r nada2, eval=TRUE, echo=FALSE}
 #MM.2(c(microsome.atrazine$time, microsome$conc))
 ```
 
 dia
 =================================
-```{r eval=TRUE, echo=FALSE}
+```{r dia_setup, eval=TRUE, echo=FALSE}
 microsome.time <- microsome.atrazine.dia$time
 
 #microsome.atrazine.atrazine$microMexp
@@ -407,7 +407,7 @@ if(verbose_output){
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
 
-```{r eval=TRUE, echo=FALSE}
+```{r dia plots, eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
 n_substrates <- length(Substrates)
 sub <- vector(mode = "numeric", length = n_substrates)
@@ -445,37 +445,51 @@ for (s in Substrates){
   }
 }
 
-mm <- as.data.frame(cbind(sub,vel))
+mm.dia <- as.data.frame(cbind(sub,vel))
 if(verbose_output){
-  str(mm)
-  print(mm)
+  str(mm.dia)
+  print(mm.dia)
 }
 
 #plot(vel ~ sub)
-model.drm <- drm(vel ~ sub, fct = MM.2())
+model.dia.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-print(summary(model.drm))
+print(summary(model.dia.drm))
 
 #redo substrate concs for plotting
-mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
-mml$vel <- predict(model.drm, newdata = mml)
+mml.dia <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml.dia$vel <- predict(model.dia.drm, newdata = mml.dia)
 
-ggplot(mm, aes(x = sub, y = vel)) +
+ggplot(mm.dia, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
   ylab("Velocity [pmol/min/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
-  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+  geom_line(data = mml.dia, aes(x = sub, y = vel), colour = "red")
 ggsave("mm_dia.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
 #x,y for mm
+
+#all together plot
+ggplot(mm.atrazine, aes(x = sub, y = vel)) +
+  theme_bw() +
+  xlab("Concentration [uM]") +
+  ylab("Velocity [pmol/min/mg protein]") +
+  ggtitle("Michaelis-Menten kinetics") +
+  geom_point(alpha = 0.5) +
+  geom_line(data = mml.atrazine, aes(x = sub, y = vel), colour = "red") +
+  geom_line(data = mml.dea, aes(x = sub, y = vel), colour = "blue") +
+  geom_line(data = mml.dia, aes(x = sub, y = vel), colour = "green")
+ggsave("mm_atrazine+D.pdf", width = 6, height = 4)
+
+
 ```
 
 triadimefon
 =================================
-```{r eval=TRUE, echo=FALSE}
+```{r triadimefon_setup, eval=TRUE, echo=FALSE}
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.triadimefon$microMexp
 Time <- microsome.triadimefon.triadimefon$time
@@ -488,7 +502,7 @@ if(verbose_output){
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
 
-```{r eval=TRUE, echo=FALSE}
+```{r triadimefon_plots, eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
 n_substrates <- length(Substrates)
 sub <- vector(mode = "numeric", length = n_substrates)
@@ -526,28 +540,28 @@ for (s in Substrates){
   }
 }
 
-mm <- as.data.frame(cbind(sub,vel))
+mm.triadimefon <- as.data.frame(cbind(sub,vel))
 if(verbose_output){
-  str(mm)
-  print(mm)
+  str(mm.triadimefon)
+  print(mm.triadimefon)
 }
 
 #plot(vel ~ sub)
-model.drm <- drm(vel ~ sub, fct = MM.2())
+model.triadimefon.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-print(summary(model.drm))
+print(summary(model.triadimefon.drm))
 
 #redo substrate concs for plotting
-mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
-mml$vel <- predict(model.drm, newdata = mml)
+mml.triadimefon <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml.triadimefon$vel <- predict(model.triadimefon.drm, newdata = mml.triadimefon)
 
-ggplot(mm, aes(x = sub, y = vel)) +
+ggplot(mm.triadimefon, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
   ylab("Velocity [pmol/min/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
-  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+  geom_line(data = mml.triadimefon, aes(x = sub, y = vel), colour = "red")
 ggsave("mm_triadimefon.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
@@ -556,7 +570,7 @@ ggsave("mm_triadimefon.pdf", width = 6, height = 4)
 
 tdla
 =================================
-```{r eval=TRUE, echo=FALSE}
+```{r tdla_setup, eval=TRUE, echo=FALSE}
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.tdla$microMexp
 Time <- microsome.triadimefon.tdla$time
@@ -569,7 +583,7 @@ if(verbose_output){
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
 
-```{r eval=TRUE, echo=FALSE}
+```{r tdla_plots, eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
 n_substrates <- length(Substrates)
 sub <- vector(mode = "numeric", length = n_substrates)
@@ -607,28 +621,28 @@ for (s in Substrates){
   }
 }
 
-mm <- as.data.frame(cbind(sub,vel))
+mm.tdla <- as.data.frame(cbind(sub,vel))
 if(verbose_output){
-  str(mm)
-  print(mm)
+  str(mm.tdla)
+  print(mm.tdla)
 }
 
 #plot(vel ~ sub)
-model.drm <- drm(vel ~ sub, fct = MM.2())
+model.tdla.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-print(summary(model.drm))
+print(summary(model.tdla.drm))
 
 #redo substrate concs for plotting
-mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
-mml$vel <- predict(model.drm, newdata = mml)
+mml.tdla <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml.tdla$vel <- predict(model.tdla.drm, newdata = mml.tdla)
 
-ggplot(mm, aes(x = sub, y = vel)) +
+ggplot(mm.tdla, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
   ylab("Velocity [pmol/min/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
-  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+  geom_line(data = mml.tdla, aes(x = sub, y = vel), colour = "red")
 ggsave("mm_tdla.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
@@ -637,7 +651,7 @@ ggsave("mm_tdla.pdf", width = 6, height = 4)
 
 tdlb
 =================================
-```{r eval=TRUE, echo=FALSE}
+```{r tdlb_setup, eval=TRUE, echo=FALSE}
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.triadimefon.tdlb$microMexp
 Time <- microsome.triadimefon.tdlb$time
@@ -650,7 +664,7 @@ if(verbose_output){
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
 
-```{r eval=TRUE, echo=FALSE}
+```{r tdlb_plots, eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
 n_substrates <- length(Substrates)
 sub <- vector(mode = "numeric", length = n_substrates)
@@ -688,37 +702,50 @@ for (s in Substrates){
   }
 }
 
-mm <- as.data.frame(cbind(sub,vel))
+mm.tdlb <- as.data.frame(cbind(sub,vel))
 if(verbose_output){
-  str(mm)
-  print(mm)
+  str(mm.tdlb)
+  print(mm.tdlb)
 }
 
 #plot(vel ~ sub)
-model.drm <- drm(vel ~ sub, fct = MM.2())
+model.tdlb.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-print(summary(model.drm))
+print(summary(model.tdlb.drm))
 
 #redo substrate concs for plotting
-mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
-mml$vel <- predict(model.drm, newdata = mml)
+mml.tdlb <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml.tdlb$vel <- predict(model.tdlb.drm, newdata = mml.tdlb)
 
-ggplot(mm, aes(x = sub, y = vel)) +
+ggplot(mm.tdlb, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
   ylab("Velocity [pmol/min/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
-  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+  geom_line(data = mml.tdlb, aes(x = sub, y = vel), colour = "red")
 ggsave("mm_tdlb.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
 #x,y for mm
+
+#all together
+ggplot(mm.triadimefon, aes(x = sub, y = vel)) +
+  theme_bw() +
+  xlab("Concentration [uM]") +
+  ylab("Velocity [pmol/min/mg protein]") +
+  ggtitle("Michaelis-Menten kinetics") +
+  geom_point(alpha = 0.5) +
+  geom_line(data = mml.triadimefon, aes(x = sub, y = vel), colour = "red") +
+  geom_line(data = mml.tdla, aes(x = sub, y = vel), colour = "blue") +
+  geom_line(data = mml.tdlb, aes(x = sub, y = vel), colour = "green")
+ggsave("mm_triadimefon+D.pdf", width = 6, height = 4)
+
 ```
 
 fipronil
 =================================
-```{r eval=TRUE, echo=FALSE}
+```{r fipronil_setup, eval=TRUE, echo=FALSE}
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.fipronil.fipronil$microMexp
 Time <- microsome.fipronil.fipronil$time
@@ -731,7 +758,7 @@ if(verbose_output){
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
 
-```{r eval=TRUE, echo=FALSE}
+```{r fipronil_plots, eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
 n_substrates <- length(Substrates)
 sub <- vector(mode = "numeric", length = n_substrates)
@@ -769,28 +796,28 @@ for (s in Substrates){
   }
 }
 
-mm <- as.data.frame(cbind(sub,vel))
+mm.fipronil <- as.data.frame(cbind(sub,vel))
 if(verbose_output){
-  str(mm)
-  print(mm)
+  str(mm.fipronil)
+  print(mm.fipronil)
 }
 
 #plot(vel ~ sub)
-model.drm <- drm(vel ~ sub, fct = MM.2())
+model.fipronil.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-print(summary(model.drm))
+print(summary(model.fipronil.drm))
 
 #redo substrate concs for plotting
-mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
-mml$vel <- predict(model.drm, newdata = mml)
+mml.fipronil <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml.fipronil$vel <- predict(model.fipronil.drm, newdata = mml.fipronil)
 
-ggplot(mm, aes(x = sub, y = vel)) +
+ggplot(mm.fipronil, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
   ylab("Velocity [pmol/min/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
-  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+  geom_line(data = mml.fipronil, aes(x = sub, y = vel), colour = "red")
 ggsave("mm_fipronil.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
@@ -799,7 +826,7 @@ ggsave("mm_fipronil.pdf", width = 6, height = 4)
 
 fipsulf
 =================================
-```{r eval=TRUE, echo=FALSE}
+```{r fipsulf_setup, eval=TRUE, echo=FALSE}
 #microsome.atrazine.atrazine$microMexp
 Substrate <- microsome.fipronil.fipsulf$microMexp
 Time <- microsome.fipronil.fipsulf$time
@@ -812,7 +839,7 @@ if(verbose_output){
 
 The above figure shows a three-dimensional plot of pesticide substrate concentration, observed concentration and experiment time. We need to condition the pesticide data on the substrate concentrations used in the experiment and regress the observed concentrations over the 90 min period in order to estimate the linear slopes for the Michaelis-Menten kinetic rate constants.
 
-```{r eval=TRUE, echo=FALSE}
+```{r fipsulf_plots, eval=TRUE, echo=FALSE}
 Substrates <- unique(Substrate)
 n_substrates <- length(Substrates)
 sub <- vector(mode = "numeric", length = n_substrates)
@@ -850,32 +877,43 @@ for (s in Substrates){
   }
 }
 
-mm <- as.data.frame(cbind(sub,vel))
+mm.fipsulf <- as.data.frame(cbind(sub,vel))
 if(verbose_output){
-  str(mm)
-  print(mm)
+  str(mm.fipsulf)
+  print(mm.fipsulf)
 }
 
 #plot(vel ~ sub)
-model.drm <- drm(vel ~ sub, fct = MM.2())
+model.fipsulf.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
-print(summary(model.drm))
+print(summary(model.fipsulf.drm))
 
 #redo substrate concs for plotting
-mml <- data.frame(sub = seq(0, max(sub), length.out = 100))
-mml$vel <- predict(model.drm, newdata = mml)
+mml.fipsulf <- data.frame(sub = seq(0, max(sub), length.out = 100))
+mml.fipsulf$vel <- predict(model.fipsulf.drm, newdata = mml.fipsulf)
 
-ggplot(mm, aes(x = sub, y = vel)) +
+ggplot(mm.fipsulf, aes(x = sub, y = vel)) +
   theme_bw() +
   xlab("Concentration [uM]") +
   ylab("Velocity [pmol/min/mg protein]") +
   ggtitle("Michaelis-Menten kinetics") +
   geom_point(alpha = 0.5) +
-  geom_line(data = mml, aes(x = sub, y = vel), colour = "red")
+  geom_line(data = mml.fipsulf, aes(x = sub, y = vel), colour = "red")
 ggsave("mm_fipsulf.pdf", width = 6, height = 4)
 #collect slopes
 #multiply by negative 1, multiple by a 1000, divide by 0.2
 #x,y for mm
+
+ggplot(mm.fipronil, aes(x = sub, y = vel)) +
+  theme_bw() +
+  xlab("Concentration [uM]") +
+  ylab("Velocity [pmol/min/mg protein]") +
+  ggtitle("Michaelis-Menten kinetics") +
+  geom_point(alpha = 0.5) +
+  geom_line(data = mml.fipronil, aes(x = sub, y = vel), colour = "red") +
+  geom_line(data = mml.fipsulf, aes(x = sub, y = vel), colour = "blue")
+ggsave("mm_fipronil+D.pdf", width = 6, height = 4)
+
 ```
 
 exposure experiment analysis
