@@ -87,14 +87,16 @@ if(verbose_output){
 
 #import data
 micro <- read.table(paste(micro.csv.in,"exposure_experiment.csv",sep=""), header = TRUE, sep = ",")
-microsome <- read.table(paste(micro.csv.in,"microsome_experiment2.csv",sep=""), header = TRUE, sep = ",")
+microsome <- read.table(paste(micro.csv.in,"microsome_experiment3.csv",sep=""), header = TRUE, sep = ",")
 
 #drop outliers per dg
 #print("outliers:")
 #View(microsome)
-#rowstodrop <- c(96,99,125:139)
-#microsome[rowstodrop,]
-#microsome <- microsome[-rowstodrop,]
+rowstodrop <- c(4,47,61,92,95,98,101,104,127,134,169,206,209,212,215,231,235,255,259,344,347,
+                350,353,356,359,365,366,370,372,379,386,478,547,591,635,657,668,710,713,803,
+                927,936,1023)
+microsome[rowstodrop,]
+microsome <- microsome[-rowstodrop,]
 #triadimefon at conc =250
 #tdla at time=0, conc 0.68, replicate =3
 
