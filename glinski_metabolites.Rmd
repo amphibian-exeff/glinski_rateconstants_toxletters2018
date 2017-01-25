@@ -131,6 +131,13 @@ microsome.fipronil.fipsulf <- microsome.fipronil[which(microsome.fipronil$analyt
 #microsome.fipronil.fipronil$microMexp[which(microsome.fipronil.fipronil$time==0)]
 #microsome.fipronil.fipsulf$conc[which(microsome.fipronil.fipsulf$time==0)] = 0
 
+#summary(micro)
+#micro.atrazine <- micro[which(micro$parent=="atrazine"),]
+#micro.atrazine.atrazine <- micro.atrazine[which(micro.atrazine$analyte=="atrazine"),]
+#micro.atrazine.dia <- micro.atrazine[which(micro.atrazine$analyte=="dia"),]
+#micro.atrazine.dea <- micro.atrazine[which(micro.atrazine$analyte=="dea"),]
+
+
 ```
 
 experimental exposure data structure
@@ -988,6 +995,45 @@ micro.group.stats.soil.triadimenon
 ```
 
 
+```{r eval=TRUE, echo=TRUE}
+pdf(paste(micro.graphics,"data_mean_barcharts",".pdf", sep=""))
+  par(mfrow=c(3,1))
+  print(parents)
+  for(parent in parents){
+    i=0
+    print(parent)
+    temp.parent <- micro.group.stats.amphib[which(micro.group.stats.amphib$parent==parent),]
+    print(temp.parent)
+    parent.analytes <- unique(temp.parent$analyte)
+    for(analyte in parent.analytes){
+      print(parent)
+      print(analyte) 
+      analytetemp <- micro.group.stats.amphib[which(micro.group.stats.amphib$analyte==analyte),]
+      xvalues <- as.numeric(as.character(analytetemp$time))
+      points.y <- micro.amphib[which(micro.amphib$analyte==analyte),]$conc
+      points.x <- as.numeric(as.character(micro.amphib[which(micro.amphib$analyte==analyte),]$time))
+      #create empty plot if needed
+      if(i==0){
+        parenttemp <- micro.group.stats.amphib[which(micro.group.stats.amphib$parent==parent),]
+        maxconc <- max(points.y) 
+        #plot(xvalues,analytetemp$ConcMean,type="l", xlim=c(0,48),
+        #     ylim = c(0,maxconc), main=parent,col="black", xlab="Hours", ylab="Concentration")
+        #axis(1,at=xvalues)
+        i=1
+      }
+      ##add line for parent metabolite
+      #if(analyte %in% parents){
+      #  lines(xvalues,analytetemp$ConcMean,type="l",col="red")
+      #  points(points.x, points.y, col = "red")
+      #}else{
+      ##add line for daughter metabolite
+      #  lines(xvalues,analytetemp$ConcMean,type="l",col="blue")
+      #  points(points.x, points.y, col = "blue")
+      #}
+    }
+  }
+dev.off()
+```
 
 ```{r eval=TRUE, echo=TRUE}
 pdf(paste(micro.graphics,"data_mean_scatterplot",".pdf", sep=""))
