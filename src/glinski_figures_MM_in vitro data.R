@@ -36,7 +36,8 @@ jpeg(paste(micro.graphics,"glinski_fig1.jpg", sep=""),width = 6, height = 4, uni
   conc <- c(0, 0.712, 3.1684, 10, 50, 75, 100, 125, 150, 200, 250)
   diarate <- c(0, 2.47, 8.545, 17.74, 44.69, 76.60, 113.78, 144.18, 132.46, 76.99, 70.46)
   dearate <- c(0, 5.05, 13.80, 27.22, 62.42, 85.02, 135.00, 163.14, 157.35, 40.30, 43.30)
-  plot(conc, atzrate, las=1, pch=16, col="red", xlab = expression(paste("Concentration (", mu, "M)")), ylab=expression(paste("V"['max']* " (pmol min "^" -1","mg" ^" -1","MSP)")))
+  plot(conc, atzrate, las=1, pch=16, col="red", xlab = expression(paste("Concentration (", mu, "M)")), 
+       ylab=expression(paste("Velocity"* " (pmol min "^" -1","mg" ^" -1","MSP)")))
   points(conc, diarate, pch=16, col="dark green")
   points(conc, dearate, pch=16, col="blue")
   x <- seq(min(atzconc), max(atzconc), length=100)
@@ -57,7 +58,7 @@ jpeg(paste(micro.graphics,"glinski_fig3.jpg", sep=""),width = 6, height = 4, uni
   fsconc <- c(0, 2.89, 10, 50, 75, 100, 125, 150, 200, 250)
   fsrate <- c(0, 35.73, 45.99, 69.81, 72.95, 145.85, 159.43, 145.86, 114.72, 115.80) 
   plot(fsconc, fsrate, xlab = expression(paste("Concentration (", mu, "M)")), 
-       ylab=expression(paste("V"['max']* " (pmol min "^" -1","mg" ^" -1","MSP)")), 
+       ylab=expression(paste("Velocity" * " (pmol min "^" -1","mg" ^" -1","MSP)")), 
        las=1, pch=16, col='blue')
   fsmmModel <- nls(fsrate~Vm*fsconc/(Km+fsconc), start = list(Vm=100,Km=20)) 
   summary(fsmmModel)
@@ -81,7 +82,7 @@ points(x, y, type='l', col='blue')
 #dont use
 fsconc <- c(0, 2.89, 10, 50, 75, 100, 125, 150, 200, 250)
 plot(fipconc, fiprate, las=1, pch=16, col='red', xlab = expression(paste("Concentration (", mu, "M)")), 
-     ylab=expression(paste("V"['max']* " (pmol min "^" -1","mg" ^" -1","MSP)")))
+     ylab=expression(paste("Velocity" * " (pmol min "^" -1","mg" ^" -1","MSP)")))
 points(fsconc, fsrate, pch=16, col='blue')
 x <- seq(min(fsconc), max(fsconc), length=100)
 y <- predict(fsmmModel, list(fsconc=x))
