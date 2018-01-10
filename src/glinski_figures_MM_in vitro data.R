@@ -1,3 +1,23 @@
+library(rmarkdown, quietly = TRUE, warn.conflicts = FALSE)
+library(dplyr, quietly = TRUE, warn.conflicts = FALSE)
+library(knitr, quietly = TRUE, warn.conflicts = FALSE)
+library(zoo, quietly = TRUE, warn.conflicts = FALSE)
+library(xtable, quietly = TRUE, warn.conflicts = FALSE)
+library(drc, quietly = TRUE, warn.conflicts = FALSE) # for fitting Michaelis Menten model
+library(ggplot2, quietly = TRUE, warn.conflicts = FALSE) # for drawing
+library(scatterplot3d)
+library(pbkrtest)
+
+
+if(Sys.info()[4]=="DZ2626UTPURUCKE"){
+  micro.root <- "d:/git/glinski_metabolites/"
+}
+
+micro.csv.in <- paste(micro.root, "csv_in/", sep="")
+micro.csv.out <- paste(micro.root, "csv_out/", sep="")
+micro.graphics <- paste(micro.root, "graphics/", sep="")
+micro.tables <- paste(micro.root, "tables/", sep="")
+
 
 
 ##MM for atz#
@@ -135,7 +155,7 @@ points(x, y, type='l', col='blue')
 jpeg(paste(micro.graphics,"glinski_fig2.jpg", sep=""),width = 6, height = 4, units = "in",res=300)
   tdnconc <- c(0, 0.6808, 2.89, 10, 50, 75, 100, 125, 150, 200, 250)
   plot(tdnconc, tdlbrate, las=1, pch=16, col='blue', xlab = expression(paste("Concentration (", mu, "M)")), 
-       ylab=expression(paste("V"['max']* " (pmol min "^" -1","mg" ^" -1","MSP)")))
+       ylab=expression(paste("Velocity" * " (pmol min "^" -1","mg" ^" -1","MSP)")))
   points(tdnconc, tdlarate, pch=16, col='dark green')
   points(tdnconc, tdnrate, pch=16, col='red')
   x <- seq(min(tdnconc), max(tdnconc), length=100)
