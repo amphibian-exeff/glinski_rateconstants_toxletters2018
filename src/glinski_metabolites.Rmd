@@ -16,7 +16,7 @@ things to do
 install and load supporting libraries
 ======================================
 ```{r setup, eval=TRUE, echo=FALSE, }
-verbose_output = FALSE
+verbose_output = TRUE
 
 if(verbose_output){
   print(Sys.info()[4])
@@ -68,7 +68,7 @@ if(Sys.info()[4]=="stp-air-3.local" || Sys.info()[4]=="stp-air.local" || Sys.inf
 }
 
 if(Sys.info()[4]=="DZ2626UTPURUCKE"){
-  micro.root <- "k:/git/glinski_metabolites/"
+  micro.root <- "d:/git/glinski_metabolites/"
 }
 
 if(verbose_output){
@@ -282,6 +282,7 @@ if(verbose_output){
 model.atrazine.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
 print(summary(model.atrazine.drm))
+print(modelFit(model.atrazine.drm))
 
 #redo substrate concs for plotting
 mml.atrazine <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -372,6 +373,7 @@ if(verbose_output){
 model.dea.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
 print(summary(model.dea.drm))
+print(modelFit(model.dea.drm))
 
 #redo substrate concs for plotting
 mml.dea <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -464,6 +466,7 @@ if(verbose_output){
 model.dia.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
 print(summary(model.dia.drm))
+print(modelFit(model.dia.drm))
 
 #redo substrate concs for plotting
 mml.dia <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -559,6 +562,7 @@ if(verbose_output){
 model.triadimefon.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
 print(summary(model.triadimefon.drm))
+print(modelFit(model.triadimefon.drm))
 
 #redo substrate concs for plotting
 mml.triadimefon <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -640,6 +644,7 @@ if(verbose_output){
 model.tdla.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
 print(summary(model.tdla.drm))
+print(modelFit(model.tdla.drm))
 
 #redo substrate concs for plotting
 mml.tdla <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -721,6 +726,7 @@ if(verbose_output){
 model.tdlb.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
 print(summary(model.tdlb.drm))
+print(modelFit(model.tdlb.drm))
 
 #redo substrate concs for plotting
 mml.tdlb <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -815,6 +821,7 @@ if(verbose_output){
 model.fipronil.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
 print(summary(model.fipronil.drm))
+print(modelFit(model.fipronil.drm))
 
 #redo substrate concs for plotting
 mml.fipronil <- data.frame(sub = seq(0, max(sub), length.out = 100))
@@ -896,6 +903,7 @@ if(verbose_output){
 model.fipsulf.drm <- drm(vel ~ sub, fct = MM.2())
 print("here are the rates")
 print(summary(model.fipsulf.drm))
+print(modelFit(model.fipsulf.drm))
 
 #redo substrate concs for plotting
 mml.fipsulf <- data.frame(sub = seq(0, max(sub), length.out = 100))
